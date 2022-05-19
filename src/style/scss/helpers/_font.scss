@@ -1,0 +1,46 @@
+// [Map]
+$font-sizes: (
+  small: $font-base-size * 3.5,
+  4: $font-base-size * 4,
+  6: $font-base-size * 6,
+  8: $font-base-size * 8,
+  11: $font-base-size * 11,
+  13: $font-base-size * 13,
+  "h5": $font-base-size * 4,
+  "h4": $font-base-size * 6,
+  "h3": $font-base-size * 8,
+  "h2": $font-base-size * 11,
+  "h1": $font-base-size * 13,
+);
+
+// [@each]
+@each $key, $value in $font-sizes {
+  .fs-#{$key} {
+    font-size: $value;
+  }
+  @media (min-width: $grid-breakpoints-sm) {
+    .fs-sm-#{$key} {
+      font-size: $value;
+    }
+  }
+  @media (min-width: $grid-breakpoints-md) {
+    .fs-md-#{$key} {
+      font-size: $value;
+    }
+  }
+  @media (min-width: $grid-breakpoints-lg) {
+    .fs-lg-#{$key} {
+      font-size: $value;
+    }
+  }
+  @media (min-width: $grid-breakpoints-xl) {
+    .fs-xl-#{$key} {
+      font-size: $value;
+    }
+  }
+  @media (min-width: $grid-breakpoints-xxl) {
+    .fs-xxl-#{$key} {
+      font-size: $value;
+    }
+  }
+}

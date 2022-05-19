@@ -1,0 +1,50 @@
+.container {
+  max-width: $grid-breakpoints-xl;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter-x;
+  padding-right: $gutter-x;
+  @media (min-width: $grid-breakpoints-sm) {
+    width: 80%;
+  }
+  @media (min-width: $grid-breakpoints-md) {
+    width: 75%;
+  }
+}
+.container-fluid {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gutter-x;
+  padding-right: $gutter-x;
+}
+
+@each $key, $value in $grid-breakpoints {
+  .container-#{$key} {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutter-x;
+    padding-right: $gutter-x;
+    @media (max-width: #{$key}) {
+      width: 100%;
+    }
+  }
+}
+
+.row {
+  // padding: 0 $gutter-x;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    width: 100% / $grid-columns * $i;
+    flex: 1 0 0%;
+  }
+}

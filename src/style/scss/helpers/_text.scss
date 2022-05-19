@@ -1,0 +1,17 @@
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.letter-space-lg {
+  letter-spacing: $letter-spacing-lg;
+}
+.letter-space-normal {
+  letter-spacing: $letter-spacing-base;
+}
+.letter-space-sm {
+  letter-spacing: $letter-spacing-sm;
+}
+
+.fw-normal {
+  font-weight: normal;
+}

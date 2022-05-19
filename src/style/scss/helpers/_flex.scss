@@ -1,0 +1,231 @@
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+.justify-content-center {
+  justify-content: space-center;
+}
+.justify-content-end {
+  justify-content: end;
+}
+
+.align-items-start {
+  align-items: start;
+}
+.align-items-end {
+  align-items: end;
+}
+.align-items-stretch {
+  align-items: stretch;
+}
+.align-items-center {
+  align-items: center;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.align-self-end {
+  align-self: flex-end;
+}
+.align-self-center {
+  align-self: center;
+}
+.align-self-stretch {
+  align-self: stretch;
+}
+
+@media (min-width: $grid-breakpoints-sm) {
+  .flex-sm-column {
+    flex-direction: column;
+  }
+  .flex-sm-row {
+    flex-direction: row;
+  }
+  .flex-sm-row-reverse {
+    flex-direction: row-reverse;
+  }
+  .flex-sm-column-reverse {
+    flex-direction: column-reverse;
+  }
+  .justify-sm-content-between {
+    justify-content: space-between;
+  }
+
+  .justify-sm-content-around {
+    justify-content: space-around;
+  }
+  .justify-sm-content-center {
+    justify-content: space-center;
+  }
+  .justify-sm-content-end {
+    justify-content: end;
+  }
+
+  .align-items-sm-start {
+    align-items: start;
+  }
+  .align-items-sm-end {
+    align-items: end;
+  }
+  .align-items-sm-stretch {
+    align-items: stretch;
+  }
+  .align-items-sm-center {
+    align-items: center;
+  }
+
+  .flex-sm-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .flex-sm-wrap {
+    flex-wrap: wrap;
+  }
+  .flex-sm-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  .align-self-sm-end {
+    align-self: flex-end;
+  }
+  .align-self-sm-center {
+    align-self: center;
+  }
+}
+@media (min-width: $grid-breakpoints-md) {
+  .flex-md-column {
+    flex-direction: column;
+  }
+  .flex-md-row {
+    flex-direction: row;
+  }
+  .flex-md-row-reverse {
+    flex-direction: row-reverse;
+  }
+  .flex-md-column-reverse {
+    flex-direction: column-reverse;
+  }
+  .justify-md-content-between {
+    justify-content: space-between;
+  }
+
+  .justify-md-content-around {
+    justify-content: space-around;
+  }
+  .justify-md-content-center {
+    justify-content: space-center;
+  }
+  .justify-md-content-end {
+    justify-content: end;
+  }
+
+  .align-items-md-start {
+    align-items: start;
+  }
+  .align-items-md-end {
+    align-items: end;
+  }
+  .align-items-md-stretch {
+    align-items: stretch;
+  }
+  .align-items-md-center {
+    align-items: center;
+  }
+
+  .flex-md-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .flex-md-wrap {
+    flex-wrap: wrap;
+  }
+  .flex-md-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  .align-self-md-end {
+    align-self: flex-end;
+  }
+  .align-self-md-center {
+    align-self: center;
+  }
+}
+@media (min-width: $grid-breakpoints-lg) {
+  .flex-lg-column {
+    flex-direction: column;
+  }
+  .flex-lg-row {
+    flex-direction: row;
+  }
+  .flex-lg-row-reverse {
+    flex-direction: row-reverse;
+  }
+  .flex-lg-column-reverse {
+    flex-direction: column-reverse;
+  }
+  .justify-lg-content-between {
+    justify-content: space-between;
+  }
+
+  .justify-lg-content-around {
+    justify-content: space-around;
+  }
+  .justify-lg-content-center {
+    justify-content: space-center;
+  }
+  .justify-lg-content-end {
+    justify-content: end;
+  }
+
+  .align-items-lg-start {
+    align-items: start;
+  }
+  .align-items-lg-end {
+    align-items: end;
+  }
+  .align-items-lg-stretch {
+    align-items: stretch;
+  }
+  .align-items-lg-center {
+    align-items: center;
+  }
+
+  .flex-lg-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .flex-lg-wrap {
+    flex-wrap: wrap;
+  }
+  .flex-lg-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+  .align-self-lg-end {
+    align-self: flex-end;
+  }
+  .align-self-lg-center {
+    align-self: center;
+  }
+}

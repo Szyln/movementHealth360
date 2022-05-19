@@ -1,0 +1,39 @@
+$primary: #006e5a;
+$primary-dark: #004536;
+$secondary: #97cfac;
+$accent: #f29438;
+$gray-light: #cccccc;
+$gray-dark: #404040;
+$dark: #1a1a1a;
+$white: #ffffff;
+
+$font-base-size: 0.25rem;
+$space: 0.25rem;
+$border-base-width: 2px;
+$border-lg-width: 4px;
+
+$border-base-radius: 10px;
+$border-base-sm-radius: 4px;
+
+$letter-spacing-base: 0.2rem;
+$letter-spacing-lg: 0.5rem;
+$letter-spacing-sm: 0.1rem;
+
+
+// grid, container and gutter
+$gutter-x: $space * 6;
+$grid-columns: 12;
+$grid-breakpoints-sm: 576px;
+$grid-breakpoints-md: 768px;
+$grid-breakpoints-lg: 992px;
+$grid-breakpoints-xl: 1200px;
+$grid-breakpoints-xxl: 1400px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: $grid-breakpoints-sm,
+  md: $grid-breakpoints-md,
+  lg: $grid-breakpoints-lg,
+  xl: $grid-breakpoints-xl,
+  xxl: $grid-breakpoints-xxl,
+);

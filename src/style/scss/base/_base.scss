@@ -1,0 +1,67 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: Futura, "Noto Sans CJK TC", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: $letter-spacing-base;
+  line-height: 1.5;
+  // line-height: $line-height-base;
+}
+
+h1 {
+  font-size: $font-base-size * 13;
+  letter-spacing: $letter-spacing-lg;
+}
+h2 {
+  font-size: $font-base-size * 11;
+  letter-spacing: $letter-spacing-lg;
+}
+h3 {
+  font-size: $font-base-size * 8;
+  letter-spacing: $letter-spacing-lg;
+}
+h4 {
+  font-size: $font-base-size * 6;
+  letter-spacing: $letter-spacing-lg;
+}
+h5 {
+  font-size: $font-base-size * 4;
+  letter-spacing: $letter-spacing-lg;
+}
+p {
+  letter-spacing: $letter-spacing-base;
+}
+
+button {
+  letter-spacing: $letter-spacing-base;
+}
+
+label {
+  display: block;
+  font-size: $font-base-size * 6;
+  color: $primary;
+}
+input, textarea {
+  display: block;
+  font-size: $font-base-size * 6;
+  font-weight: bold;
+  padding: $space * 4;
+  border: $border-base-width $primary solid;
+  border-radius: $border-base-sm-radius;
+  margin-top: $space * 2;
+  margin-bottom: $space * 4;
+  width: 100%;
+  color: $gray-dark;
+}
+
+
+dialog {
+  // background-color: none;
+  border: none;
+  padding: 0;
+  // margin: $space * 4;
+
+
+}

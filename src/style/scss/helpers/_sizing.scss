@@ -1,0 +1,225 @@
+$base-size: 4px;
+$sizes: (
+  1: $base-size * 1,
+  2: $base-size * 2,
+  3: $base-size * 3,
+  4: $base-size * 4,
+  5: $base-size * 5,
+  6: $base-size * 6,
+  7: $base-size * 7,
+  8: $base-size * 8,
+  9: $base-size * 9,
+  10: $base-size * 10,
+  11: $base-size * 11,
+  12: $base-size * 12,
+  13: $base-size * 13,
+  14: $base-size * 14,
+  15: $base-size * 15,
+  16: $base-size * 16,
+  17: $base-size * 17,
+  18: $base-size * 18,
+  19: $base-size * 19,
+  20: $base-size * 20,
+  21: $base-size * 21,
+  22: $base-size * 22,
+  23: $base-size * 23,
+  24: $base-size * 24,
+  25: $base-size * 25,
+  26: $base-size * 26,
+  27: $base-size * 27,
+  28: $base-size * 28,
+  29: $base-size * 29,
+  30: $base-size * 30,
+  31: $base-size * 31,
+  32: $base-size * 32,
+  33: $base-size * 33,
+  34: $base-size * 34,
+  35: $base-size * 35,
+  36: $base-size * 36,
+  37: $base-size * 37,
+  38: $base-size * 38,
+  39: $base-size * 39,
+  40: $base-size * 40,
+  41: $base-size * 41,
+  42: $base-size * 42,
+  43: $base-size * 43,
+  44: $base-size * 44,
+  45: $base-size * 45,
+  46: $base-size * 46,
+  47: $base-size * 47,
+  48: $base-size * 48,
+  49: $base-size * 49,
+  50: $base-size * 50,
+  51: $base-size * 51,
+  52: $base-size * 52,
+  53: $base-size * 53,
+  54: $base-size * 54,
+  55: $base-size * 55,
+  56: $base-size * 56,
+  57: $base-size * 57,
+  58: $base-size * 58,
+  59: $base-size * 59,
+  60: $base-size * 60,
+  61: $base-size * 61,
+  62: $base-size * 62,
+  63: $base-size * 63,
+  64: $base-size * 64,
+  65: $base-size * 65,
+  66: $base-size * 66,
+  67: $base-size * 67,
+  68: $base-size * 68,
+  69: $base-size * 69,
+  70: $base-size * 70,
+  71: $base-size * 71,
+  72: $base-size * 72,
+  73: $base-size * 73,
+  74: $base-size * 74,
+  75: $base-size * 75,
+  76: $base-size * 76,
+  77: $base-size * 77,
+  78: $base-size * 78,
+  79: $base-size * 79,
+  80: $base-size * 80,
+  81: $base-size * 81,
+  82: $base-size * 82,
+  83: $base-size * 83,
+  84: $base-size * 84,
+  85: $base-size * 85,
+  86: $base-size * 86,
+  87: $base-size * 87,
+  88: $base-size * 88,
+  89: $base-size * 89,
+  90: $base-size * 90,
+  91: $base-size * 91,
+  92: $base-size * 92,
+  93: $base-size * 93,
+  94: $base-size * 94,
+  95: $base-size * 95,
+  96: $base-size * 96,
+  97: $base-size * 97,
+  98: $base-size * 98,
+  99: $base-size * 99,
+  100: $base-size * 100,
+  
+
+  100p: 100%,
+  75p: 75%,
+  90p: 90%,
+  80p: 80%,
+  70p: 70%,
+  60p: 60%,
+  50p: 50%,
+  40p: 40%,
+  30p: 30%,
+  20p: 20%,
+  10p: 10%,
+  25p: 25%,
+  100vh: 100vh,
+  90vh: 90vh,
+  80vh: 80vh,
+  70vh: 70vh,
+  60vh: 60vh,
+  50vh: 50vh,
+  40vh: 40vh,
+  30vh: 30vh,
+  20vh: 20vh,
+  10vh: 10vh,
+  100vw: 100vw,
+  90vw: 90vw,
+  80vw: 80vw,
+  70vw: 70vw,
+  60vw: 60vw,
+  50vw: 50vw,
+  40vw: 40vw,
+  30vw: 30vw,
+  20vw: 20vw,
+  10vw: 10vw,
+);
+
+@each $key, $value in $sizes {
+  .h-#{$key} {
+    height: $value;
+  }
+  .w-#{$key} {
+    width: $value;
+  }
+  .maxh-#{$key} {
+    max-height: $value;
+  }
+  .maxw-#{$key} {
+    max-width: $value;
+  }
+  .minh-#{$key} {
+    min-height: $value;
+  }
+  .minw-#{$key} {
+    min-width: $value;
+  }
+}
+
+@each $key, $value in $sizes {
+  @media (min-width: $grid-breakpoints-sm) {
+    .h-sm-#{$key} {
+      height: $value;
+    }
+    .w-sm-#{$key} {
+      width: $value;
+    }
+    .maxh-sm-#{$key} {
+      max-height: $value;
+    }
+    .maxw-sm-#{$key} {
+      max-width: $value;
+    }
+    .minh-sm-#{$key} {
+      min-height: $value;
+    }
+    .minw-sm-#{$key} {
+      min-width: $value;
+    }
+  }
+}
+@each $key, $value in $sizes {
+  @media (min-width: $grid-breakpoints-md) {
+    .h-md-#{$key} {
+      height: $value;
+    }
+    .w-md-#{$key} {
+      width: $value;
+    }
+    .maxh-md-#{$key} {
+      max-height: $value;
+    }
+    .maxw-md-#{$key} {
+      max-width: $value;
+    }
+    .minh-md-#{$key} {
+      min-height: $value;
+    }
+    .minw-md-#{$key} {
+      min-width: $value;
+    }
+  }
+}
+@each $key, $value in $sizes {
+  @media (min-width: $grid-breakpoints-lg) {
+    .h-lg-#{$key} {
+      height: $value;
+    }
+    .w-lg-#{$key} {
+      width: $value;
+    }
+    .maxh-lg-#{$key} {
+      max-height: $value;
+    }
+    .maxw-lg-#{$key} {
+      max-width: $value;
+    }
+    .minh-lg-#{$key} {
+      min-height: $value;
+    }
+    .minw-lg-#{$key} {
+      min-width: $value;
+    }
+  }
+}

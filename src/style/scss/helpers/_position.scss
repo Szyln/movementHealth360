@@ -1,0 +1,50 @@
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0;
+}
+.bottom-0 {
+  bottom: 0;
+}
+.left-0 {
+  left: 0;
+}
+.right-0 {
+  right: 0;
+}
+.left-50 {
+  left: 50%;
+}
+.right-50 {
+  right: 50%;
+}
+.top-50 {
+  top: 50%;
+}
+.bottom-50 {
+  bottom: 50%;
+}
+
+.translate-middle {
+  transform: translate(-50%,-50%);
+}
+.translate-x-middle {
+  transform: translate(-50%,0);
+}
+.translate-y-middle {
+  transform: translate(0,-50%);
+}

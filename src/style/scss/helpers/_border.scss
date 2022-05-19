@@ -1,0 +1,28 @@
+.border-top {
+  border-top: solid $border-base-width;
+}
+.border-end {
+  border-right: solid $border-base-width;
+}
+.border-bottom {
+  border-bottom: solid $border-base-width;
+}
+.border-start {
+  border-left: solid $border-base-width;
+}
+.border-around {
+  border: solid $border-base-width;
+}
+.border-lg {
+  border-width: $border-lg-width;
+}
+.rounded {
+  border-radius: $border-base-radius;
+}
+.rounded-top {
+  border-radius: $border-base-radius 0;
+}
+
+.rounded-sm {
+  border-radius: $border-base-sm-radius;
+}
