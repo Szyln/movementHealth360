@@ -6,11 +6,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "serve": "vite build && vite preview",
     "build-css": "sass -w src/style/scss/all.scss src/style/all.css"
   },
   "dependencies": {
     "@formspree/react": "^2.2.5",
+    "aos": "^2.3.4",
+    "gsap": "^3.10.4",
     "react": "^18.0.0",
+    "react-document-title": "^2.0.3",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
     "sass": "^1.51.0",

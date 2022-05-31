@@ -1,15 +1,17 @@
 // Navbar with toggle on/off which always fixed on window
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
 import NavListComponent from './nav-list-component';
 import MediaLinkComponent from './media-link-component';
 import ContactInfoComponent from './contact-info-component';
 import Copyright from './copyright-component';
 import LogoWordComponent from './logo-word-component';
 
-const iconColor = '../../src/icon-2color.svg';
-const navToggleBtn = '../../src/img/nav-toggle-button.svg';
+const iconColor = '/icon-2color.svg';
+const navToggleBtn = '/nav-toggle-button.svg';
+const navToggleBtnWhite = '/nav-toggle-button-white.svg';
 
 function NavComponent() {
   const [navToggle, setNavToggle] = useState(false);
@@ -20,6 +22,12 @@ function NavComponent() {
       setNavToggle(false);
     }
   };
+  const navRef = useState();
+  useEffect(() => {
+    gsap.from(navRef.current, {
+      x: '+=100',
+    });
+  });
 
   return (
     <nav
@@ -27,20 +35,22 @@ function NavComponent() {
     >
       <div className="container h-100p d-flex flex-column justify-content-between">
         {/* navbar */}
+        {/* icon */}
         <div className="d-flex justify-content-between align-items-center">
           <div>
-            <Link to="/">
+            <Link to="/" onClick={navToggle ? toggleNavBtnHandler : false}>
               <img className="h-10 h-md-20" src={iconColor} alt="icon of logo, an energetic green man." />
             </Link>
           </div>
-
+          {/* word logo */}
           <div className="d-flex align-items-center">
-            <div className="pe-5">
-              <LogoWordComponent heightClass="h-7 h-md-10" isWhite={!!navToggle} />
-            </div>
+            <Link to="/" className="pe-5 border-primary border-end p-2 d-flex" onClick={navToggle ? toggleNavBtnHandler : false}>
+              <LogoWordComponent heightClass="h-7 h-md-10 " isWhite={!!navToggle} />
+            </Link>
             <div>
-              <button type="button" className="border-start border-primary p-2 p-md-5 hover-bg-primary" onClick={toggleNavBtnHandler}>
-                <img className="h-4" src={navToggleBtn} alt="動作健康360 motion health 360" />
+              {/* toggle button */}
+              <button type="button" className="ms-2 p-5 p-md-6 hover-bg-primary hover-nav-link d-flex" onClick={toggleNavBtnHandler}>
+                <img className="h-4" src={navToggle ? navToggleBtnWhite : navToggleBtn} alt="動作健康360 motion health 360" />
               </button>
 
             </div>

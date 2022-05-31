@@ -1,6 +1,6 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-// import BgBtn from './backgroundBtn-component';
+import Btn from './button-component';
 
 function MemberCardComponent({
   member, getMemberName, isOpen = false,
@@ -31,9 +31,7 @@ function MemberCardComponent({
 
         </div>
 
-        <button type="button" className="bg-primary text-white border-primary rounded border-around p-3 fs-h4 w-100p align-self-stretch fw-normal " data-member-name={engName} onClick={getMemberName}>
-          {isOpen ? '關閉' : '詳細'}
-        </button>
+        <Btn data={engName} getData={getMemberName}>{ isOpen ? '關閉' : '詳細' }</Btn>
 
       </div>
       {isOpen && (

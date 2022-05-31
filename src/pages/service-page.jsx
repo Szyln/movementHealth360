@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import DocumentTitle from 'react-document-title';
 import ServiceCardComponent from '../components/service-card-component';
 import PageContainerComponent from '../components/page-container-component';
 
@@ -17,22 +18,25 @@ function ServicePage({ servicesList }) {
   };
 
   return (
-    <PageContainerComponent title="服務項目">
-      <ul>
-        {servicesList.map((service) => (
-          <li key={service.id} className="mb-5">
-            <div>
-              <ServiceCardComponent service={service} getServiceName={getServiceName} />
-            </div>
-          </li>
-        ))}
-      </ul>
-      {currentService && (
-      <dialog className="rounded position-fixed top-0 bottom-0 left-0 right-0 p-5 d-flex align-items-center z-1000 ">
-        <ServiceCardComponent service={currentService} getServiceName={getServiceName} isOpen />
-      </dialog>
-      )}
-    </PageContainerComponent>
+    <DocumentTitle title="服務項目 - 動作健康 360">
+
+      <PageContainerComponent title="服務項目">
+        <ul>
+          {servicesList.map((service) => (
+            <li key={service.id} className="mb-5">
+              <div>
+                <ServiceCardComponent service={service} getServiceName={getServiceName} />
+              </div>
+            </li>
+          ))}
+        </ul>
+        {currentService && (
+        <dialog className="rounded position-fixed top-0 bottom-0 left-0 right-0 p-5 d-flex align-items-center z-1000 ">
+          <ServiceCardComponent service={currentService} getServiceName={getServiceName} isOpen />
+        </dialog>
+        )}
+      </PageContainerComponent>
+    </DocumentTitle>
   );
 }
 

@@ -67,11 +67,11 @@ button, input[type=submit], input[type=reset] {
 }
 
 body {
-  font-family: Futura, "Noto Sans CJK TC", sans-serif;
+  font-family: "Hind Madurai", "Noto Sans TC", sans-serif;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0.2rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 h1 {
@@ -3249,6 +3249,30 @@ dialog {
 
 .minw-30vw {
   min-width: 30vw;
+}
+
+.h-25vw {
+  height: 25vw;
+}
+
+.w-25vw {
+  width: 25vw;
+}
+
+.maxh-25vw {
+  max-height: 25vw;
+}
+
+.maxw-25vw {
+  max-width: 25vw;
+}
+
+.minh-25vw {
+  min-height: 25vw;
+}
+
+.minw-25vw {
+  min-width: 25vw;
 }
 
 .h-20vw {
@@ -6547,6 +6571,31 @@ dialog {
 
   .minw-sm-30vw {
     min-width: 30vw;
+  }
+}
+@media (min-width: 576px) {
+  .h-sm-25vw {
+    height: 25vw;
+  }
+
+  .w-sm-25vw {
+    width: 25vw;
+  }
+
+  .maxh-sm-25vw {
+    max-height: 25vw;
+  }
+
+  .maxw-sm-25vw {
+    max-width: 25vw;
+  }
+
+  .minh-sm-25vw {
+    min-height: 25vw;
+  }
+
+  .minw-sm-25vw {
+    min-width: 25vw;
   }
 }
 @media (min-width: 576px) {
@@ -9850,6 +9899,31 @@ dialog {
   }
 }
 @media (min-width: 768px) {
+  .h-md-25vw {
+    height: 25vw;
+  }
+
+  .w-md-25vw {
+    width: 25vw;
+  }
+
+  .maxh-md-25vw {
+    max-height: 25vw;
+  }
+
+  .maxw-md-25vw {
+    max-width: 25vw;
+  }
+
+  .minh-md-25vw {
+    min-height: 25vw;
+  }
+
+  .minw-md-25vw {
+    min-width: 25vw;
+  }
+}
+@media (min-width: 768px) {
   .h-md-20vw {
     height: 20vw;
   }
@@ -13150,6 +13224,31 @@ dialog {
   }
 }
 @media (min-width: 992px) {
+  .h-lg-25vw {
+    height: 25vw;
+  }
+
+  .w-lg-25vw {
+    width: 25vw;
+  }
+
+  .maxh-lg-25vw {
+    max-height: 25vw;
+  }
+
+  .maxw-lg-25vw {
+    max-width: 25vw;
+  }
+
+  .minh-lg-25vw {
+    min-height: 25vw;
+  }
+
+  .minw-lg-25vw {
+    min-width: 25vw;
+  }
+}
+@media (min-width: 992px) {
   .h-lg-20vw {
     height: 20vw;
   }
@@ -13203,15 +13302,120 @@ dialog {
   background: #006e5a;
 }
 
-.hover-member:hover {
-  z-index: 10;
+.hover-nav-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: transform 0.2s;
+  transition: all 0.2s;
+}
+.hover-nav-link::before {
+  content: "";
+  width: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #006e5a;
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
-  right: 0;
-  bottom: 0;
-  border: #f29438 solid 2px;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+  z-index: -1;
+}
+.hover-nav-link:hover {
+  color: #ffffff;
+}
+.hover-nav-link:hover::before {
+  width: 220%;
+}
+
+.hover-navigate-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: transform 0.2s;
+  transition: all 0.2s;
+}
+.hover-navigate-link::before {
+  content: "";
+  width: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
   background: #f29438;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+  z-index: -1;
+}
+.hover-navigate-link:hover {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  color: #ffffff;
+}
+.hover-navigate-link:hover::before {
+  width: 220%;
+}
+
+.hover-btn-link-primary {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+  z-index: 1;
+}
+.hover-btn-link-primary::before {
+  content: "";
+  width: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #006e5a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+  z-index: -1;
+}
+.hover-btn-link-primary:hover {
+  z-index: 2000;
+  color: #006e5a;
+}
+.hover-btn-link-primary:hover::before {
+  width: 220%;
+}
+
+.hover-btn-link-outline-primary {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+  z-index: 1;
+}
+.hover-btn-link-outline-primary::before {
+  content: "";
+  width: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #006e5a;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+  z-index: -1;
+}
+.hover-btn-link-outline-primary:hover {
+  z-index: 2000;
+  color: white;
+}
+.hover-btn-link-outline-primary:hover::before {
+  width: 220%;
 }
 
 .border-top {
@@ -13939,8 +14143,12 @@ dialog {
   list-style-type: disc;
 }
 
-.opacity-5 {
-  opacity: 80%;
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-1 {
+  opacity: 1;
 }
 
 .pointer-events-none {

@@ -1,3 +1,4 @@
+@use "sass:math";
 .container {
   max-width: $grid-breakpoints-xl;
   margin-left: auto;
@@ -44,7 +45,7 @@
 
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
-    width: 100% / $grid-columns * $i;
+    width: math.div(100%, $grid-columns) * $i;
     flex: 1 0 0%;
   }
 }

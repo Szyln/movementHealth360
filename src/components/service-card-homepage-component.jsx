@@ -13,8 +13,8 @@ function ServiceCardHomepageComponent({ service }) {
         </h3>
       </div>
       <div className="d-flex flex-column justify-content-end align-items-stretch p-5 h-60">
-        <img src={img} alt={name} className="h-100p mb-10" />
-        <Btn isDisabled={!enable}>{ enable ? '立即報名' : '即將開課'}</Btn>
+        <img src={img} alt={name} className="h-50p mb-10" />
+        <Btn isDisabled={!enable}>{ enable ? '立即報名' : '即將開課' }</Btn>
       </div>
     </div>
   );

@@ -4,15 +4,15 @@ function MediaLinkComponent({ isFlexColumn = false }) {
   const mediaLinks = [
     {
       name: 'instagram',
-      address: 'www.instagram.com',
+      address: 'https://www.instagram.com/movement_health360/',
     },
     {
       name: 'medium',
-      address: 'www.medium.com',
+      address: 'https://movementhealth360.medium.com/',
     },
     {
       name: 'facebook',
-      address: 'www.facebook.com',
+      address: 'https://www.facebook.com/movementhealth360',
     },
   ];
   return (

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import DocumentTitle from 'react-document-title';
 import PageContainerComponent from '../components/page-container-component';
 import MemberCardComponent from '../components/member-card-component';
 
-const memberLarryPic = '../../src/img/memberLarryPicture.svg';
-const memberTYPic = '../../src/img/memberTYPicture.svg';
-const memberZoePic = '../../src/img/memberZoePicture.svg';
+const memberLarryPic = '/memberLarryPicture.svg';
+const memberTYPic = '/memberTYPicture.svg';
+const memberZoePic = '/memberZoePicture.svg';
 
 function AboutUsPage() {
   const memberList = [
@@ -76,60 +77,64 @@ function AboutUsPage() {
   ];
   const [currentMember, setCurrentMember] = useState('');
   const getMemberName = (e) => {
-    if (currentMember.engName !== e.target.dataset.memberName) {
+    console.log(e.target.dataset.id);
+
+    if (currentMember.engName !== e.target.dataset.id) {
       setCurrentMember(memberList.find((member) => (
-        member.engName === e.target.dataset.memberName
+        member.engName === e.target.dataset.id
       )));
-    } else if (currentMember.engName === e.target.dataset.memberName) {
+    } else if (currentMember.engName === e.target.dataset.id) {
       setCurrentMember('');
     }
   };
 
   return (
-    <PageContainerComponent title="我們！">
-      <div className="mb-18">
-        <p className="mb-2">
-          團隊集結物理治療師、運動防護員、運動醫學肌力與體能教練，不同專業領域的我們，對於健康有著共通的理念。
-        </p>
-        <p>
-          透過「動作健康360」品牌，帶給大家「動作健康」這門全新的科學概念，讓大家找回生活的動力、動作的熱情，實現「要活就要動，要動就要動的健康」。
-        </p>
-      </div>
-      <div>
-        <Swiper
-          slidesPerView={1.25}
-          spaceBetween={24}
-          breakpoints={{
-            576: {
-              slidesPerView: 1.1,
-              spaceBetween: 24,
-            },
-            768: {
-              slidesPerView: 2.1,
-              spaceBetween: 16,
-            },
-            992: {
-              slidesPerView: 3,
-              spaceBetween: 16,
-            },
-          }}
+    <DocumentTitle title="我們！ - 動作健康 360">
 
-        >
-          {memberList.map((member) => (
-            <div key={uuidv4()}>
-              <SwiperSlide key={uuidv4()}>
-                <MemberCardComponent member={member} getMemberName={getMemberName} />
-              </SwiperSlide>
-            </div>
-          ))}
-        </Swiper>
-      </div>
-      {currentMember && (
-        <dialog className="rounded position-fixed top-0 bottom-0 left-0 right-0 p-5 d-flex align-items-center z-1000 ">
+      <PageContainerComponent title="我們！">
+        <div className="mb-18">
+          <p className="mb-2">
+            團隊集結物理治療師、運動防護員、運動醫學肌力與體能教練，不同專業領域的我們，對於健康有著共通的理念。
+          </p>
+          <p>
+            透過「動作健康360」品牌，帶給大家「動作健康」這門全新的科學概念，讓大家找回生活的動力、動作的熱情，實現「要活就要動，要動就要動的健康」。
+          </p>
+        </div>
+        <div>
+          <Swiper
+            slidesPerView={1.25}
+            spaceBetween={24}
+            breakpoints={{
+              576: {
+                slidesPerView: 1.1,
+                spaceBetween: 24,
+              },
+              768: {
+                slidesPerView: 2.1,
+                spaceBetween: 16,
+              },
+              992: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+              },
+            }}
+          >
+            {memberList.map((member) => (
+              <div key={uuidv4()}>
+                <SwiperSlide key={uuidv4()}>
+                  <MemberCardComponent member={member} getMemberName={getMemberName} />
+                </SwiperSlide>
+              </div>
+            ))}
+          </Swiper>
+        </div>
+        {currentMember && (
+        <dialog className="rounded position-fixed top-0 bottom-0 left-0 right-0 p-5 d-flex align-items-center z-1000   ">
           <MemberCardComponent member={currentMember} getMemberName={getMemberName} isOpen />
         </dialog>
-      )}
-    </PageContainerComponent>
+        )}
+      </PageContainerComponent>
+    </DocumentTitle>
   );
 }
 
