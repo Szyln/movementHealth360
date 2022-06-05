@@ -22,7 +22,7 @@ const elderImg = '/Active-elderly-people-bro.svg';
 const basketballImg = '/Basketball-bro.svg';
 const studentsImg = '/Students-bro.svg';
 
-function Homepage({ servicesList }) {
+function Homepage({ servicesList, servicesCategories }) {
   const feedbackList = [
     {
       name: '膝蓋痛鄰居',
@@ -43,6 +43,8 @@ function Homepage({ servicesList }) {
       comment: '專業！比以前更注重健康了！',
     },
   ];
+
+  // gsap animation
   const mainRef = useRef();
   const q = gsap.utils.selector(mainRef);
   useEffect(() => {
@@ -87,6 +89,10 @@ function Homepage({ servicesList }) {
 
       });
   }, []);
+
+  const getCategoryOfProduct = (CategoryOfProduct) => (
+    servicesCategories.find((category) => (category.name === CategoryOfProduct))
+  );
 
   return (
     <DocumentTitle title="首頁 - 動作健康 360">
@@ -158,7 +164,7 @@ function Homepage({ servicesList }) {
               </HomepageSectionTitleComponent>
               <NavigateLinkButtonComponent linkTo="/service/category" isWhite>立即體驗</NavigateLinkButtonComponent>
             </div>
-            <div className="position-relative w-100p w-md-20vw h-40vh d-flex align-items-center">
+            <div className="position-relative w-90p w-lg-20vw h-40vh d-flex align-items-center">
               <HomepageSectionImgComponent img={elderImg} imgAlt="elder image" otherClass="scrollTrigger-1 position-absolute transition-y-middle" />
               <HomepageSectionImgComponent img={studentsImg} imgAlt="4 students" otherClass="scrollTrigger-2 position-absolute  transition-y-middle" />
               <HomepageSectionImgComponent img={basketballImg} imgAlt="2 men in a basketball game" otherClass="scrollTrigger-3 position-absolute  transition-y-middle" />
@@ -194,8 +200,8 @@ function Homepage({ servicesList }) {
             }}
           >
             {servicesList.map((service) => (
-              <SwiperSlide key={service.category}>
-                <ServiceCardHomepageComponent service={service} />
+              <SwiperSlide key={service.id}>
+                <ServiceCardHomepageComponent service={service} category={getCategoryOfProduct(service.category)} />
               </SwiperSlide>
             ))}
           </Swiper>

@@ -14544,18 +14544,26 @@ a:active {
 
 .letter-space-sm {
   letter-spacing: 0.1rem;
+  text-indent: 0.1rem;
 }
 
 .letter-space-normal {
   letter-spacing: 0.2rem;
+  text-indent: 0.2rem;
 }
 
 .letter-space-md {
   letter-spacing: 0.3rem;
+  text-indent: 0.3rem;
 }
 
 .letter-space-lg {
   letter-spacing: 0.5rem;
+  text-indent: 0.5rem;
+}
+
+.letter-space-none {
+  letter-spacing: 0;
 }
 
 .fw-normal {

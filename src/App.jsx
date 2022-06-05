@@ -236,6 +236,13 @@ function App() {
     },
 
   ];
+  const filterCategoryProductList = (categoryName) => (
+    servicesList.filter((service) => (service.category === categoryName))
+  );
+  const getCategoryData = (CategoryOfProduct) => (
+    servicesCategories.filter((category) => (category.name === CategoryOfProduct))
+  );
+  
   return (
     <div className="App">
       <header>
@@ -245,7 +252,7 @@ function App() {
         <DocumentTitle title="動作健康 360">
           <Routes>
             {/* Route 決定點連結之後會產生的內容 */}
-            <Route path="/" element={<Homepage servicesList={servicesList} />} />
+            <Route path="/" element={<Homepage servicesList={servicesList} servicesCategories={servicesCategories} />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/service/category" element={<ServicePage servicesList={servicesList} servicesCategories={servicesCategories} />} />

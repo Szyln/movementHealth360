@@ -1,18 +1,24 @@
 .text-decoration-none {
   text-decoration: none;
 }
-
 .letter-space-sm {
   letter-spacing: $letter-spacing-sm;
+  text-indent: $letter-spacing-sm;
 }
 .letter-space-normal {
   letter-spacing: $letter-spacing-base;
+   text-indent: $letter-spacing-base;
 }
 .letter-space-md {
   letter-spacing: $letter-spacing-md;
+   text-indent: $letter-spacing-md;
 }
 .letter-space-lg {
   letter-spacing: $letter-spacing-lg;
+   text-indent: $letter-spacing-lg;
+}
+.letter-space-none {
+  letter-spacing: 0;
 }
 
 .fw-normal {
