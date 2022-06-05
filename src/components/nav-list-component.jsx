@@ -6,7 +6,7 @@ function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTe
   const navListItems = [
     {
       name: '來體驗',
-      route: '/service',
+      route: '/service/category',
     },
     {
       name: '學動作',

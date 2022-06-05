@@ -41,7 +41,7 @@ function AboutUsPage() {
       id: uuidv4(),
       img: memberTYPic,
       professionalTitles: [
-        '動行銷企劃',
+        '行銷企劃',
         '培訓測試人員',
         '培訓講師',
       ],

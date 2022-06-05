@@ -2,16 +2,26 @@
   text-decoration: none;
 }
 
-.letter-space-lg {
-  letter-spacing: $letter-spacing-lg;
+.letter-space-sm {
+  letter-spacing: $letter-spacing-sm;
 }
 .letter-space-normal {
   letter-spacing: $letter-spacing-base;
 }
-.letter-space-sm {
-  letter-spacing: $letter-spacing-sm;
+.letter-space-md {
+  letter-spacing: $letter-spacing-md;
+}
+.letter-space-lg {
+  letter-spacing: $letter-spacing-lg;
 }
 
 .fw-normal {
   font-weight: normal;
+}
+.fw-bold {
+  font-weight: bold;
+}
+
+.lh-1 {
+  line-height: 1;
 }

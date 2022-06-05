@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import gsap from 'gsap';
+// import gsap from 'gsap';
 import NavListComponent from './nav-list-component';
 import MediaLinkComponent from './media-link-component';
 import ContactInfoComponent from './contact-info-component';
@@ -22,12 +22,12 @@ function NavComponent() {
       setNavToggle(false);
     }
   };
-  const navRef = useState();
-  useEffect(() => {
-    gsap.from(navRef.current, {
-      x: '+=100',
-    });
-  });
+  // const navRef = useState();
+  // useEffect(() => {
+  //   gsap.from(navRef.current, {
+  //     x: '+=100',
+  //   });
+  // });
 
   return (
     <nav

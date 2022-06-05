@@ -5,6 +5,7 @@ import { useForm, ValidationError } from '@formspree/react';
 
 import DocumentTitle from 'react-document-title';
 import PageContainerComponent from '../components/page-container-component';
+import Alert from '../components/alert-component';
 
 function ContactPage() {
   const [state, handleSubmit] = useForm('mqkngrkj');
@@ -12,7 +13,7 @@ function ContactPage() {
   return (
     <DocumentTitle title="聯絡我們 - 動作健康 360">
       <PageContainerComponent title="聯絡我們">
-        {state.succeeded && <p className="text-accent border-around border-accent rounded-sm p-4 fs-h4 border-lg mb-7">訊息已送出！</p>}
+        {state.succeeded && <Alert theme="accent">訊息已送出</Alert> }
 
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">

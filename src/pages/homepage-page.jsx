@@ -101,7 +101,7 @@ function Homepage({ servicesList }) {
                 <br />
                 運動訓練的全新策略
               </h1>
-              <NavigateLinkButtonComponent linkTo="/service">立即體驗</NavigateLinkButtonComponent>
+              <NavigateLinkButtonComponent linkTo="/service/category">立即體驗</NavigateLinkButtonComponent>
             </div>
             <div className="d-none d-lg-block align-self-end">
               <NavListComponent textColor="primary-dark" fontSizeClass="fs-h5 fs-md-h4" />
@@ -131,7 +131,7 @@ function Homepage({ servicesList }) {
                 <br />
                 就用動作的方式解決
               </HomepageSectionTitleComponent>
-              <NavigateLinkButtonComponent linkTo="/service">了解運動科學</NavigateLinkButtonComponent>
+              <NavigateLinkButtonComponent linkTo="/service/category">了解運動科學</NavigateLinkButtonComponent>
             </div>
             <HomepageSectionImgComponent img={coachImg} />
           </HomepageSectionComponent>
@@ -156,7 +156,7 @@ function Homepage({ servicesList }) {
                 找回「動作健康」
                 <br />
               </HomepageSectionTitleComponent>
-              <NavigateLinkButtonComponent linkTo="/service" isWhite>立即體驗</NavigateLinkButtonComponent>
+              <NavigateLinkButtonComponent linkTo="/service/category" isWhite>立即體驗</NavigateLinkButtonComponent>
             </div>
             <div className="position-relative w-100p w-md-20vw h-40vh d-flex align-items-center">
               <HomepageSectionImgComponent img={elderImg} imgAlt="elder image" otherClass="scrollTrigger-1 position-absolute transition-y-middle" />
@@ -194,7 +194,7 @@ function Homepage({ servicesList }) {
             }}
           >
             {servicesList.map((service) => (
-              <SwiperSlide key={service.id}>
+              <SwiperSlide key={service.category}>
                 <ServiceCardHomepageComponent service={service} />
               </SwiperSlide>
             ))}
@@ -240,7 +240,7 @@ function Homepage({ servicesList }) {
             ))}
           </Swiper>
           <div className="container">
-            <NavigateLinkButtonComponent linkTo="/service" isWhite isAlignEnd>立即體驗</NavigateLinkButtonComponent>
+            <NavigateLinkButtonComponent linkTo="/service/category" isWhite isAlignEnd>立即體驗</NavigateLinkButtonComponent>
           </div>
         </ViewportHeightContainer>
       </div>

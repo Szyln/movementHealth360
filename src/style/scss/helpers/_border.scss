@@ -10,6 +10,39 @@
 .border-start {
   border-left: solid $border-base-width;
 }
+.border-except-top {
+  border-top: 0;
+  border-bottom: solid $border-base-width;
+  border-left: solid $border-base-width;
+  border-right: solid $border-base-width;
+}
+.border-except-bottom {
+  border-top: solid $border-base-width;
+  border-bottom: 0;
+  border-left: solid $border-base-width;
+  border-right: solid $border-base-width;
+}
+.border-except-start {
+  border-top: solid $border-base-width;
+  border-bottom: solid $border-base-width;
+  border-left: 0;
+  border-right: solid $border-base-width;
+}
+.border-except-end {
+  border-top: solid $border-base-width;
+  border-bottom: solid $border-base-width;
+  border-left: solid $border-base-width;
+  border-right: 0;
+}
+.border-end {
+  border-right: solid $border-base-width;
+}
+.border-bottom {
+  border-bottom: solid $border-base-width;
+}
+.border-start {
+  border-left: solid $border-base-width;
+}
 .border-around {
   border: solid $border-base-width;
 }
@@ -20,7 +53,94 @@
   border-radius: $border-base-radius;
 }
 .rounded-top {
-  border-radius: $border-base-radius 0;
+  border-radius: $border-base-radius $border-base-radius 0 0;
+}
+.rounded-start {
+  border-radius: $border-base-radius 0 0 $border-base-radius;
+}
+.rounded-end {
+  border-radius: 0 $border-base-radius $border-base-radius 0;
+}
+.rounded-bottom {
+  border-radius: 0 0 $border-base-radius $border-base-radius;
+}
+
+.rounded-inside {
+  border-radius: calc($border-base-radius - 3px);
+}
+.rounded-top-inside {
+  border-radius: calc($border-base-radius - 3px) calc($border-base-radius - 3px)
+    0 0;
+}
+.rounded-start-inside {
+  border-radius: calc($border-base-radius - 3px) 0 0
+    calc($border-base-radius - 3px);
+}
+
+@media (min-width: $grid-breakpoints-md) {
+  .border-md-top {
+    border-top: solid $border-base-width;
+  }
+  .border-md-end {
+    border-right: solid $border-base-width;
+  }
+  .border-md-bottom {
+    border-bottom: solid $border-base-width;
+  }
+  .border-md-start {
+    border-left: solid $border-base-width;
+  }
+  .border-md-around {
+    border: solid $border-base-width;
+  }
+  .border-md-lg {
+    border-width: $border-lg-width;
+  }
+  .border-md-except-top {
+    border-top: 0;
+    border-bottom: solid $border-base-width;
+    border-left: solid $border-base-width;
+    border-right: solid $border-base-width;
+  }
+  .border-md-except-bottom {
+    border-top: solid $border-base-width;
+    border-bottom: 0;
+    border-left: solid $border-base-width;
+    border-right: solid $border-base-width;
+  }
+  .border-md-except-start {
+    border-top: solid $border-base-width;
+    border-bottom: solid $border-base-width;
+    border-left: 0;
+    border-right: solid $border-base-width;
+  }
+  .border-md-except-end {
+    border-top: solid $border-base-width;
+    border-bottom: solid $border-base-width;
+    border-left: solid $border-base-width;
+    border-right: 0;
+  }
+  .rounded-md-start {
+    border-radius: $border-base-radius 0 0 $border-base-radius;
+  }
+  .rounded-md-end {
+    border-radius: 0 $border-base-radius $border-base-radius 0;
+  }
+  .rounded-md-top {
+    border-radius: $border-base-radius 0;
+  }
+
+  .rounded-md-inside {
+    border-radius: calc($border-base-radius - 3px);
+  }
+  .rounded-md-top-inside {
+    border-radius: calc($border-base-radius - 3px)
+      calc($border-base-radius - 3px) 0 0;
+  }
+  .rounded-md-start-inside {
+    border-radius: calc($border-base-radius - 3px) 0 0
+      calc($border-base-radius - 3px);
+  }
 }
 
 .rounded-sm {

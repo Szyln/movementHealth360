@@ -1,12 +1,21 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Hind Madurai', "Noto Sans TC", sans-serif;
+  // font-family: "Hind Madurai", "Noto Sans TC", sans-serif;
+  font-family: "Hind Madurai", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: $letter-spacing-base;
-  line-height: 1.6;
+  line-height: 1.5;
   // line-height: $line-height-base;
 }
 
@@ -30,12 +39,14 @@ h5 {
   font-size: $font-base-size * 4;
   letter-spacing: $letter-spacing-lg;
 }
-p {
-  letter-spacing: $letter-spacing-base;
+p,
+li {
+  letter-spacing: $letter-spacing-sm;
 }
 
 button {
   letter-spacing: $letter-spacing-base;
+  vertical-align: middle;
 }
 
 label {
@@ -43,7 +54,8 @@ label {
   font-size: $font-base-size * 6;
   color: $primary;
 }
-input, textarea {
+input,
+textarea {
   display: block;
   font-size: $font-base-size * 6;
   font-weight: bold;
@@ -56,12 +68,35 @@ input, textarea {
   color: $gray-dark;
 }
 
-
 dialog {
   // background-color: none;
   border: none;
   padding: 0;
   // margin: $space * 4;
+}
 
+// button,
+// a {
+//   display: block;
+//   line-height: 1;
+//   padding-top: $space;
+//   padding-bottom: $space;
 
+// }
+// button {
+//   // display: block;
+//   // line-height: 1;
+//   // padding-top: $space;
+//   // padding-bottom: $space;
+// }
+
+a {
+  color: $primary;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: $accent;
+  }
+  &:active {
+    color: $secondary;
+  }
 }
