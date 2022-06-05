@@ -16,6 +16,7 @@ function Btn({
         link ? (
           <a
             href={link}
+            target="_blank"
             className={`
               border-around
               fs-h5 p-3 rounded fw-normal w-100p rounded-sm
@@ -31,6 +32,7 @@ function Btn({
             data-id={data}
             onClick={getData}
             disabled={isDisabled}
+            rel="noreferrer"
           >
             {children}
           </a>
