@@ -19,7 +19,7 @@ const educationalPromotionImg = '/Mobile-Marketing-bro.svg';
 function App() {
   const servicesList = [
     {
-      name: '物理治療（需診斷證明書）',
+      name: '物理治療',
       category: '找健康',
       id: uuidv4(),
       alert: '需診斷證明書',
@@ -222,11 +222,11 @@ function App() {
       provide: [
         '為無運動經驗或是非運動／醫療相關專業人士開設 ',
         '從民眾衛教、企業演講、團體包班、專業人員繼續教育。',
-      ],
-      features: [
         '專為運動／醫療相關專業人士開設',
         '高達 200 小時的動作科學研習課程',
         '融合解剖學、肌動學、表體解剖學、神經生理學、動作控制與動作學習。',
+      ],
+      features: [
       ],
       product: [
 
@@ -262,7 +262,6 @@ function App() {
       </main>
       {/* 使用 Routes 包住 Route */}
       <FooterComponent />
-      <p>待辦：怎麼串ig、目前課程的銷售方式？連商場？電話？匯款？</p>
     </div>
   );
 }
