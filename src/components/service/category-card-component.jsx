@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Btn from '../button-component';
 import CardInfoSection from './card-info-section';
 
-function CategoryCardComponent({ category, filterCategoryProductList }) {
+function CategoryCardComponent({ category, filterCategoryProductList, getCategoryName}) {
   const {
     name, img, descriptions, provide, features, product, enable, hide,
   } = category;
@@ -60,7 +60,7 @@ function CategoryCardComponent({ category, filterCategoryProductList }) {
 
           </div>
 
-          <Btn link="#productList" otherClassName="mt-auto" isDisabled={!enable}>{ enable ? '立即報名' : '規劃中'}</Btn>
+          <Btn link="#productList" isHash target="_self" otherClassName="mt-auto" isDisabled={!enable} data={name} getData={getCategoryName}>{ enable ? '立即報名' : '規劃中'}</Btn>
 
         </div>
       </div>

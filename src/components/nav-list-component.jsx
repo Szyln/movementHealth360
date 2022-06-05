@@ -10,7 +10,7 @@ function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTe
     },
     {
       name: '學動作',
-      route: 'https://www.instagram.com/movement_health360/',
+      route: '/aboutMovementHealth',
     },
     {
       name: '我們！',
@@ -37,13 +37,10 @@ function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTe
       {
         navListItems.map((navListItem) => (
           <li key={navListItem.route} className="py-1 py-lg-2">
-            {navListItem.name !== '學動作'
-              ? <Link to={navListItem.route} className={`${fontSizeClass} text-decoration-none text-${textColor} letter-space-lg hover-nav-link`}>{navListItem.name}</Link>
-              : <a href={navListItem.route} target="_blank" rel="noreferrer" className={`${fontSizeClass} text-decoration-none text-${textColor} letter-space-lg hover-nav-link`}>{navListItem.name}</a>}
+            <Link to={navListItem.route} className={`${fontSizeClass} text-decoration-none text-${textColor} letter-space-lg hover-nav-link`}>{navListItem.name}</Link>
           </li>
         ))
       }
-
     </ul>
   );
 }

@@ -14566,6 +14566,26 @@ a:active {
   letter-spacing: 0;
 }
 
+.letter-space-sm-paragraph {
+  letter-spacing: 0.1rem;
+}
+
+.letter-space-normal-paragraph {
+  letter-spacing: 0.2rem;
+}
+
+.letter-space-md-paragraph {
+  letter-spacing: 0.3rem;
+}
+
+.letter-space-lg-paragraph {
+  letter-spacing: 0.5rem;
+}
+
+.letter-space-none-paragraph {
+  letter-spacing: 0;
+}
+
 .fw-normal {
   font-weight: normal;
 }

@@ -21,6 +21,22 @@
   letter-spacing: 0;
 }
 
+.letter-space-sm-paragraph {
+  letter-spacing: $letter-spacing-sm;
+}
+.letter-space-normal-paragraph {
+  letter-spacing: $letter-spacing-base;
+}
+.letter-space-md-paragraph {
+  letter-spacing: $letter-spacing-md;
+}
+.letter-space-lg-paragraph {
+  letter-spacing: $letter-spacing-lg;
+}
+.letter-space-none-paragraph{
+  letter-spacing: 0;
+}
+
 .fw-normal {
   font-weight: normal;
 }

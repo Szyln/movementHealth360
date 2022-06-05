@@ -62,30 +62,33 @@ function Homepage({ servicesList, servicesCategories }) {
     tl.from('.scrollTrigger-1', {
       y: '+=40',
       opacity: 0,
+      duration: 100,
     })
       .to('.scrollTrigger-1', {
         y: '-=40',
         opacity: 0,
-        duration: 0.2,
+        duration: 100,
 
       })
       .from('.scrollTrigger-2', {
         y: '+=40',
         opacity: 0,
+        duration: 100,
       })
       .to('.scrollTrigger-2', {
         y: '-=40',
         opacity: 0,
-        duration: 0.2,
+        duration: 100,
       })
       .from('.scrollTrigger-3', {
         y: '+=40',
         opacity: 0,
+        duration: 100,
       })
       .to('.scrollTrigger-3', {
         y: '-=40',
         opacity: 0,
-        duration: 0.2,
+        duration: 100,
 
       });
   }, []);

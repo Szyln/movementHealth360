@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import DocumentTitle from 'react-document-title';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import ServiceCardComponent from '../components/service-card-component';
 import PageContainerComponent from '../components/page-container-component';
 import CategoryCardComponent from '../components/service/category-card-component';
@@ -11,6 +12,7 @@ import Btn from '../components/button-component';
 
 function ServicePage({ servicesList, servicesCategories }) {
   const [currentService, setCurrentService] = useState('');
+  const [currentCategoryName, setCurrentCategoryName] = useState('');
   const getServiceName = (e) => {
     if (currentService.name !== e.target.dataset.id) {
       setCurrentService(servicesList.find((service) => (
@@ -20,10 +22,18 @@ function ServicePage({ servicesList, servicesCategories }) {
       setCurrentService('');
     }
   };
+  const getCategoryName = (e) => {
+    console.log(e.target.dataset.id);
+    setCurrentCategoryName(e.target.dataset.id);
+  };
+  useEffect(() => {
+    console.log('useEffect');
+    window.localStorage.setItem('category', currentCategoryName);
+  }, [currentCategoryName]);
 
+  // products that category is equal to argument
   const filterCategoryProductList = (categoryName) => (
     servicesList.filter((service) => (service.category === categoryName))
-
   );
 
   return (
@@ -41,15 +51,23 @@ function ServicePage({ servicesList, servicesCategories }) {
           <ul className="row">
             {servicesCategories.map((category) => (
               <li className="col-12" key={uuidv4()}>
-                <CategoryCardComponent category={category} filterCategoryProductList={filterCategoryProductList} />
+                <CategoryCardComponent category={category} filterCategoryProductList={filterCategoryProductList} getCategoryName={getCategoryName} />
               </li>
             ))}
           </ul>
         </PageContainerComponent>
+        {/* product filter */}
         <PageContainerComponent title="可購買項目" id="productList" headingLevel="h2">
           <ul className="row">
-            {servicesList.map((service) => (
-              <li key={service.id} className="mb-5 col-lg-6">
+            {!currentCategoryName && (
+              servicesList.map((service) => (
+                <li key={uuidv4()} className="mb-5 col-lg-6">
+                  <ServiceCardComponent service={service} getServiceName={getServiceName} />
+                </li>
+              ))
+            )}
+            {filterCategoryProductList(currentCategoryName).map((service) => (
+              <li key={uuidv4} className="mb-5 col-lg-6">
                 <ServiceCardComponent service={service} getServiceName={getServiceName} />
               </li>
             ))}
@@ -59,6 +77,7 @@ function ServicePage({ servicesList, servicesCategories }) {
             <ServiceCardComponent service={currentService} getServiceName={getServiceName} isOpen />
           </dialog>
           )}
+
         </PageContainerComponent>
       </>
     </DocumentTitle>

@@ -3,13 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import DocumentTitle from 'react-document-title';
 import NavComponent from './components/nav-component';
-// import NavComponent2 from './components/nav-component2';
+
 import FooterComponent from './components/footer-component';
 import Homepage from './pages/homepage-page';
 import AboutUsPage from './pages/about-us-page';
 import ContactPage from './pages/contact-page';
 import ServicePage from './pages/service-page';
-import ServiceProductPage from './pages/service-product-page';
+import AboutMovementHealthPage from './pages/about-movement-health-page';
+// import ServiceProductPage from './pages/service-product-page';
 
 const bodyMovementCheckImg = '/Massage-therapist-bro.svg';
 const movementTrainingImg = '/Coach-bro.svg';
@@ -193,7 +194,7 @@ function App() {
       product: [
 
       ],
-      enable: false,
+      enable: true,
       hide: false,
     },
     {
@@ -242,7 +243,7 @@ function App() {
   const getCategoryData = (CategoryOfProduct) => (
     servicesCategories.filter((category) => (category.name === CategoryOfProduct))
   );
-  
+
   return (
     <div className="App">
       <header>
@@ -253,9 +254,11 @@ function App() {
           <Routes>
             {/* Route 決定點連結之後會產生的內容 */}
             <Route path="/" element={<Homepage servicesList={servicesList} servicesCategories={servicesCategories} />} />
+            <Route path="/service/category" element={<ServicePage servicesList={servicesList} servicesCategories={servicesCategories} />} />
+
+            <Route path="/aboutMovementHealth" element={<AboutMovementHealthPage />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/service/category" element={<ServicePage servicesList={servicesList} servicesCategories={servicesCategories} />} />
             {/* <Route path="/service/product" element={<ServiceProductPage servicesList={servicesList} servicesCategories={servicesCategories} />} /> */}
           </Routes>
         </DocumentTitle>
