@@ -1,5 +1,5 @@
 // import gsap from 'gsap';
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTextEnd = true }) {
@@ -10,7 +10,7 @@ function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTe
     },
     {
       name: '學動作',
-      route: '/aboutMovementHealth',
+      route: '/about/movementHealth',
     },
     {
       name: '我們！',

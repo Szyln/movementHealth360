@@ -47,7 +47,7 @@ function App() {
       name: '1 對 1 進階動作控制訓練',
       category: '找健康',
       id: uuidv4(),
-      descriptions: [''],
+      // descriptions: [''],
       enable: false,
     },
     {
@@ -64,14 +64,14 @@ function App() {
       name: '肌力體能動作健康',
       category: '找運動',
       id: uuidv4(),
-      descriptions: [],
+      // descriptions: [],
       enable: false,
     },
     {
       name: '綜合體能動作健康',
       category: '找運動',
       id: uuidv4(),
-      descriptions: [],
+      // descriptions: [],
       enable: false,
       link: '',
     },
@@ -79,7 +79,7 @@ function App() {
       name: '客製化運動系列',
       category: '找運動',
       id: uuidv4(),
-      descriptions: [],
+      // descriptions: [],
       enable: false,
       link: '',
     },
@@ -207,7 +207,7 @@ function App() {
         '為無運動經驗或是非運動／醫療相關專業人士開設 ',
         '從民眾衛教、企業演講、團體包班、專業人員繼續教育。',
       ],
-      features: [],
+// features: [''],
       product: [
 
       ],
@@ -227,8 +227,7 @@ function App() {
         '高達 200 小時的動作科學研習課程',
         '融合解剖學、肌動學、表體解剖學、神經生理學、動作控制與動作學習。',
       ],
-      features: [
-      ],
+      // features: [''],
       product: [
 
       ],
@@ -237,12 +236,12 @@ function App() {
     },
 
   ];
-  const filterCategoryProductList = (categoryName) => (
-    servicesList.filter((service) => (service.category === categoryName))
-  );
-  const getCategoryData = (CategoryOfProduct) => (
-    servicesCategories.filter((category) => (category.name === CategoryOfProduct))
-  );
+  // const filterCategoryProductList = (categoryName) => (
+  //   servicesList.filter((service) => (service.category === categoryName))
+  // );
+  // const getCategoryData = (CategoryOfProduct) => (
+  //   servicesCategories.filter((category) => (category.name === CategoryOfProduct))
+  // );
 
   return (
     <div className="App">
@@ -251,19 +250,17 @@ function App() {
       </header>
       <main>
         <DocumentTitle title="動作健康 360">
+          {/* 使用 Routes 包住 Route */}
           <Routes>
             {/* Route 決定點連結之後會產生的內容 */}
             <Route path="/" element={<Homepage servicesList={servicesList} servicesCategories={servicesCategories} />} />
             <Route path="/service/category" element={<ServicePage servicesList={servicesList} servicesCategories={servicesCategories} />} />
-
-            <Route path="/aboutMovementHealth" element={<AboutMovementHealthPage />} />
+            <Route path="/about/movementHealth" element={<AboutMovementHealthPage />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            {/* <Route path="/service/product" element={<ServiceProductPage servicesList={servicesList} servicesCategories={servicesCategories} />} /> */}
           </Routes>
         </DocumentTitle>
       </main>
-      {/* 使用 Routes 包住 Route */}
       <FooterComponent />
     </div>
   );

@@ -77,8 +77,6 @@ function AboutUsPage() {
   ];
   const [currentMember, setCurrentMember] = useState('');
   const getMemberName = (e) => {
-    console.log(e.target.dataset.id);
-
     if (currentMember.engName !== e.target.dataset.id) {
       setCurrentMember(memberList.find((member) => (
         member.engName === e.target.dataset.id
@@ -92,7 +90,7 @@ function AboutUsPage() {
     <DocumentTitle title="我們！ - 動作健康 360">
 
       <PageContainerComponent title="我們！">
-        <div className="mb-18">
+        <div className="mb-18 text-primary-dark">
           <p className="mb-2">
             團隊集結物理治療師、運動防護員、運動醫學肌力與體能教練，不同專業領域的我們，對於健康有著共通的理念。
           </p>
@@ -102,6 +100,7 @@ function AboutUsPage() {
         </div>
         <div>
           <Swiper
+            className="p-2"
             slidesPerView={1.25}
             spaceBetween={24}
             breakpoints={{

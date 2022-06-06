@@ -4,7 +4,7 @@ import Btn from './button-component';
 
 function ServiceCardHomepageComponent({ service, category }) {
   const {
-    name, id, enable, link
+    name, id, enable, link,
   } = service;
 
   return (
@@ -18,9 +18,7 @@ function ServiceCardHomepageComponent({ service, category }) {
       <div className="d-flex flex-column justify-content-end align-items-stretch p-5 ">
         <img src={category.img} alt={category.name} className="h-70" />
       </div>
-      <div className="p-5">
-        <Btn isDisabled={!enable} link={ link}>{ enable ? '立即報名' : '即將開課' }</Btn>
-      </div>
+
     </div>
   );
 }

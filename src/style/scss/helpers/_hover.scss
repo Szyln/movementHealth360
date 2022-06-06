@@ -108,7 +108,35 @@
     }
   }
 }
-
+.hover-btn-link-accent {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+  z-index: 1;
+  // transition: all 0.2s;
+  &::before {
+    content: "";
+    width: 0;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: $white;
+    color: $accent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s;
+    z-index: -1;
+  }
+  &:hover {
+    z-index: 2000;
+    color: $accent;
+    &::before {
+      width: 220%;
+    }
+  }
+}
 
 .hover-btn-link-outline-primary {
   display: block;

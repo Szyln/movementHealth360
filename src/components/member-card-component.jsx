@@ -10,7 +10,7 @@ function MemberCardComponent({
   } = member;
 
   return (
-    <div aria-hidden="true" className="bg-white border-primary border-around rounded p-6 d-flex flex-column flex-md-row  align-items-center h-100p">
+    <div aria-hidden="true" className="bg-white border-primary border-around rounded p-6 d-flex flex-column flex-md-row  align-items-center h-100p  text-gray-dark">
       <div className={`d-flex flex-column align-items-center ${isOpen ? 'w-md-30p' : 'w-100p'}`}>
         <img src={img} alt={name} className="h-25 h-md-40 mb-6" />
         {/* member card: context part */}
@@ -31,7 +31,7 @@ function MemberCardComponent({
 
         </div>
 
-        <Btn data={engName} getData={getMemberName}>{ isOpen ? '關閉' : '詳細' }</Btn>
+        <Btn data={engName} getData={getMemberName} isOutline={isOpen}>{ isOpen ? '關閉' : '詳細' }</Btn>
 
       </div>
       {isOpen && (

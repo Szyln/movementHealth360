@@ -20,7 +20,7 @@ function FooterComponent() {
               <LogoWordComponent isWhite />
             </Link>
           </div>
-          <div className="d-flex flex-column-reverse flex-lg-row justify-content-between">
+          <div className="d-flex flex-column-reverse flex-lg-row justify-content-between align-items-lg-end">
             <div>
               <MediaLinkComponent />
               <ContactInfoComponent fontSizeClasses="fs-h5" />

@@ -91,7 +91,7 @@ function Homepage({ servicesList, servicesCategories }) {
         duration: 100,
 
       });
-  }, []);
+  });
 
   const getCategoryOfProduct = (CategoryOfProduct) => (
     servicesCategories.find((category) => (category.name === CategoryOfProduct))
@@ -99,10 +99,9 @@ function Homepage({ servicesList, servicesCategories }) {
 
   return (
     <DocumentTitle title="首頁 - 動作健康 360">
-      <div ref={mainRef}>
+      <div ref={mainRef} className="overflow-x-hidden">
         {/* hero banner */}
         <ViewportHeightContainer>
-
           <div className="d-flex pt-38 h-80vh justify-content-between">
             <div>
               <h1 className="text-primary">
@@ -140,7 +139,7 @@ function Homepage({ servicesList, servicesCategories }) {
                 <br />
                 就用動作的方式解決
               </HomepageSectionTitleComponent>
-              <NavigateLinkButtonComponent linkTo="/service/category">了解運動科學</NavigateLinkButtonComponent>
+              <NavigateLinkButtonComponent linkTo="/about/movementHealth">了解運動科學</NavigateLinkButtonComponent>
             </div>
             <HomepageSectionImgComponent img={coachImg} />
           </HomepageSectionComponent>
@@ -149,7 +148,7 @@ function Homepage({ servicesList, servicesCategories }) {
         <ViewportHeightContainer bgColor="secondary" otherClassName="who">
 
           <HomepageSectionComponent>
-            <div>
+            <div className="mb-6 mb-lg-0">
               <HomepageSectionTitleComponent>
                 提供不論
                 <span className="d-inline-block position-relative">
@@ -175,43 +174,65 @@ function Homepage({ servicesList, servicesCategories }) {
           </HomepageSectionComponent>
         </ViewportHeightContainer>
         {/* what */}
-        <ViewportHeightContainer container={false} fullHeight={false} otherClassName="service">
-          <Swiper
-            className="my-2"
-            slidesPerView={1.25}
-            spaceBetween={24}
-            centeredSlides
-            loop
-            breakpoints={{
-              576: {
-                slidesPerView: 1.25,
-                spaceBetween: 24,
-              },
-              768: {
-                slidesPerView: 2.25,
-                spaceBetween: 16,
-              },
-              992: {
-                slidesPerView: 3.25,
-                spaceBetween: 16,
-              },
-              1200: {
-                slidesPerView: 4.25,
-                spaceBetween: 16,
-              },
+        <ViewportHeightContainer fullHeight={false}>
+          <div className="row flex-column flex-md-row flex-md-nowrap align-items-center">
+            <div className="col-md-4 d-flex flex-column align-items-center align-items-md-start">
+              <div className="">
+                <HomepageSectionTitleComponent>
+                  帶你
+                  <br />
+                  理解動作、掌握健康
+                </HomepageSectionTitleComponent>
+                <NavigateLinkButtonComponent linkTo="/service/category">探索服務</NavigateLinkButtonComponent>
+              </div>
+            </div>
+            <div className="offset-md-1 offset-lg-2 col-md-12">
+              <Swiper
+                className="p-2 me-n24 mx-sm-n20 ms-md-0 me-md-n22 me-lg-0"
+                slidesPerView={1.25}
+                spaceBetween={24}
+                loop
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1.3,
+                    spaceBetween: 24,
 
-            }}
-          >
-            {servicesList.map((service) => (
-              <SwiperSlide key={service.id}>
-                <ServiceCardHomepageComponent service={service} category={getCategoryOfProduct(service.category)} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                  },
+                  576: {
+                    slidesPerView: 1.25,
+                    spaceBetween: 24,
+                    centeredSlides: true,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 16,
+                    centeredSlides: false,
+                  },
+                  992: {
+                    slidesPerView: 2.25,
+                    spaceBetween: 16,
+                  },
+                  1200: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 16,
+                  },
+                }}
+              >
+                {servicesList.map((service) => (
+                  <SwiperSlide key={service.id}>
+                    <ServiceCardHomepageComponent service={service} category={getCategoryOfProduct(service.category)} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+          <HomepageSectionComponent />
         </ViewportHeightContainer>
+
         {/* feedback */}
         <ViewportHeightContainer bgColor="secondary" container={false} fullHeight={false}>
           <Swiper
+            className="z-0 p-2"
             slidesPerView={1.25}
             spaceBetween={24}
             centeredSlides
@@ -240,7 +261,7 @@ function Homepage({ servicesList, servicesCategories }) {
               },
             }}
             modules={[Autoplay]}
-            className="z-0"
+
           >
             {feedbackList.map((feedback) => (
               <SwiperSlide key={feedback.id}>

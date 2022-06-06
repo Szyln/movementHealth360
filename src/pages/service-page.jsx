@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DocumentTitle from 'react-document-title';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+
 import ServiceCardComponent from '../components/service-card-component';
 import PageContainerComponent from '../components/page-container-component';
 import CategoryCardComponent from '../components/service/category-card-component';
@@ -23,11 +23,9 @@ function ServicePage({ servicesList, servicesCategories }) {
     }
   };
   const getCategoryName = (e) => {
-    console.log(e.target.dataset.id);
     setCurrentCategoryName(e.target.dataset.id);
   };
   useEffect(() => {
-    console.log('useEffect');
     window.localStorage.setItem('category', currentCategoryName);
   }, [currentCategoryName]);
 
@@ -67,7 +65,7 @@ function ServicePage({ servicesList, servicesCategories }) {
               ))
             )}
             {filterCategoryProductList(currentCategoryName).map((service) => (
-              <li key={uuidv4} className="mb-5 col-lg-6">
+              <li key={uuidv4()} className="mb-5 col-lg-6">
                 <ServiceCardComponent service={service} getServiceName={getServiceName} />
               </li>
             ))}

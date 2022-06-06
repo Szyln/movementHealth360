@@ -33,8 +33,6 @@
   }
 }
 
-
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -49,7 +47,7 @@
     padding-right: calc($gutter-x * 0.5);
     padding-left: calc($gutter-x * 0.5);
   }
- margin-right: calc($gutter-x * -0.5);
+  margin-right: calc($gutter-x * -0.5);
   margin-left: calc($gutter-x * -0.5);
   .col {
     flex: 1 0 0%;
@@ -75,12 +73,18 @@
       width: math.div(100%, $grid-columns) * $i;
       flex: 0 0 auto;
     }
+    .offset-#{$i} {
+      margin-left: math.div(100%, $grid-columns) * $i;
+    }
   }
   @for $i from 1 through $grid-columns {
     @media (min-width: $grid-breakpoints-sm) {
       .col-sm-#{$i} {
         width: math.div(100%, $grid-columns) * $i;
         flex: 0 0 auto;
+      }
+      .offset-sm-#{$i} {
+        margin-left: math.div(100%, $grid-columns) * $i;
       }
     }
   }
@@ -90,6 +94,9 @@
         width: math.div(100%, $grid-columns) * $i;
         flex: 0 0 auto;
       }
+      .offset-md-#{$i} {
+        margin-left: math.div(100%, $grid-columns) * $i;
+      }
     }
   }
   @for $i from 1 through $grid-columns {
@@ -98,17 +105,23 @@
         width: math.div(100%, $grid-columns) * $i;
         flex: 0 0 auto;
       }
+      .offset-lg-#{$i} {
+        margin-left: math.div(100%, $grid-columns) * $i;
+      }
     }
   }
 }
 
-
 .gx-0 {
   margin-right: 0;
   margin-left: 0;
-    > * {
-
+  > * {
     padding-right: 0;
     padding-left: 0;
   }
+}
+
+.col-13 {
+  width: math.div(100%, $grid-columns) * 13;
+  flex: 0 0 auto;
 }

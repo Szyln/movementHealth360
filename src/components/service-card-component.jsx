@@ -16,7 +16,7 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
       </div>
       {/* product info */}
       <div className="d-flex flex-column justify-content-between p-4 p-md-7">
-        <div className="h-60 mb-5 overflow-y-auto">
+        <div className={`${descriptions && 'h-60'} mb-5 overflow-y-auto`}>
           {alert && (<Alert isBold={false} size="sm" theme="accent">{ alert }</Alert>)}
           {/* product description */}
           {descriptions && (
@@ -29,9 +29,9 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
 
         <ul className="d-flex justify-content-stretch flex-wrap">
           <li className="w-100p mb-3">
-            <Btn dataId={id} getData={getServiceName} isDisabled={!enable} link={enable ? link : ''}>{enable ? '立即報名' : '即將開課'}</Btn>
+            <Btn dataId={id} getData={getServiceName} isDisabled={!enable} link={enable ? link : ''}>{enable ? '立即報名' : '規劃中'}</Btn>
           </li>
-          <li className="w-100p">
+          <li className={descriptions ? 'w-100p' : 'd-none'}>
             <Btn data={name} getData={getServiceName} isOutline isWhiteText={false}>{ isOpen ? '關閉' : '了解更多'}</Btn>
           </li>
         </ul>
