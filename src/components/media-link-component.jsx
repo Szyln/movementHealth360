@@ -26,7 +26,10 @@ function MediaLinkComponent({
         <li key={mediaLink.name}>
           <a href={mediaLink.address} aria-label={`Link to ${mediaLink.name}`} className={`p${isFlexColumn ? 'y' : 'x'}-${isSmall ? '1' : '3'} d-flex align-items-center text-primary-dark`}>
             <i className={`bi bi-${mediaLink.name} text-${theme}  fs-h3 ${showId && 'me-3'}`} />
-            {showId && mediaLink.id}
+            <span className="text-truncate">
+              {showId && mediaLink.id}
+
+            </span>
           </a>
         </li>
       ))}

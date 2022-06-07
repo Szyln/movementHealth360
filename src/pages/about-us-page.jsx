@@ -8,7 +8,7 @@ import MemberCardComponent from '../components/member-card-component';
 const memberLarryPic = '/memberLarryPicture.svg';
 const memberTYPic = '/memberTYPicture.svg';
 const memberZoePic = '/memberZoePicture.svg';
-
+const logoPic = '/logo-LR-2color.svg';
 function AboutUsPage() {
   const memberList = [
     {
@@ -90,13 +90,31 @@ function AboutUsPage() {
     <DocumentTitle title="我們！ - 動作健康 360">
 
       <PageContainerComponent title="我們！">
-        <div className="mb-18 text-primary-dark">
-          <p className="mb-2">
-            團隊集結物理治療師、運動防護員、運動醫學肌力與體能教練，不同專業領域的我們，對於健康有著共通的理念。
-          </p>
-          <p>
-            透過「動作健康360」品牌，帶給大家「動作健康」這門全新的科學概念，讓大家找回生活的動力、動作的熱情，實現「要活就要動，要動就要動的健康」。
-          </p>
+        <div className="mb-22 text-primary-dark">
+          <div className="row">
+            <div className="col-md-4 col-lg-5 d-flex px-30 pb-10 pb-md-0 px-md-10 px-lg-6 mb-6">
+              <img src={logoPic} alt="logo" />
+            </div>
+            <div className="col-md-7 col-lg-6  offset-md-1">
+              <h2 className="fs-h3 fs-lg-h2 mb-10 letter-space-md-paragraph">
+                動作健康 360
+                <br />
+                <span className="fs-h4 text-end w-100p d-inline-block text-primary">——屬於你的動作訓練所</span>
+              </h2>
+              <div className="fs-lg-h4 fw-normal">
+                <ul className="mb-10">
+                  <li className="mb-2">身體動作失能，醫療介入。</li>
+                  <li className="mb-2">傷後回場訓練，結合運動防護。</li>
+                  <li>動作技巧優化，專項肌力體能。</li>
+                </ul>
+                <p className="mb-2">
+                  We move Better. Smarter. Healthier.
+                </p>
+                <p>動作的問題，就用動作的方法解決。</p>
+              </div>
+            </div>
+
+          </div>
         </div>
         <div>
           <Swiper
