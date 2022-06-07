@@ -31,7 +31,7 @@ function NavComponent() {
 
   return (
     <nav
-      className={`${navToggle ? 'h-100p bg-primary-dark ' : ''}  position-fixed w-100p z-3000 ${navToggle ? 'py-4 py-md-10 py-lg-20' : 'pt-3 pt-md-10 pt-lg-20'}`}
+      className={`${navToggle ? 'h-100p bg-primary-dark py-3 py-md-10 py-lg-20' : 'pt-3 pt-md-10 pt-lg-20'}  position-fixed w-100p z-3000 `}
     >
       <div className="container h-100p d-flex flex-column justify-content-between">
         {/* navbar */}
@@ -44,12 +44,12 @@ function NavComponent() {
           </div>
           {/* word logo */}
           <div className="d-flex align-items-center">
-            <Link to="/" className="pe-5 border-primary border-end p-2 d-flex" onClick={navToggle ? toggleNavBtnHandler : false}>
+            <Link to="/" className="pe-4 border-primary-dark border-end p-2 d-flex" onClick={navToggle ? toggleNavBtnHandler : false}>
               <LogoWordComponent heightClass="h-7 h-md-10 " isWhite={!!navToggle} />
             </Link>
             <div>
               {/* toggle button */}
-              <button type="button" className="ms-2 p-5 p-md-6 hover-bg-primary hover-nav-link d-flex" onClick={toggleNavBtnHandler}>
+              <button type="button" className="ms-2 px-1 py-5 py-md-6 hover-bg-primary hover-nav-link d-flex" onClick={toggleNavBtnHandler}>
                 <img className="h-4" src={navToggle ? navToggleBtnWhite : navToggleBtn} alt="動作健康360 motion health 360" />
               </button>
 

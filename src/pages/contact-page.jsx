@@ -9,16 +9,22 @@ import Alert from '../components/alert-component';
 
 function ContactPage() {
   const [state, handleSubmit] = useForm('mqkngrkj');
-
+  
   return (
     <DocumentTitle title="聯絡我們 - 動作健康 360">
       <PageContainerComponent title="聯絡我們">
         {state.succeeded && <Alert theme="accent">訊息已送出</Alert> }
 
         <form onSubmit={handleSubmit}>
+          <input type="hidden" name="_language" value="zh-TW" />
           <label htmlFor="name">
             姓名
-            <input type="text" name="name" id="name" placeholder="請輸入您的姓名" />
+            <input type="text" name="name" id="name" placeholder="請輸入您的姓名" required />
+            <ValidationError
+              prefix="name"
+              field="姓名欄"
+              errors={state.errors}
+            />
           </label>
           <label htmlFor="email">
             電子信箱
@@ -27,6 +33,7 @@ function ContactPage() {
               type="email"
               name="email"
               placeholder="請輸入您的電子信箱"
+              required
             />
             <ValidationError
               prefix="Email"
@@ -40,6 +47,7 @@ function ContactPage() {
               id="message"
               name="message"
               placeholder="有什麼想了解的呢？"
+              required
             />
             <ValidationError
               prefix="Message"

@@ -36,7 +36,7 @@ function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTe
     <ul className={`text${isTextEnd ? '-end' : '-start'}`}>
       {
         navListItems.map((navListItem) => (
-          <li key={navListItem.route} className="py-1 py-lg-2">
+          <li key={navListItem.route} className="py-2">
             <Link to={navListItem.route} className={`${fontSizeClass} text-decoration-none text-${textColor} letter-space-lg hover-nav-link`}>{navListItem.name}</Link>
           </li>
         ))
