@@ -93,7 +93,12 @@ function AboutUsPage() {
         <div className="mb-22 text-primary-dark">
           <div className="row">
             <div className="col-md-4 col-lg-5 d-flex px-30 pb-10 pb-md-0 px-md-10 px-lg-6 mb-6">
-              <img src={logoPic} alt="logo" />
+              <img
+                src={logoPic}
+                alt="logo"
+                className="maxw-100p
+              "
+              />
             </div>
             <div className="col-md-7 col-lg-6  offset-md-1">
               <h2 className="fs-h3 fs-lg-h2 mb-10 letter-space-md-paragraph">

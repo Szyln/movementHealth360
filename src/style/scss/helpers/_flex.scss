@@ -58,6 +58,13 @@
   align-self: stretch;
 }
 
+.d2222 {
+  // flex: 23% 1 0;
+  flex-basis: 30%;
+  // flex-grow: ;
+  // flex-shrink: ;
+}
+
 @media (min-width: $grid-breakpoints-sm) {
   .flex-sm-column {
     flex-direction: column;

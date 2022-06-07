@@ -111,7 +111,7 @@ function Homepage({ servicesList, servicesCategories }) {
               </h1>
               <NavigateLinkButtonComponent linkTo="/service/category">立即體驗</NavigateLinkButtonComponent>
             </div>
-            <div className="d-none d-lg-block align-self-end">
+            <div className="align-self-end d2222">
               <NavListComponent textColor="primary-dark" fontSizeClass="fs-h5 fs-md-h4" />
             </div>
 
