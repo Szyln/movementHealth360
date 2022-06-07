@@ -9,6 +9,7 @@ import PageContainerComponent from '../components/page-container-component';
 import CategoryCardComponent from '../components/service/category-card-component';
 import Alert from '../components/alert-component';
 import Btn from '../components/button-component';
+import PageTitleComponent from '../components/page-title-component';
 
 function ServicePage({ servicesList, servicesCategories }) {
   const [currentService, setCurrentService] = useState('');
@@ -46,16 +47,15 @@ function ServicePage({ servicesList, servicesCategories }) {
               </Link>
             </div>
           </Alert>
-          <ul className="row">
+          <ul className="row mb-22">
             {servicesCategories.map((category) => (
               <li className="col-12" key={uuidv4()}>
                 <CategoryCardComponent category={category} filterCategoryProductList={filterCategoryProductList} getCategoryName={getCategoryName} />
               </li>
             ))}
           </ul>
-        </PageContainerComponent>
         {/* product filter */}
-        <PageContainerComponent title="可購買項目" id="productList" headingLevel="h2">
+        <PageTitleComponent title="可購買項目" id="productList" headingLevel="h2" />
           <ul className="row">
             {!currentCategoryName && (
               servicesList.map((service) => (
