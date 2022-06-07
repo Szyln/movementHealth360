@@ -13964,6 +13964,8 @@ a:active {
 .hover-btn-link-primary:hover {
   z-index: 2000;
   color: #006e5a;
+  background: #ffffff;
+  transition: all 0.2s;
 }
 .hover-btn-link-primary:hover::before {
   width: 220%;
@@ -13993,6 +13995,8 @@ a:active {
 .hover-btn-link-accent:hover {
   z-index: 2000;
   color: #f29438;
+  background: #ffffff;
+  transition: all 0.2s;
 }
 .hover-btn-link-accent:hover::before {
   width: 220%;
@@ -14022,6 +14026,8 @@ a:active {
 .hover-btn-link-outline-primary:hover {
   z-index: 2000;
   color: white;
+  background: #006e5a;
+  transition: all 0.2s;
 }
 .hover-btn-link-outline-primary:hover::before {
   width: 220%;
@@ -14051,35 +14057,8 @@ a:active {
 .hover-btn-link-outline-secondary:hover {
   z-index: 2000;
   color: white;
-}
-.hover-btn-link-outline-secondary:hover::before {
-  width: 220%;
-}
-
-.hover-btn-link-outline-secondary {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s;
-  z-index: 1;
-}
-.hover-btn-link-outline-secondary::before {
-  content: "";
-  width: 0;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background-color: #97cfac;
-  color: #ffffff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background: #97cfac;
   transition: all 0.2s;
-  z-index: -1;
-}
-.hover-btn-link-outline-secondary:hover {
-  z-index: 2000;
-  color: white;
 }
 .hover-btn-link-outline-secondary:hover::before {
   width: 220%;
