@@ -51,7 +51,7 @@ function NavComponent() {
             </div>
             <div>
               {/* toggle button */}
-              <button type="button" className="ms-2 px-1 py-5 py-md-6  hover hover-expand-round hover-animation-start d-flex" onClick={toggleNavBtnHandler}>
+              <button type="button" className="ms-2 px-1 py-5 py-md-6  hover hover-expand-round hover-animation-start hover-nav-link d-flex" onClick={toggleNavBtnHandler}>
                 <img className="h-4" src={navToggle ? navToggleBtnWhite : navToggleBtn} alt="動作健康360 motion health 360" />
               </button>
 

@@ -64,7 +64,7 @@ function ServicePage({
         </ul>
         {servicesCategories.map((category) => (
           <div className="row" key={uuidv4()}>
-            <Link to={`/service/${category.name}`}>
+            <Link to={{ pathname: '/service', hash: `#${category.name}` }}>
               <PageTitleComponent id={category.name} headingLevel="h2">{category.name}</PageTitleComponent>
             </Link>
             <div className="col-lg-10 offset-lg-1">

@@ -53,7 +53,7 @@ function Homepage({ servicesList, servicesCategories }) {
       scrollTrigger: {
         trigger: q('.who'),
         start: 'top top',
-        end: 'bottom 65%',
+        end: '+=260%',
         pin: q('.who'),
         toggleActions: 'play pause reverse reverse',
         scrub: 2,
@@ -65,7 +65,7 @@ function Homepage({ servicesList, servicesCategories }) {
       duration: 100,
     })
       .to('.scrollTrigger-1', {
-        y: '-=40',
+        y: '-=10',
         opacity: 0,
         duration: 100,
 
@@ -76,7 +76,7 @@ function Homepage({ servicesList, servicesCategories }) {
         duration: 100,
       })
       .to('.scrollTrigger-2', {
-        y: '-=40',
+        y: '-=10',
         opacity: 0,
         duration: 100,
       })
@@ -86,7 +86,7 @@ function Homepage({ servicesList, servicesCategories }) {
         duration: 100,
       })
       .to('.scrollTrigger-3', {
-        y: '-=40',
+        y: '-=10',
         opacity: 0,
         duration: 100,
 

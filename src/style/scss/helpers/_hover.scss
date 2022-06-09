@@ -63,6 +63,7 @@
   }
   &:hover {
     color: $white;
+
   }
 }
 .hover-expand-round {
@@ -86,7 +87,7 @@
     z-index: 1;
     &::before {
       width: 210%;
-      height: 100vmax;
+      height: 50vmax;
     }
   }
 }

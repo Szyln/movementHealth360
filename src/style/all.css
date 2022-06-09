@@ -33932,7 +33932,7 @@ a:active {
 }
 .hover-expand-round:hover::before {
   width: 210%;
-  height: 100vmax;
+  height: 50vmax;
 }
 
 .hover-animation-start::before {
