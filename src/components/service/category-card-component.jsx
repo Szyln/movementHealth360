@@ -8,6 +8,7 @@ function CategoryCardComponent({ category, filterCategoryProductList, getCategor
   const {
     name, img, descriptions, provide, features, product, enable, hide,
   } = category;
+
   return (
     <section className="row mb-4 gx-0" key={uuidv4()}>
       <div className="col-md-5 col-lg-4">
@@ -52,7 +53,7 @@ function CategoryCardComponent({ category, filterCategoryProductList, getCategor
               </CardInfoSection>
             )}
             {/* product list */}
-            <CardInfoSection title="可購買項目" id="productList">
+            <CardInfoSection title="可購買項目">
               { filterCategoryProductList(name).map((product) => (
                 <li className="list-style-disc mb-1" key={uuidv4()}>{ product.name}</li>
               )) }
@@ -60,7 +61,7 @@ function CategoryCardComponent({ category, filterCategoryProductList, getCategor
 
           </div>
 
-          <Btn link="#productList" isHash target="_self" otherClassName="mt-auto" isDisabled={!enable} data={name} getData={getCategoryName}>{ enable ? '立即報名' : '規劃中'}</Btn>
+          <Btn link={`/service#${name}`} isHash target="_self" otherClassName="mt-auto" isDisabled={!enable} data={name} getData={getCategoryName}>{ enable ? '立即報名' : '規劃中'}</Btn>
 
         </div>
       </div>

@@ -1,17 +1,4 @@
-$themes: (
-  "primary": $primary,
-  "primary-dark": $primary-dark,
-  "secondary": $secondary,
-  "accent": $accent,
-  "gray-light": $gray-light,
-  "gray-dark": $gray-dark,
-  "dark": $dark,
-  "white": $white,
-  // success: #5cb85c,
-  // info: #5bc0de,
-  // warning: #f0ad4e,
-  // danger: #d9534f,
-);
+
 
 // bg
 @each $key, $value in $themes {
@@ -22,6 +9,24 @@ $themes: (
     color: $value;
   }
   .border-#{$key} {
-    border-color: $value;
+    border-color: $value; 
   }
+
+  .btn {
+    &-#{$key} {
+      border: solid $border-base-width $value;
+      border-color: $value;
+      // border-radius: $border-base-radius;
+      background-color: $value;
+      color: $white;
+    }
+    &-outline-#{$key} {
+      border: solid $border-base-width $value;
+      border-color: $value;
+      // border-radius: $border-base-radius;
+      background-color: $white;
+      color: $value;
+    }
+  }
+
 }

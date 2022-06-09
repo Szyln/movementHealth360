@@ -6,7 +6,7 @@ function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTe
   const navListItems = [
     {
       name: '來體驗',
-      route: '/service/category',
+      route: '/service',
     },
     {
       name: '學動作',
@@ -37,7 +37,7 @@ function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTe
       {
         navListItems.map((navListItem) => (
           <li key={navListItem.route} className="py-2">
-            <Link to={navListItem.route} className={`${fontSizeClass} text-decoration-none text-${textColor} letter-space-lg hover-nav-link`}>{navListItem.name}</Link>
+            <Link to={navListItem.route} className={`${fontSizeClass} text-decoration-none text-${textColor} letter-space-lg hover-expand-round hover-animation-start hover hover-nav-link`}>{navListItem.name}</Link>
           </li>
         ))
       }

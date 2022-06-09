@@ -3,10 +3,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NavigateLinkButtonComponent({ linkTo, children, isWhite = false, isAlignEnd = false }) {
+function NavigateLinkButtonComponent({
+  linkTo, children, isWhite = false, isAlignEnd = false,
+}) {
   return (
     <div className="mb-4 mb-lg-0">
-      <Link className={`navigate-link-button text-accent d-flex align-items-center ${isAlignEnd ? 'justify-content-end' : ''} fs-h4 py-4 ${isWhite ? 'text-white' : ''} hover-navigate-link`} to={linkTo}>
+      <Link className={`navigate-link-button text-accent d-flex align-items-center ${isAlignEnd && 'justify-content-end'} fs-h4 py-4 ${isWhite && 'text-white'} hover hover-navigate-link hover-expand-round hover-animation-start`} to={linkTo}>
 
         <span className="me-3">
           {children}

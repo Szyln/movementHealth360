@@ -6,7 +6,7 @@ function PageContainerComponent({
 }) {
   return (
     <div className="container mb-30">
-      <PageTitleComponent title={title} id={id} headingLevel={headingLevel} />
+      <PageTitleComponent title={title} id={id} headingLevel={headingLevel}>{title}</PageTitleComponent>
       {children}
     </div>
   );

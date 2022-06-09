@@ -83,8 +83,10 @@ function AboutMovementHealthPage() {
               </h3>
             </div>
           </div>
-          <div className="col-lg-8 px-4 py-lg-2 border-primary border-except-top border-lg-except-start rounded-bottom rounded-lg-end">
-            <MediaLinkComponent theme="primary" showId isFlexColumn isSmall />
+          <div className="col-lg-8">
+            <div className="px-4 py-lg-2 border-primary border-except-top border-lg-except-start rounded-bottom rounded-lg-end">
+              <MediaLinkComponent theme="primary" showId isFlexColumn isSmall />
+            </div>
           </div>
         </div>
         <div className="row">
@@ -93,7 +95,7 @@ function AboutMovementHealthPage() {
               <h3 className="text-accent mb-4 text-center letter-space-md fw-normal">需要更完整的服務？</h3>
               <ul>
                 <li className="mb-4">
-                  <Link to="/service/category">
+                  <Link to="/service/categories">
                     <Btn theme="accent">來體驗</Btn>
                   </Link>
                 </li>

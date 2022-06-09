@@ -10,7 +10,8 @@ import AboutUsPage from './pages/about-us-page';
 import ContactPage from './pages/contact-page';
 import ServicePage from './pages/service-page';
 import AboutMovementHealthPage from './pages/about-movement-health-page';
-// import ServiceProductPage from './pages/service-product-page';
+import ServiceProductPage from './pages/service-product-page';
+import CategoriesPage from './pages/categories-page';
 
 const bodyMovementCheckImg = '/Massage-therapist-bro.svg';
 const movementTrainingImg = '/Coach-bro.svg';
@@ -207,7 +208,7 @@ function App() {
         '為無運動經驗或是非運動／醫療相關專業人士開設 ',
         '從民眾衛教、企業演講、團體包班、專業人員繼續教育。',
       ],
-// features: [''],
+      // features: [''],
       product: [
 
       ],
@@ -252,12 +253,22 @@ function App() {
         <DocumentTitle title="動作健康 360">
           {/* 使用 Routes 包住 Route */}
           <Routes>
+
             {/* Route 決定點連結之後會產生的內容 */}
             <Route path="/" element={<Homepage servicesList={servicesList} servicesCategories={servicesCategories} />} />
-            <Route path="/service/category" element={<ServicePage servicesList={servicesList} servicesCategories={servicesCategories} />} />
+            <Route path="/service" element={<ServicePage servicesList={servicesList} servicesCategories={servicesCategories} />}>
+              {/* <Route path="/service/" element={<CategoriesPage servicesCategories={servicesCategories} getCategoryName={getCategoryName} filterCategoryProductList={filterCategoryProductList} />}> */}
+              {/* <Route path="categories" element={<ServiceProductPage />} /> */}
+              {/* <Route path=":category" element={<ServiceProductPage />} /> */}
+
+            </Route>
             <Route path="/about/movementHealth" element={<AboutMovementHealthPage />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route
+              path="*"
+              element={(<p>404</p>)}
+            />
           </Routes>
         </DocumentTitle>
       </main>

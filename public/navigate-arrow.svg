@@ -1,3 +1,7 @@
-<svg width="58" height="16" viewBox="0 0 58 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M57.7071 8.70711C58.0976 8.31658 58.0976 7.68342 57.7071 7.29289L51.3431 0.928932C50.9526 0.538408 50.3195 0.538408 49.9289 0.928932C49.5384 1.31946 49.5384 1.95262 49.9289 2.34315L55.5858 8L49.9289 13.6569C49.5384 14.0474 49.5384 14.6805 49.9289 15.0711C50.3195 15.4616 50.9526 15.4616 51.3431 15.0711L57.7071 8.70711ZM0 9H57V7H0V9Z" fill="#F29438"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 58 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-0.636039)">
+        <path d="M54.586,7L0,7L0,9L54.586,9L49.929,13.657C49.538,14.047 49.538,14.681 49.929,15.071C50.32,15.462 50.953,15.462 51.343,15.071L57.707,8.707C58.098,8.317 58.098,7.683 57.707,7.293L51.343,0.929C50.953,0.538 50.32,0.538 49.929,0.929C49.538,1.319 49.538,1.953 49.929,2.343L54.586,7Z" style="fill:rgb(242,148,56);fill-rule:nonzero;"/>
+    </g>
 </svg>

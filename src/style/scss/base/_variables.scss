@@ -7,6 +7,21 @@ $gray-dark: #404040;
 $dark: #1a1a1a;
 $white: #ffffff;
 
+$themes: (
+  "primary": $primary,
+  "primary-dark": $primary-dark,
+  "secondary": $secondary,
+  "accent": $accent,
+  "gray-light": $gray-light,
+  "gray-dark": $gray-dark,
+  "dark": $dark,
+  "white": $white,
+  // success: #5cb85c,
+  // info: #5bc0de,
+  // warning: #f0ad4e,
+  // danger: #d9534f,
+);
+
 $font-base-size: 0.25rem;
 $space: 0.25rem;
 $border-base-width: 2px;
@@ -19,7 +34,6 @@ $letter-spacing-sm: 0.1rem;
 $letter-spacing-base: 0.2rem;
 $letter-spacing-md: 0.3rem;
 $letter-spacing-lg: 0.5rem;
-
 
 // grid, container and gutter
 $gutter-x: $space * 3;
@@ -38,7 +52,6 @@ $grid-breakpoints: (
   xl: $grid-breakpoints-xl,
   xxl: $grid-breakpoints-xxl,
 );
-
 
 $spaces: (
   0: 0,

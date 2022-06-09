@@ -102,17 +102,17 @@ function Homepage({ servicesList, servicesCategories }) {
       <div ref={mainRef} className="overflow-x-hidden">
         {/* hero banner */}
         <ViewportHeightContainer>
-          <div className="d-flex pt-38 h-80vh justify-content-between">
+          <div className="d-flex flex-column flex-md-row pt-10 pt-md-38 h-80vh justify-content-between">
             <div>
               <h1 className="text-primary">
                 動作科學
                 <br />
                 運動訓練的全新策略
               </h1>
-              <NavigateLinkButtonComponent linkTo="/service/category">立即體驗</NavigateLinkButtonComponent>
+              <NavigateLinkButtonComponent linkTo="/service">立即體驗</NavigateLinkButtonComponent>
             </div>
-            <div className="align-self-end d-none d-md-block d2222">
-              <NavListComponent textColor="primary-dark" fontSizeClass="fs-h5 fs-md-h4" />
+            <div className="align-self-end d2222">
+              <NavListComponent textColor="primary-dark" fontSizeClass="fs-h4 fs-md-h4" />
             </div>
 
           </div>
@@ -151,9 +151,9 @@ function Homepage({ servicesList, servicesCategories }) {
             <div className="mb-6 mb-lg-0">
               <HomepageSectionTitleComponent>
                 提供不論
-                <span className="d-inline-block position-relative">
+                <span className="d-inline-block position-relative z-n1">
                   <div className="opacity-0">男女老少</div>
-                  <span className="text-primary-dark position-absolute top-0 left-0 w-100p scrollTrigger-1 opacity-1">一般民眾</span>
+                  <span className="text-primary-dark position-absolute top-0 left-0 w-100p scrollTrigger-1 opacity-1">男女老少</span>
                   <span className="text-primary-dark position-absolute top-0 w-100p scrollTrigger-2">團體包班</span>
                   <span className="text-primary-dark position-absolute top-0 w-100p scrollTrigger-3">運動員</span>
 
@@ -164,7 +164,7 @@ function Homepage({ servicesList, servicesCategories }) {
                 找回「動作健康」
                 <br />
               </HomepageSectionTitleComponent>
-              <NavigateLinkButtonComponent linkTo="/service/category" isWhite>立即體驗</NavigateLinkButtonComponent>
+              <NavigateLinkButtonComponent linkTo="/service" isWhite>立即體驗</NavigateLinkButtonComponent>
             </div>
             <div className="position-relative w-90p w-lg-20vw h-40vh d-flex align-items-center">
               <HomepageSectionImgComponent img={elderImg} imgAlt="elder image" otherClass="scrollTrigger-1 position-absolute transition-y-middle" />
@@ -183,7 +183,7 @@ function Homepage({ servicesList, servicesCategories }) {
                   <br />
                   理解動作、掌握健康
                 </HomepageSectionTitleComponent>
-                <NavigateLinkButtonComponent linkTo="/service/category">探索服務</NavigateLinkButtonComponent>
+                <NavigateLinkButtonComponent linkTo="/service">探索服務</NavigateLinkButtonComponent>
               </div>
             </div>
             <div className="offset-md-1 offset-lg-2 col-md-12">
@@ -270,7 +270,7 @@ function Homepage({ servicesList, servicesCategories }) {
             ))}
           </Swiper>
           <div className="container">
-            <NavigateLinkButtonComponent linkTo="/service/category" isWhite isAlignEnd>立即體驗</NavigateLinkButtonComponent>
+            <NavigateLinkButtonComponent linkTo="/service" isWhite isAlignEnd>立即體驗</NavigateLinkButtonComponent>
           </div>
         </ViewportHeightContainer>
       </div>
