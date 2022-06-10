@@ -24,7 +24,7 @@
         z-index: -1;
       }
       &:hover {
-        z-index: 2000;
+        z-index: 1;
         background-color: $white;
         color: $value;
         // background: $white;
@@ -40,7 +40,7 @@
         z-index: -1;
       }
       &:hover {
-        z-index: 2000;
+        z-index: 1;
         // background-color: $white;
         color: $white;
         // background: $white;
@@ -63,7 +63,6 @@
   }
   &:hover {
     color: $white;
-
   }
 }
 .hover-expand-round {
@@ -81,27 +80,35 @@
     transform: translate(-50%, -50%);
     z-index: -1;
     width: 0%;
-    height: 0;
+    height: 0%;
   }
   &:hover {
     z-index: 1;
-    &::before {
-      width: 210%;
-      height: 50vmax;
-    }
   }
 }
 .hover-animation {
   &-start {
     &::before {
-      left: 0;
+      left: 20%;
       top: 50%;
+    }
+    &:hover {
+      &::before {
+        padding: 105% 0;
+        width: 210%;
+      }
     }
   }
   &-center {
     &::before {
       left: 50%;
       top: 50%;
+    }
+    &:hover {
+      &::before {
+        padding: 100% 0;
+        width: 200%;
+      }
     }
   }
 }

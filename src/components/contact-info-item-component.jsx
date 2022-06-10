@@ -7,7 +7,7 @@ function ContactInfoItemComponent({
     <li>
       <a href={`${hrefType}:${children}`} className={`py-3 text-gray-light text-decoration-none ${fontSizeClasses} fw-normal d-flex`}>
         <i className={`bi bi-${bsIconName} me-3`} />
-        <span className="text-truncate letter-space-normal-paragraph">
+        <span className="text-truncate letter-space-sm-paragraph">
           {children}
         </span>
       </a>

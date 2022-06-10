@@ -150,10 +150,11 @@ function AboutUsPage() {
             ))}
           </Swiper>
         </div>
+        {/* member modal */}
         {currentMember && (
-        <dialog className="rounded position-fixed top-0 bottom-0 left-0 right-0 p-5 d-flex align-items-center z-1000   ">
+        <div className="p-3 position-fixed top-50 left-50 translate-middle d-flex align-items-center z-1000 w-100p   w-lg-90p w-xl-80p h-md-down-100p">
           <MemberCardComponent member={currentMember} getMemberName={getMemberName} isOpen />
-        </dialog>
+        </div>
         )}
       </PageContainerComponent>
     </DocumentTitle>

@@ -100,7 +100,6 @@ $sizes: (
   98: $base-size * 98,
   99: $base-size * 99,
   100: $base-size * 100,
-  
 
   100p: 100%,
   75p: 75%,
@@ -222,5 +221,38 @@ $sizes: (
     .minw-lg-#{$key} {
       min-width: $value;
     }
+  }
+}
+@each $key, $value in $sizes {
+  @media (min-width: $grid-breakpoints-xl) {
+    .h-xl-#{$key} {
+      height: $value;
+    }
+    .w-xl-#{$key} {
+      width: $value;
+    }
+    .maxh-xl-#{$key} {
+      max-height: $value;
+    }
+    .maxw-xl-#{$key} {
+      max-width: $value;
+    }
+    .minh-xl-#{$key} {
+      min-height: $value;
+    }
+    .minw-xl-#{$key} {
+      min-width: $value;
+    }
+  }
+}
+
+@media (max-width: $grid-breakpoints-sm) {
+  .h-sm-down-100p {
+    height: 100%;
+  }
+}
+@media (max-width: $grid-breakpoints-md) {
+  .h-md-down-100p {
+    height: 100%;
   }
 }
