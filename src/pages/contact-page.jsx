@@ -9,7 +9,7 @@ import Alert from '../components/alert-component';
 
 function ContactPage() {
   const [state, handleSubmit] = useForm('mqkngrkj');
-  
+
   return (
     <DocumentTitle title="聯絡我們 - 動作健康 360">
       <PageContainerComponent title="聯絡我們">
@@ -55,7 +55,7 @@ function ContactPage() {
               errors={state.errors}
             />
           </label>
-          <button type="submit" className="bg-primary border-primary rounded-sm py-3 px-15 fs-h4 text-white mt-3" disabled={state.submitting}>
+          <button type="submit" className="bg-primary border-primary rounded-sm py-3 px-15 fs-h5 fs-md-h4 text-white mt-3 w-100p" disabled={state.submitting}>
             送出
           </button>
         </form>
