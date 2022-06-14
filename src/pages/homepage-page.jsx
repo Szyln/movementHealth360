@@ -156,7 +156,6 @@ function Homepage({ servicesList, servicesCategories }) {
                   <span className="text-primary-dark position-absolute top-0 left-0 w-100p scrollTrigger-1 opacity-1">男女老少</span>
                   <span className="text-primary-dark position-absolute top-0 w-100p scrollTrigger-2">團體包班</span>
                   <span className="text-primary-dark position-absolute top-0 w-100p scrollTrigger-3">運動員</span>
-
                 </span>
                 <br />
                 最完善健全的照顧
@@ -166,7 +165,7 @@ function Homepage({ servicesList, servicesCategories }) {
               </HomepageSectionTitleComponent>
               <NavigateLinkButtonComponent linkTo="/service" isWhite>立即體驗</NavigateLinkButtonComponent>
             </div>
-            <div className="position-relative w-90p w-lg-20vw h-40vh d-flex align-items-center">
+            <div className="position-relative w-60p w-lg-20vw h-30vh d-flex align-items-center">
               <HomepageSectionImgComponent img={elderImg} imgAlt="elder image" otherClass="scrollTrigger-1 position-absolute transition-y-middle" />
               <HomepageSectionImgComponent img={studentsImg} imgAlt="4 students" otherClass="scrollTrigger-2 position-absolute  transition-y-middle" />
               <HomepageSectionImgComponent img={basketballImg} imgAlt="2 men in a basketball game" otherClass="scrollTrigger-3 position-absolute  transition-y-middle" />
@@ -176,7 +175,7 @@ function Homepage({ servicesList, servicesCategories }) {
         {/* what */}
         <ViewportHeightContainer fullHeight={false}>
           <div className="row flex-column flex-md-row flex-md-nowrap align-items-center">
-            <div className="col-md-4 d-flex flex-column align-items-center align-items-md-start">
+            <div className="col-md-5 d-flex flex-column align-items-center align-items-md-start">
               <div className="">
                 <HomepageSectionTitleComponent>
                   帶你
@@ -186,7 +185,7 @@ function Homepage({ servicesList, servicesCategories }) {
                 <NavigateLinkButtonComponent linkTo="/service">探索服務</NavigateLinkButtonComponent>
               </div>
             </div>
-            <div className="offset-md-1 offset-lg-2 col-md-12">
+            <div className="offset-md-2 offset-lg-2 col-md-12">
               <Swiper
                 className="p-2 me-n24 mx-sm-n20 ms-md-0 me-md-n22 me-lg-0"
                 slidesPerView={1.25}

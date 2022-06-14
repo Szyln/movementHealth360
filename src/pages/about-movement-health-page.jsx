@@ -95,7 +95,7 @@ function AboutMovementHealthPage() {
               <h3 className="text-accent mb-4 text-center letter-space-md fw-normal">需要更完整的服務？</h3>
               <ul>
                 <li className="mb-4">
-                  <Link to="/service/categories">
+                  <Link to="/service">
                     <Btn theme="accent">來體驗</Btn>
                   </Link>
                 </li>

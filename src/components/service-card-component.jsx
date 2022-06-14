@@ -28,7 +28,8 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
 
         <ul className="d-flex justify-content-stretch flex-wrap">
           <li className="w-100p mb-3">
-            <Btn dataId={id} getData={getServiceName} isDisabled={!enable} link={enable ? link : ''}>{enable ? '立即報名' : '規劃中'}</Btn>
+
+            <Btn dataId={id} getData={getServiceName} isDisabled={!enable} link={enable ? link : ''} isLinkExternal>{enable ? '立即報名' : '規劃中'}</Btn>
           </li>
           <li className="w-100p">
             <Btn data={name} getData={getServiceName} isOutline theme="primary">{ isOpen ? '關閉' : '了解更多'}</Btn>

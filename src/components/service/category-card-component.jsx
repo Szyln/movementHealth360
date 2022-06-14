@@ -1,10 +1,13 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import Btn from '../button-component';
 import CardInfoSection from './card-info-section';
 
-function CategoryCardComponent({ category, filterCategoryProductList, getCategoryName}) {
+function CategoryCardComponent({
+  category, filterCategoryProductList, getCategoryName,
+}) {
   const {
     name, img, descriptions, provide, features, product, enable, hide,
   } = category;
@@ -60,8 +63,9 @@ function CategoryCardComponent({ category, filterCategoryProductList, getCategor
             </CardInfoSection>
 
           </div>
-
-          <Btn link={`/service#${name}`} isHash target="_self" otherClassName="mt-auto" isDisabled={!enable} data={name} getData={getCategoryName}>{ enable ? '立即報名' : '規劃中'}</Btn>
+          <HashLink to={`/service/#${name}`}>
+            <Btn otherClassName="mt-auto" isDisabled={!enable} data={name} getData={getCategoryName}>{ enable ? '立即報名' : '規劃中'}</Btn>
+          </HashLink>
 
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import DocumentTitle from 'react-document-title';
@@ -11,7 +11,7 @@ import ContactPage from './pages/contact-page';
 import ServicePage from './pages/service-page';
 import AboutMovementHealthPage from './pages/about-movement-health-page';
 import ServiceProductPage from './pages/service-product-page';
-import CategoriesPage from './pages/categories-page';
+// import CategoriesPage from './pages/categories-page';
 
 const bodyMovementCheckImg = '/Massage-therapist-bro.svg';
 const movementTrainingImg = '/Coach-bro.svg';
@@ -237,12 +237,23 @@ function App() {
     },
 
   ];
-  // const filterCategoryProductList = (categoryName) => (
-  //   servicesList.filter((service) => (service.category === categoryName))
-  // );
+  // get product list which is in this(argument) category
+  const filterCategoryProductList = (categoryName) => (
+    servicesList.filter((service) => (service.category === categoryName))
+  );
   // const getCategoryData = (CategoryOfProduct) => (
   //   servicesCategories.filter((category) => (category.name === CategoryOfProduct))
   // );
+  const [currentService, setCurrentService] = useState('');
+  const getServiceName = (e) => {
+    if (currentService.name !== e.target.dataset.id) {
+      setCurrentService(servicesList.find((service) => (
+        service.name === e.target.dataset.id
+      )));
+    } else if (currentService.name === e.target.dataset.id) {
+      setCurrentService('');
+    }
+  };
 
   return (
     <div className="App">
@@ -256,12 +267,7 @@ function App() {
 
             {/* Route 決定點連結之後會產生的內容 */}
             <Route path="/" element={<Homepage servicesList={servicesList} servicesCategories={servicesCategories} />} />
-            <Route path="/service" element={<ServicePage servicesList={servicesList} servicesCategories={servicesCategories} />}>
-              {/* <Route path="/service/" element={<CategoriesPage servicesCategories={servicesCategories} getCategoryName={getCategoryName} filterCategoryProductList={filterCategoryProductList} />}> */}
-              {/* <Route path="categories" element={<ServiceProductPage />} /> */}
-              {/* <Route path=":category" element={<ServiceProductPage />} /> */}
-
-            </Route>
+            <Route path="/service" element={<ServicePage servicesList={servicesList} servicesCategories={servicesCategories} filterCategoryProductList={filterCategoryProductList} currentService={currentService} setCurrentService={setCurrentService} getServiceName={getServiceName} />} />
             <Route path="/about/movementHealth" element={<AboutMovementHealthPage />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/contact" element={<ContactPage />} />
