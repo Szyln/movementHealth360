@@ -24,7 +24,7 @@ function MediaLinkComponent({
     <ul className={`d-flex ${isFlexColumn ? 'flex-column' : ''}  m${isFlexColumn ? 'e' : 's'}-n3`}>
       {mediaLinks.map((mediaLink) => (
         <li key={mediaLink.name}>
-          <a href={mediaLink.address} aria-label={`Link to ${mediaLink.name}`} className={`p${isFlexColumn ? 'y' : 'x'}-${isSmall ? '1' : '3'} d-flex align-items-center text-primary-dark`}>
+          <a href={mediaLink.address} target="_blank" aria-label={`Link to ${mediaLink.name}`} className={`p${isFlexColumn ? 'y' : 'x'}-${isSmall ? '1' : '3'} d-flex align-items-center text-primary-dark`} rel="noreferrer">
             <i className={`bi bi-${mediaLink.name} text-${theme}  fs-h3 ${showId && 'me-3'}`} />
             <span className="text-truncate">
               {showId && mediaLink.id}
