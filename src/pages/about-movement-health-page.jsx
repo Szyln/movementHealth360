@@ -9,7 +9,9 @@ function AboutMovementHealthPage() {
   return (
     <DocumentTitle title="學動作 - 動作健康 360">
       <PageContainerComponent title="學動作 - 什麼是動作科學？">
+
         <div className="row">
+
           <div className="col-lg-8 offset-lg-2">
             <div className="fw-normal mb-10 mb-md-20 text-primary-dark">
               <ul className="mb-4">
@@ -108,7 +110,7 @@ function AboutMovementHealthPage() {
             </div>
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row d-none">
           <div className="col-lg-8 offset-lg-2">
             <h2 className="fs-h5 fw-bold mb-2 letter-space-normal-paragraph text-gray-dark">參考資料</h2>
             <ol className="fw-normal text-gray-dark">
@@ -126,7 +128,7 @@ function AboutMovementHealthPage() {
             </ol>
           </div>
 
-        </div>
+        </div> */}
 
       </PageContainerComponent>
     </DocumentTitle>
