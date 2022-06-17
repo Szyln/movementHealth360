@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 function MediaLinkComponent({
   isFlexColumn = false, theme = 'gray-light', showId = false, isSmall = false,
@@ -23,7 +24,7 @@ function MediaLinkComponent({
   return (
     <ul className={`d-flex ${isFlexColumn ? 'flex-column' : ''}  m${isFlexColumn ? 'e' : 's'}-n3`}>
       {mediaLinks.map((mediaLink) => (
-        <li key={mediaLink.name}>
+        <li key={uuidv4()}>
           <a href={mediaLink.address} target="_blank" aria-label={`Link to ${mediaLink.name}`} className={`p${isFlexColumn ? 'y' : 'x'}-${isSmall ? '1' : '3'} d-flex align-items-center text-primary-dark`} rel="noreferrer">
             <i className={`bi bi-${mediaLink.name} text-${theme}  fs-h3 ${showId && 'me-3'}`} />
             <span className="text-truncate">

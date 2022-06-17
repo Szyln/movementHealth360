@@ -1,6 +1,7 @@
 // import gsap from 'gsap';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTextEnd = true }) {
   const navListItems = [
@@ -36,7 +37,7 @@ function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTe
     <ul className={`text${isTextEnd ? '-end' : '-start'}`}>
       {
         navListItems.map((navListItem) => (
-          <li key={navListItem.route} className="py-2">
+          <li key={uuidv4()} className="py-2">
             <Link to={navListItem.route} className={`${fontSizeClass} text-decoration-none text-${textColor} letter-space-lg hover-expand-round hover-animation-start hover hover-nav-link`}>{navListItem.name}</Link>
           </li>
         ))
