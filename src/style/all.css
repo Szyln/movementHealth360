@@ -36461,7 +36461,7 @@ a:active {
 }
 
 .justify-content-center {
-  justify-content: space-center;
+  justify-content: center;
 }
 
 .justify-content-end {
@@ -36538,7 +36538,7 @@ a:active {
   }
 
   .justify-content-sm-center {
-    justify-content: space-center;
+    justify-content: center;
   }
 
   .justify-content-sm-end {
@@ -36607,7 +36607,7 @@ a:active {
   }
 
   .justify-content-md-center {
-    justify-content: space-center;
+    justify-content: center;
   }
 
   .justify-content-md-end {
@@ -36676,7 +36676,7 @@ a:active {
   }
 
   .justify-content-lg-center {
-    justify-content: space-center;
+    justify-content: center;
   }
 
   .justify-content-lg-end {
