@@ -48,6 +48,7 @@ function Homepage({ servicesList, servicesCategories }) {
   const mainRef = useRef();
   const q = gsap.utils.selector(mainRef);
   useEffect(() => {
+    console.log('trigger gsap homepage animation!');
     gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -59,7 +60,7 @@ function Homepage({ servicesList, servicesCategories }) {
         scrub: 2,
       },
     });
-    tl.from('.scrollTrigger-1', {
+    const ScrollAnimation = tl.from('.scrollTrigger-1', {
       y: '+=40',
       opacity: 0,
       duration: 100,
@@ -91,7 +92,10 @@ function Homepage({ servicesList, servicesCategories }) {
         duration: 100,
 
       });
-  });
+    return () => {
+      ScrollAnimation.kill();
+    };
+  }, []);
 
   const getCategoryOfProduct = (CategoryOfProduct) => (
     servicesCategories.find((category) => (category.name === CategoryOfProduct))
@@ -190,7 +194,10 @@ function Homepage({ servicesList, servicesCategories }) {
                 className="p-2 me-n24 mx-sm-n20 ms-md-0 me-md-n22 me-lg-0"
                 slidesPerView={1.25}
                 spaceBetween={24}
-                loop
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
                 breakpoints={{
                   0: {
                     slidesPerView: 1.3,
@@ -216,9 +223,10 @@ function Homepage({ servicesList, servicesCategories }) {
                     spaceBetween: 16,
                   },
                 }}
+                modules={[Autoplay]}
               >
                 {servicesList.map((service) => (
-                  <SwiperSlide key={service.id}>
+                  <SwiperSlide key={uuidv4()}>
                     <ServiceCardHomepageComponent service={service} category={getCategoryOfProduct(service.category)} />
                   </SwiperSlide>
                 ))}
@@ -228,8 +236,8 @@ function Homepage({ servicesList, servicesCategories }) {
           <HomepageSectionComponent />
         </ViewportHeightContainer>
 
-        {/* feedback */}
-        <ViewportHeightContainer bgColor="secondary" container={false} fullHeight={false}>
+        {/* feedback: isHidden */}
+        <ViewportHeightContainer bgColor="secondary" container={false} fullHeight={false} isHidden>
           <Swiper
             className="z-0 p-2"
             slidesPerView={1.25}
@@ -263,7 +271,7 @@ function Homepage({ servicesList, servicesCategories }) {
 
           >
             {feedbackList.map((feedback) => (
-              <SwiperSlide key={feedback.id}>
+              <SwiperSlide key={uuidv4()}>
                 <FeedbackCardComponent feedback={feedback} />
               </SwiperSlide>
             ))}
