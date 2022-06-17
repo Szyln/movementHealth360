@@ -11,14 +11,13 @@ function CategoryCardComponent({
   const {
     name, img, descriptions, provide, features, product, enable, hide,
   } = category;
-
   return (
     <section className="row mb-4 gx-0" key={uuidv4()}>
       <div className="col-md-5 col-lg-4">
         <div className="bg-primary rounded-top-inside rounded-md-start-inside border-primary border-around rounded p-4 p-md-6 p-lg-7 d-flex flex-row-reverse  justify-content-between align-items-center flex-md-column h-100p">
           {/* category title & description */}
           <div className="mb-md-6">
-            <h2 className="fs-h3 text-white mb-3">{name}</h2>
+            <h2 className="fs-h3 text-white mb-lg-3">{name}</h2>
             { descriptions.map((description) => (
               <p className="text-secondary fw-normal d-none d-md-block" key={uuidv4()}>{description}</p>
             ))}
