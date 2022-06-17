@@ -72,6 +72,10 @@ function AboutUsPage({ memberList }) {
                 spaceBetween: 16,
               },
               992: {
+                slidesPerView: 2.5,
+                spaceBetween: 16,
+              },
+              1120: {
                 slidesPerView: 3,
                 spaceBetween: 16,
               },
