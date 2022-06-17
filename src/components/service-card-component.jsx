@@ -5,7 +5,7 @@ import Alert from './alert-component';
 
 function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
   const {
-    name, id, img, descriptions, enable, link, alert,
+    name, id, descriptions, enable, link, alert,
   } = service;
   return (
     <div className="border-primary border-around rounded bg-white w-100p h-md-down-100p">
