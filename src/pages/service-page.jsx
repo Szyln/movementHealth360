@@ -4,7 +4,6 @@ import DocumentTitle from 'react-document-title';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 
-// import ServiceCardComponent from '../components/service-card-component';
 import PageContainerComponent from '../components/page-container-component';
 import CategoryCardComponent from '../components/service/category-card-component';
 import Alert from '../components/alert-component';
@@ -13,7 +12,12 @@ import ServiceCardComponent from '../components/service-card-component';
 import ServiceProductPage from './service-product-page';
 
 function ServicePage({
-  servicesList, servicesCategories, filterCategoryProductList, currentService, setCurrentService, getServiceName,
+  servicesList,
+  servicesCategories,
+  filterCategoryProductList,
+  currentService,
+  setCurrentService,
+  getServiceName,
 }) {
   const [currentCategoryName, setCurrentCategoryName] = useState('');
 
@@ -41,25 +45,37 @@ function ServicePage({
           <ul className="row mb-22">
             {servicesCategories.map((category) => (
               <li className="col-12" key={uuidv4()}>
-                <CategoryCardComponent category={category} filterCategoryProductList={filterCategoryProductList} getCategoryName={getCategoryName} />
+                <CategoryCardComponent
+                  category={category}
+                  filterCategoryProductList={filterCategoryProductList}
+                  getCategoryName={getCategoryName}
+                />
               </li>
             ))}
           </ul>
 
           {/* product in category */}
           {servicesCategories.map((category) => (
-            <div key={uuidv4()}>
-              <ServiceProductPage category={category.name} servicesList={servicesList} filterCategoryProductList={filterCategoryProductList} getServiceName={getServiceName} />
+            <div key={uuidv4()} className="row">
+              <ServiceProductPage
+                category={category.name}
+                servicesList={servicesList}
+                filterCategoryProductList={filterCategoryProductList}
+                getServiceName={getServiceName}
+              />
             </div>
           ))}
 
         </PageContainerComponent>
         {/* product modal */}
         {currentService && (
-          <div className="p-3 position-fixed top-50 left-50 translate-middle d-flex align-items-center z-1000 w-100p w-sm-80p w-md-60p w-lg-40p w-xl-30p h-md-down-100p">
+        <div className="backdrop">
+          <div className="position-fixed top-50 left-50 translate-middle z-3000 w-95p w-sm-80p w-md-80p w-lg-80p maxw-lg-breakpoint-xl maxh-95p h-95p  ">
             <ServiceCardComponent service={currentService} getServiceName={getServiceName} isOpen />
           </div>
+        </div>
         )}
+
       </>
     </DocumentTitle>
   );
