@@ -1,6 +1,8 @@
 $primary: #006e5a;
 $primary-dark: #004536;
 $secondary: #97cfac;
+$secondary-light: #daf2e3;
+$info: #edfbff;
 $accent: #f29438;
 $gray-light: #cccccc;
 $gray-dark: #404040;
@@ -11,6 +13,9 @@ $themes: (
   "primary": $primary,
   "primary-dark": $primary-dark,
   "secondary": $secondary,
+  "secondary-light": $secondary-light,
+  "info": $info,
+
   "accent": $accent,
   "gray-light": $gray-light,
   "gray-dark": $gray-dark,

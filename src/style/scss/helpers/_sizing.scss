@@ -100,8 +100,12 @@ $sizes: (
   98: $base-size * 98,
   99: $base-size * 99,
   100: $base-size * 100,
+  150: $base-size * 150,
+  200: $base-size * 200,
+
 
   100p: 100%,
+  95p: 95%,
   75p: 75%,
   90p: 90%,
   80p: 80%,
@@ -134,6 +138,10 @@ $sizes: (
   25vw: 25vw,
   20vw: 20vw,
   10vw: 10vw,
+
+  breakpoint-xl:  $grid-breakpoints-xl,
+  breakpoint-lg:  $grid-breakpoints-lg,
+
 );
 
 @each $key, $value in $sizes {
@@ -254,5 +262,11 @@ $sizes: (
 @media (max-width: $grid-breakpoints-md) {
   .h-md-down-100p {
     height: 100%;
+  }
+  .h-md-down-90p {
+    height: 90%;
+  }
+  .h-md-down-95p {
+    height: 95%;
   }
 }

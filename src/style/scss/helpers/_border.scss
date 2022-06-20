@@ -52,6 +52,9 @@
 .rounded {
   border-radius: $border-base-radius;
 }
+.rounded-circle {
+  border-radius: 50px;
+}
 .rounded-top {
   border-radius: $border-base-radius $border-base-radius 0 0;
 }
@@ -75,6 +78,10 @@
 .rounded-start-inside {
   border-radius: calc($border-base-radius - 3px) 0 0
     calc($border-base-radius - 3px);
+}
+.rounded-bottom-inside {
+  border-radius: 0 0
+    calc($border-base-radius - 3px) calc($border-base-radius - 3px) ;
 }
 
 .rounded-sm {
