@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 // import { v4 as uuidv4 } from 'uuid';
 import DocumentTitle from 'react-document-title';
 import axios from 'axios';
+import { DotWave } from '@uiball/loaders';
 import NavComponent from './components/nav-component';
 
 import FooterComponent from './components/footer-component';
@@ -67,8 +68,13 @@ function App() {
   if (isLoading) {
     return (
       <div className="bg-primary-dark h-100vh d-flex flex-column align-items-center justify-content-center">
-        <img src={logoImg} alt="logo of Movement Health 360" className="w-25 mb-5" />
-        <p className="text-white fs-h4 text-center">Loading...</p>
+        <img src={logoImg} alt="logo of Movement Health 360" className="w-20 mb-10" />
+
+        <DotWave
+          size={47}
+          speed={1}
+          color="#97cfac"
+        />
       </div>
     );
   } if (!isLoading) {
