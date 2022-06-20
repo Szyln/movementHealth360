@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@formspree/react": "^2.2.5",
+    "@uiball/loaders": "^1.2.6",
     "aos": "^2.3.4",
     "axios": "^0.27.2",
     "gsap": "^3.10.4",
