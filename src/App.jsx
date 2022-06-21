@@ -96,7 +96,7 @@ function App() {
               <Route path="/about" element={<AboutUsPage memberList={memberList} />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route
-                path="/*"
+                path="*"
                 element={<ForbiddenPage />}
               />
             </Routes>
