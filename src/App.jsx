@@ -12,6 +12,7 @@ import AboutUsPage from './pages/about-us-page';
 import ContactPage from './pages/contact-page';
 import ServicePage from './pages/service-page';
 import AboutMovementHealthPage from './pages/about-movement-health-page';
+import ForbiddenPage from './pages/forbidden-page';
 
 const logoImg = '/icon-2color.svg';
 const API_URL = 'https://movementhealth360-server.herokuapp.com/';
@@ -95,8 +96,8 @@ function App() {
               <Route path="/about" element={<AboutUsPage memberList={memberList} />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route
-                path="*"
-                element={(<p>404</p>)}
+                path="/*"
+                element={<ForbiddenPage />}
               />
             </Routes>
           </DocumentTitle>
