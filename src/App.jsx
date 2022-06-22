@@ -68,7 +68,7 @@ function App() {
   };
   if (isLoading) {
     return (
-      <div className="bg-primary-dark h-100vh d-flex flex-column align-items-center justify-content-center">
+      <div className="bg-primary-dark h-100vh d-flex flex-column align-items-center justify-content-center transition-all">
         <img src={logoImg} alt="logo of Movement Health 360" className="w-20 mb-10" />
 
         <DotWave

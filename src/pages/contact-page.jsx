@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import DocumentTitle from 'react-document-title';
 // Make sure to run npm install @formspree/react
 // For more help visit https://formspr.ee/react-help
 import { useForm, ValidationError } from '@formspree/react';
 
-import DocumentTitle from 'react-document-title';
 import PageContainerComponent from '../components/page-container-component';
 import Alert from '../components/alert-component';
 
 function ContactPage() {
   const [state, handleSubmit] = useForm('mqkngrkj');
-
   return (
+
     <DocumentTitle title="聯絡我們 - 動作健康 360">
       <PageContainerComponent title="聯絡我們">
         {state.succeeded && <Alert theme="accent">訊息已送出</Alert> }
