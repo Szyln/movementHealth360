@@ -37614,6 +37614,10 @@ a:active {
   box-shadow: 2px 0px 4px #cccccc;
 }
 
+.transition-all {
+  transition: all 1s ease-out;
+}
+
 .hover.text-primary::before {
   background-color: #006e5a;
 }
