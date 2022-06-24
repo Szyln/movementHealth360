@@ -5,6 +5,7 @@ import DocumentTitle from 'react-document-title';
 
 import PageContainerComponent from '../components/page-container-component';
 import MemberCardComponent from '../components/member-card-component';
+import Modal from '../components/modal-component';
 
 const logoPic = '/logo-LR-2color.svg';
 // const memberLarryPic = '/memberLarryPicture.svg';
@@ -92,9 +93,11 @@ function AboutUsPage({ memberList }) {
         </div>
         {/* member modal */}
         {currentMember && (
-        <div className="p-3 position-fixed top-50 left-50 translate-middle d-flex align-items-center z-1000 w-100p   w-lg-90p w-xl-80p h-md-down-100p">
+        <Modal>
           <MemberCardComponent member={currentMember} getMemberName={getMemberName} isOpen />
-        </div>
+        </Modal>
+        // <div className="d-flex align-items-center  w-100p w-lg-90p w-xl-80p h-md-down-100p">
+        // </div>
         )}
       </PageContainerComponent>
     </DocumentTitle>

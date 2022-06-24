@@ -15,41 +15,40 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
     enable, link, alert,
   } = service;
   return (
-    <div className={`border-primary border-around bg-white rounded ${isOpen ? 'h-100p  flex-column d-flex justify-content-between' : ''}  `}>
+    <div className={`border-primary border-around bg-white rounded ${isOpen ? 'maxh-100p flex-column d-flex justify-content-between ' : ''}  `}>
       {/* product title */}
       <div className=" bg-white p-4 p-md-7 border-bottom border-primary rounded-top">
         <h3 className="text-primary fs-h4 fs-md-h3 letter-space-normal-paragraph">{name}</h3>
       </div>
       {/* product info */}
       <div className={` 
-      ${isOpen ? 'overflow-y-auto h-80p rounded' : 'h-lg-150 overflow-y-auto'}
+      ${isOpen ? 'overflow-y-auto h-80p rounded' : 'overflow-y-auto'}
        p-4 p-lg-5`}
       >
         <div className="container-fluid">
           <div className="row">
+            {/* badge info */}
+            <ul className="d-flex mb-8 flex-wrap">
+              <li>
+                {alert && (<Badge theme="accent" isOutline textColor="accent">{ alert }</Badge>)}
+              </li>
+              <li>
+                {appointment && (<Badge theme="accent" isOutline textColor="accent">{appointment === 'required' ? '需事前預約' : '可按照開班時間前往駐點報名參加'}</Badge>)}
+              </li>
+              <li>
+                {allowRemote && (<Badge theme="secondary">可安排線上授課</Badge>)}
+              </li>
+              <li>
 
+                {allowClass ? <Badge theme="primary" textColor="white">可安排團體授課</Badge> : <Badge theme="secondary">一對一</Badge>}
+
+              </li>
+              <li>
+                {allowResident && <Badge theme="primary" textColor="white">可安排駐點</Badge>}
+              </li>
+            </ul>
             {/* main info */}
             <div className={`${isOpen ? ' col-lg-6' : ''}`}>
-              {/* badge info */}
-              <ul className="d-flex mb-2 flex-wrap">
-                <li>
-                  {alert && (<Badge theme="accent" isOutline textColor="accent">{ alert }</Badge>)}
-                </li>
-                <li>
-                  {appointment && (<Badge theme="accent" isOutline textColor="accent">{appointment === 'required' ? '需事前預約' : '可按照開班時間前往駐點報名參加'}</Badge>)}
-                </li>
-                <li>
-                  {allowRemote && (<Badge theme="secondary">可安排線上授課</Badge>)}
-                </li>
-                <li>
-
-                  {allowClass ? <Badge theme="primary" textColor="white">可安排團體授課</Badge> : <Badge theme="secondary">一對一</Badge>}
-
-                </li>
-                <li>
-                  {allowResident && <Badge theme="primary" textColor="white">可安排駐點</Badge>}
-                </li>
-              </ul>
               {/* product description */}
               {descriptions && (
               <div className="mb-8">

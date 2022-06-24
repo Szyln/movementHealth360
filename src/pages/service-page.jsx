@@ -10,6 +10,7 @@ import Alert from '../components/alert-component';
 import Btn from '../components/button-component';
 import ServiceCardComponent from '../components/service-card-component';
 import ServiceProductPage from './service-product-page';
+import Modal from '../components/modal-component';
 
 function ServicePage({
   servicesList,
@@ -69,11 +70,10 @@ function ServicePage({
         </PageContainerComponent>
         {/* product modal */}
         {currentService && (
-        <div className="backdrop">
-          <div className="position-fixed top-50 left-50 translate-middle z-3000 w-95p w-sm-80p w-md-80p w-lg-80p maxw-lg-breakpoint-xl maxh-95p h-95p  ">
+          <Modal>
             <ServiceCardComponent service={currentService} getServiceName={getServiceName} isOpen />
-          </div>
-        </div>
+          </Modal>
+
         )}
 
       </>
