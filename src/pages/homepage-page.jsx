@@ -1,4 +1,6 @@
+/* eslint-disable import/no-unresolved */
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
@@ -46,9 +48,9 @@ function Homepage({ servicesList, servicesCategories }) {
 
   // gsap animation
   const mainRef = useRef();
-  const q = gsap.utils.selector(mainRef);
   useEffect(() => {
-    console.log('trigger gsap homepage animation!');
+    const q = gsap.utils.selector(mainRef);
+    // console.log('trigger gsap homepage animation!');
     gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -284,5 +286,10 @@ function Homepage({ servicesList, servicesCategories }) {
     </DocumentTitle>
   );
 }
+
+Homepage.propTypes = {
+  servicesList: PropTypes.isRequired,
+  servicesCategories: PropTypes.isRequired,
+};
 
 export default Homepage;
