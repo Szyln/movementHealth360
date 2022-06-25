@@ -96,8 +96,6 @@ function AboutUsPage({ memberList }) {
         <Modal>
           <MemberCardComponent member={currentMember} getMemberName={getMemberName} isOpen />
         </Modal>
-        // <div className="d-flex align-items-center  w-100p w-lg-90p w-xl-80p h-md-down-100p">
-        // </div>
         )}
       </PageContainerComponent>
     </DocumentTitle>
