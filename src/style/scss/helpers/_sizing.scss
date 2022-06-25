@@ -151,16 +151,16 @@ $sizes: (
   .w-#{$key} {
     width: $value;
   }
-  .maxh-#{$key} {
+  .max-h-#{$key} {
     max-height: $value;
   }
-  .maxw-#{$key} {
+  .max-w-#{$key} {
     max-width: $value;
   }
-  .minh-#{$key} {
+  .min-h-#{$key} {
     min-height: $value;
   }
-  .minw-#{$key} {
+  .min-w-#{$key} {
     min-width: $value;
   }
 }
@@ -173,16 +173,16 @@ $sizes: (
     .w-sm-#{$key} {
       width: $value;
     }
-    .maxh-sm-#{$key} {
+    .max-h-sm-#{$key} {
       max-height: $value;
     }
-    .maxw-sm-#{$key} {
+    .max-w-sm-#{$key} {
       max-width: $value;
     }
-    .minh-sm-#{$key} {
+    .min-h-sm-#{$key} {
       min-height: $value;
     }
-    .minw-sm-#{$key} {
+    .min-w-sm-#{$key} {
       min-width: $value;
     }
   }
@@ -195,16 +195,16 @@ $sizes: (
     .w-md-#{$key} {
       width: $value;
     }
-    .maxh-md-#{$key} {
+    .max-h-md-#{$key} {
       max-height: $value;
     }
-    .maxw-md-#{$key} {
+    .max-w-md-#{$key} {
       max-width: $value;
     }
-    .minh-md-#{$key} {
+    .min-h-md-#{$key} {
       min-height: $value;
     }
-    .minw-md-#{$key} {
+    .min-w-md-#{$key} {
       min-width: $value;
     }
   }
@@ -217,16 +217,16 @@ $sizes: (
     .w-lg-#{$key} {
       width: $value;
     }
-    .maxh-lg-#{$key} {
+    .max-h-lg-#{$key} {
       max-height: $value;
     }
-    .maxw-lg-#{$key} {
+    .max-w-lg-#{$key} {
       max-width: $value;
     }
-    .minh-lg-#{$key} {
+    .min-h-lg-#{$key} {
       min-height: $value;
     }
-    .minw-lg-#{$key} {
+    .min-w-lg-#{$key} {
       min-width: $value;
     }
   }
@@ -239,16 +239,16 @@ $sizes: (
     .w-xl-#{$key} {
       width: $value;
     }
-    .maxh-xl-#{$key} {
+    .max-h-xl-#{$key} {
       max-height: $value;
     }
-    .maxw-xl-#{$key} {
+    .max-w-xl-#{$key} {
       max-width: $value;
     }
-    .minh-xl-#{$key} {
+    .min-h-xl-#{$key} {
       min-height: $value;
     }
-    .minw-xl-#{$key} {
+    .min-w-xl-#{$key} {
       min-width: $value;
     }
   }
