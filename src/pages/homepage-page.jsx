@@ -112,7 +112,7 @@ function Homepage({ servicesList, servicesCategories, feedbackList }) {
               <br />
               沒頭緒？
             </HomepageSectionTitleComponent>
-            <HomepageSectionImgComponent img={lostImg} />
+            <HomepageSectionImgComponent img={lostImg} imgAlt="a man in an intersection don't know where to go." />
           </HomepageSectionComponent>
         </ViewportHeightContainer>
         {/* how */}
@@ -126,7 +126,7 @@ function Homepage({ servicesList, servicesCategories, feedbackList }) {
               </HomepageSectionTitleComponent>
               <NavigateLinkButtonComponent linkTo="/about/movementHealth">了解運動科學</NavigateLinkButtonComponent>
             </div>
-            <HomepageSectionImgComponent img={coachImg} />
+            <HomepageSectionImgComponent img={coachImg} imgAlt="fitness training coach." />
           </HomepageSectionComponent>
         </ViewportHeightContainer>
         {/* who */}
@@ -217,7 +217,7 @@ function Homepage({ servicesList, servicesCategories, feedbackList }) {
               </Swiper>
             </div>
           </div>
-          <HomepageSectionComponent />
+
         </ViewportHeightContainer>
 
         {/* feedback: isHidden */}

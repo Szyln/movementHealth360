@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function HomepageSectionImgComponent({ img, imgAlt = '', otherClass = '' }) {
   return (
@@ -7,5 +8,15 @@ function HomepageSectionImgComponent({ img, imgAlt = '', otherClass = '' }) {
     </div>
   );
 }
+HomepageSectionImgComponent.propTypes = {
 
+  img: PropTypes.string.isRequired,
+  imgAlt: PropTypes.string.isRequired,
+  otherClass: PropTypes.string,
+
+};
+
+HomepageSectionImgComponent.defaultProps = {
+  otherClass: '',
+};
 export default HomepageSectionImgComponent;

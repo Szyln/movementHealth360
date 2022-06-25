@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function HomepageSectionComponent({ children }) {
   return (
@@ -7,5 +8,8 @@ function HomepageSectionComponent({ children }) {
     </div>
   );
 }
+HomepageSectionComponent.propTypes = {
+  children: PropTypes.node.isRequired,
 
+};
 export default HomepageSectionComponent;
