@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function CardInfoSection({ title, children }) {
   return (
@@ -10,5 +11,9 @@ function CardInfoSection({ title, children }) {
     </div>
   );
 }
+CardInfoSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 
+};
 export default CardInfoSection;

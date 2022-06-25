@@ -1,5 +1,4 @@
 // footer which show on bottom of every pages
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ContactInfoComponent from './contact-info-component';

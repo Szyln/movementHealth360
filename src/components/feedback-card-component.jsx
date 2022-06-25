@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AvatarComponent from './api/avatar-component';
 
 function FeedbackCardComponent({ feedback }) {
   const {
-    name, rate, comment, img,
+    name, rate, comment,
   } = feedback;
   return (
     <div className="border-primary-dark border-around rounded bg-white p-5 d-flex">
@@ -16,5 +17,14 @@ function FeedbackCardComponent({ feedback }) {
     </div>
   );
 }
+
+FeedbackCardComponent.propTypes = {
+  feedback: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    rate: PropTypes.string.isRequired,
+    comment: PropTypes.string.isRequired,
+  }).isRequired,
+
+};
 
 export default FeedbackCardComponent;

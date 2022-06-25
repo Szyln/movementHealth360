@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 import DocumentTitle from 'react-document-title';
 
@@ -8,9 +10,7 @@ import MemberCardComponent from '../components/member-card-component';
 import Modal from '../components/modal-component';
 
 const logoPic = '/logo-LR-2color.svg';
-// const memberLarryPic = '/memberLarryPicture.svg';
-// const memberTYPic = '/memberTYPicture.svg';
-// const memberZoePic = '/memberZoePicture.svg';
+
 function AboutUsPage({ memberList }) {
   const [currentMember, setCurrentMember] = useState('');
   const getMemberName = (e) => {
@@ -33,7 +33,7 @@ function AboutUsPage({ memberList }) {
               <img
                 src={logoPic}
                 alt="logo"
-                className="maxw-100p
+                className="max-w-100p
               "
               />
             </div>
@@ -101,5 +101,14 @@ function AboutUsPage({ memberList }) {
     </DocumentTitle>
   );
 }
+AboutUsPage.propTypes = {
+  memberList: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    engName: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    professionalTitles: PropTypes.arrayOf(PropTypes.string).isRequired,
+    experiences: PropTypes.arrayOf(PropTypes.string),
+  })).isRequired,
+};
 
 export default AboutUsPage;

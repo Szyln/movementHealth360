@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTextEnd = true }) {
   const navListItems = [
@@ -45,5 +46,18 @@ function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTe
     </ul>
   );
 }
+
+// textColor = 'primary', fontSizeClass = 'fs-h5', isTextEnd = true
+NavListComponent.propTypes = {
+  fontSizeClass: PropTypes.string,
+  isTextEnd: PropTypes.bool,
+  textColor: PropTypes.string,
+
+};
+NavListComponent.defaultProps = {
+  fontSizeClass: 'fs-h5',
+  textColor: 'primary',
+  isTextEnd: true,
+};
 
 export default NavListComponent;

@@ -1,10 +1,9 @@
 import React from 'react';
-import EnrollBtn from './enroll-button';
-import Btn from './button-component';
+import PropTypes from 'prop-types';
 
 function ServiceCardHomepageComponent({ service, category }) {
   const {
-    name, id, enable, link,
+    name,
   } = service;
 
   return (
@@ -22,5 +21,15 @@ function ServiceCardHomepageComponent({ service, category }) {
     </div>
   );
 }
+
+ServiceCardHomepageComponent.propTypes = {
+  service: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  category: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default ServiceCardHomepageComponent;

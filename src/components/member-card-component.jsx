@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import Btn from './button-component';
 
@@ -6,7 +7,7 @@ function MemberCardComponent({
   member, getMemberName, isOpen = false,
 }) {
   const {
-    name, engName, id, img, professionalTitles, experiences,
+    name, engName, img, professionalTitles, experiences,
   } = member;
 
   return (
@@ -24,7 +25,7 @@ function MemberCardComponent({
               </h3>
               {/* profession title */}
               <div>
-                <ul className={`mb-5 ${isOpen ? 'minh-40' : 'minh-50'}`}>
+                <ul className={`mb-5 ${isOpen ? 'min-h-40' : 'min-h-50'}`}>
                   { professionalTitles.map((professionalTitle) => (
                     <li key={uuidv4()}>{professionalTitle}</li>
                   )) }
@@ -48,5 +49,21 @@ function MemberCardComponent({
     </div>
   );
 }
+
+MemberCardComponent.propTypes = {
+  member: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    engName: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    professionalTitles: PropTypes.arrayOf(PropTypes.string).isRequired,
+    experiences: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+  getMemberName: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool,
+};
+
+MemberCardComponent.defaultProps = {
+  isOpen: false,
+};
 
 export default MemberCardComponent;

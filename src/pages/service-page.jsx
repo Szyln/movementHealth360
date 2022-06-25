@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import DocumentTitle from 'react-document-title';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import PageContainerComponent from '../components/page-container-component';
 import CategoryCardComponent from '../components/service/category-card-component';
@@ -17,7 +17,6 @@ function ServicePage({
   servicesCategories,
   filterCategoryProductList,
   currentService,
-  setCurrentService,
   getServiceName,
 }) {
   const [currentCategoryName, setCurrentCategoryName] = useState('');
@@ -80,5 +79,82 @@ function ServicePage({
     </DocumentTitle>
   );
 }
+
+ServicePage.propTypes = {
+  servicesList: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    alert: PropTypes.string,
+    descriptions: PropTypes.arrayOf(PropTypes.string),
+    features: PropTypes.arrayOf(PropTypes.string),
+    products: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      pricePerUnit: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+      ]),
+      unit: PropTypes.shape({
+        max: PropTypes.number,
+        min: PropTypes.number,
+      }),
+      member: PropTypes.shape({
+        max: PropTypes.number,
+        min: PropTypes.number,
+      }),
+    })),
+    appointment: PropTypes.oneOf(['required', 'optional']),
+    allowClass: PropTypes.bool,
+    allowResident: PropTypes.bool,
+    allowRemote: PropTypes.bool,
+    requirement: PropTypes.arrayOf(PropTypes.string),
+    enable: PropTypes.bool.isRequired,
+    link: PropTypes.string,
+  })).isRequired,
+
+  servicesCategories: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    descriptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+    provide: PropTypes.arrayOf(PropTypes.string),
+    features: PropTypes.arrayOf(PropTypes.string),
+    enable: PropTypes.bool.isRequired,
+    hide: PropTypes.bool.isRequired,
+  })).isRequired,
+  filterCategoryProductList: PropTypes.func.isRequired,
+  currentService: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      alert: PropTypes.string,
+      descriptions: PropTypes.arrayOf(PropTypes.string),
+      features: PropTypes.arrayOf(PropTypes.string),
+      products: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string,
+        pricePerUnit: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.number,
+        ]),
+        unit: PropTypes.shape({
+          max: PropTypes.number,
+          min: PropTypes.number,
+        }),
+        member: PropTypes.shape({
+          max: PropTypes.number,
+          min: PropTypes.number,
+        }),
+      })),
+      appointment: PropTypes.oneOf(['required', 'optional']),
+      allowClass: PropTypes.bool,
+      allowResident: PropTypes.bool,
+      allowRemote: PropTypes.bool,
+      requirement: PropTypes.arrayOf(PropTypes.string),
+      enable: PropTypes.bool.isRequired,
+      link: PropTypes.string,
+    }),
+  ]).isRequired,
+
+  getServiceName: PropTypes.func.isRequired,
+};
 
 export default ServicePage;

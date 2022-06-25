@@ -22,6 +22,7 @@ function App() {
   const [servicesList, setServicesList] = useState(null);
   const [servicesCategories, setServicesCategories] = useState(null);
   const [memberList, setMemberList] = useState(null);
+  const [feedbackList, setFeedbackList] = useState(null);
   const [currentService, setCurrentService] = useState('');
 
   useLayoutEffect(() => {
@@ -43,13 +44,19 @@ function App() {
     }).catch((err) => {
       console.log(err);
     });
+    axios.get(`${API_URL}feedbackList`).then((res) => {
+      setFeedbackList(res.data);
+      console.log('feedbackList: success');
+    }).catch((err) => {
+      console.log(err);
+    });
   }, []);
 
   useEffect(() => {
-    if (servicesList && servicesCategories && memberList) {
+    if (servicesList && servicesCategories && memberList && feedbackList) {
       setIsLoading(false);
     }
-  }, [servicesList, servicesCategories, memberList]);
+  }, [servicesList, servicesCategories, memberList, feedbackList]);
   // get product list which is in this(argument) category
   const filterCategoryProductList = (categoryName) => (
     servicesList.filter((service) => (service.category === categoryName))
@@ -90,8 +97,8 @@ function App() {
             <Routes>
 
               {/* Route 決定點連結之後會產生的內容 */}
-              <Route path="/" element={<Homepage servicesList={servicesList} servicesCategories={servicesCategories} />} />
-              <Route path="/service" element={<ServicePage servicesList={servicesList} servicesCategories={servicesCategories} filterCategoryProductList={filterCategoryProductList} currentService={currentService} setCurrentService={setCurrentService} getServiceName={getServiceName} />} />
+              <Route path="/" element={<Homepage servicesList={servicesList} servicesCategories={servicesCategories} feedbackList={feedbackList} />} />
+              <Route path="/service" element={<ServicePage servicesList={servicesList} servicesCategories={servicesCategories} filterCategoryProductList={filterCategoryProductList} currentService={currentService} getServiceName={getServiceName} />} />
               <Route path="/about/movementHealth" element={<AboutMovementHealthPage />} />
               <Route path="/about" element={<AboutUsPage memberList={memberList} />} />
               <Route path="/contact" element={<ContactPage />} />

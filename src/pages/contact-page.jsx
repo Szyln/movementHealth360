@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect } from 'react';
 import DocumentTitle from 'react-document-title';
 // Make sure to run npm install @formspree/react

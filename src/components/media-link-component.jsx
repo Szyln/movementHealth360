@@ -1,5 +1,6 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 function MediaLinkComponent({
   isFlexColumn = false, theme = 'gray-light', showId = false, isSmall = false,
@@ -38,4 +39,16 @@ function MediaLinkComponent({
   );
 }
 
+MediaLinkComponent.propTypes = {
+  theme: PropTypes.string,
+  showId: PropTypes.bool,
+  isSmall: PropTypes.bool,
+  isFlexColumn: PropTypes.bool,
+};
+MediaLinkComponent.defaultProps = {
+  theme: 'gray-light',
+  showId: false,
+  isSmall: false,
+  isFlexColumn: false,
+};
 export default MediaLinkComponent;

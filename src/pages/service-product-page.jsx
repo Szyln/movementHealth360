@@ -1,12 +1,13 @@
 import React from 'react';
-// import { Link, useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+
 import PageTitleComponent from '../components/page-title-component';
 import ServiceCardComponent from '../components/service-card-component';
 
 function ServiceProductPage({
-  servicesList, filterCategoryProductList, getServiceName, category,
+  filterCategoryProductList, getServiceName, category,
 }) {
   // get from /service/:category
   // const { category } = useParams();
@@ -38,5 +39,10 @@ function ServiceProductPage({
     </div>
   );
 }
+ServiceProductPage.propTypes = {
+  filterCategoryProductList: PropTypes.func.isRequired,
+  getServiceName: PropTypes.func.isRequired,
+  category: PropTypes.string.isRequired,
+};
 
 export default ServiceProductPage;

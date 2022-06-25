@@ -12,10 +12,10 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
   const {
     name, descriptions, features, products, appointment,
     allowRemote, allowClass, allowResident, requirement,
-    enable, link, alert,
+    alert,
   } = service;
   return (
-    <div className={`border-primary border-around bg-white rounded ${isOpen ? 'maxh-100p flex-column d-flex justify-content-between ' : ''}  `}>
+    <div className={`border-primary border-around bg-white rounded ${isOpen ? 'max-h-100p flex-column d-flex justify-content-between ' : ''}  `}>
       {/* product title */}
       <div className=" bg-white p-4 p-md-7 border-bottom border-primary rounded-top">
         <h3 className="text-primary fs-h4 fs-md-h3 letter-space-normal-paragraph">{name}</h3>
@@ -106,7 +106,7 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
                               </div>
                             </div>
                             {product.discount && (
-                            <Alert theme="accent" size="sm" isBold={false}>
+                            <Alert theme="accent" isSmall isBold={false}>
                               本項目購滿
                                 {' '}
                               {product.discount.unit}
@@ -179,8 +179,41 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
   );
 }
 ServiceCardComponent.propTypes = {
-  service: PropTypes.any,
-  getServiceName: PropTypes.func,
+  service: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    alert: PropTypes.string,
+    descriptions: PropTypes.arrayOf(PropTypes.string),
+    features: PropTypes.arrayOf(PropTypes.string),
+    products: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      pricePerUnit: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+      ]),
+      unit: PropTypes.shape({
+        max: PropTypes.number,
+        min: PropTypes.number,
+      }),
+      member: PropTypes.shape({
+        max: PropTypes.number,
+        min: PropTypes.number,
+      }),
+    })),
+    appointment: PropTypes.oneOf(['required', 'optional']),
+    allowClass: PropTypes.bool,
+    allowResident: PropTypes.bool,
+    allowRemote: PropTypes.bool,
+    requirement: PropTypes.arrayOf(PropTypes.string),
+    enable: PropTypes.bool.isRequired,
+    link: PropTypes.string,
+  }).isRequired,
+  getServiceName: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
 };
+
+ServiceCardComponent.defaultProps = {
+  isOpen: false,
+};
+
 export default ServiceCardComponent;

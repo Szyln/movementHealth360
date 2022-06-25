@@ -24,28 +24,7 @@ const elderImg = '/Active-elderly-people-bro.svg';
 const basketballImg = '/Basketball-bro.svg';
 const studentsImg = '/Students-bro.svg';
 
-function Homepage({ servicesList, servicesCategories }) {
-  const feedbackList = [
-    {
-      name: '膝蓋痛鄰居',
-      id: uuidv4(),
-      rate: '★★★★★',
-      comment: '下次慢跑可以多跑一圈！',
-    },
-    {
-      name: '蓋不到火鍋同學',
-      id: uuidv4(),
-      rate: '★★★★★',
-      comment: '終於搶下一分！',
-    },
-    {
-      name: '久站腳麻親戚',
-      id: uuidv4(),
-      rate: '★★★★★',
-      comment: '專業！比以前更注重健康了！',
-    },
-  ];
-
+function Homepage({ servicesList, servicesCategories, feedbackList }) {
   // gsap animation
   const mainRef = useRef();
   useEffect(() => {
@@ -179,7 +158,7 @@ function Homepage({ servicesList, servicesCategories }) {
           </HomepageSectionComponent>
         </ViewportHeightContainer>
         {/* what */}
-        <ViewportHeightContainer fullHeight={false}>
+        <ViewportHeightContainer isFullHeight={false}>
           <div className="row flex-column flex-md-row flex-md-nowrap align-items-center">
             <div className="col-md-5 d-flex flex-column align-items-center align-items-md-start">
               <div className="">
@@ -229,7 +208,10 @@ function Homepage({ servicesList, servicesCategories }) {
               >
                 {servicesList.map((service) => (
                   <SwiperSlide key={uuidv4()}>
-                    <ServiceCardHomepageComponent service={service} category={getCategoryOfProduct(service.category)} />
+                    <ServiceCardHomepageComponent
+                      service={service}
+                      category={getCategoryOfProduct(service.category)}
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -239,7 +221,7 @@ function Homepage({ servicesList, servicesCategories }) {
         </ViewportHeightContainer>
 
         {/* feedback: isHidden */}
-        <ViewportHeightContainer bgColor="secondary" container={false} fullHeight={false} isHidden>
+        <ViewportHeightContainer bgColor="secondary" isContainer={false} isFullHeight={false} isHidden>
           <Swiper
             className="z-0 p-2"
             slidesPerView={1.25}
@@ -288,8 +270,51 @@ function Homepage({ servicesList, servicesCategories }) {
 }
 
 Homepage.propTypes = {
-  servicesList: PropTypes.isRequired,
-  servicesCategories: PropTypes.isRequired,
+  servicesList: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    alert: PropTypes.string,
+    descriptions: PropTypes.arrayOf(PropTypes.string),
+    features: PropTypes.arrayOf(PropTypes.string),
+    products: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      pricePerUnit: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+      ]),
+      unit: PropTypes.shape({
+        max: PropTypes.number,
+        min: PropTypes.number,
+      }),
+      member: PropTypes.shape({
+        max: PropTypes.number,
+        min: PropTypes.number,
+      }),
+    })),
+    appointment: PropTypes.oneOf(['required', 'optional']),
+    allowClass: PropTypes.bool,
+    allowResident: PropTypes.bool,
+    allowRemote: PropTypes.bool,
+    requirement: PropTypes.arrayOf(PropTypes.string),
+    enable: PropTypes.bool.isRequired,
+    link: PropTypes.string,
+  })).isRequired,
+
+  servicesCategories: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    descriptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+    provide: PropTypes.arrayOf(PropTypes.string),
+    features: PropTypes.arrayOf(PropTypes.string),
+    enable: PropTypes.bool.isRequired,
+    hide: PropTypes.bool.isRequired,
+  })).isRequired,
+  feedbackList: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    rate: PropTypes.string.isRequired,
+    comment: PropTypes.string.isRequired,
+
+  })).isRequired,
 };
 
 export default Homepage;

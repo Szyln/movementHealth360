@@ -110,26 +110,6 @@ function AboutMovementHealthPage() {
             </div>
           </div>
         </div>
-        {/* <div className="row d-none">
-          <div className="col-lg-8 offset-lg-2">
-            <h2 className="fs-h5 fw-bold mb-2 letter-space-normal-paragraph text-gray-dark">參考資料</h2>
-            <ol className="fw-normal text-gray-dark">
-              <li className="letter-space-sm-paragraph mb-4 fs-small">
-                McNeill W, Blandford L. Movement health. J Bodyw Mov Ther.
-                <br />
-                2015;19(1):150-9
-              </li>
-              <li className=" letter-space-sm-paragraph fs-small">
-                Dingenen B, Blandford L, Comerford M, Staes F, Mottram S. The assessment of movement health in clinical practice: A multidimensional perspective. Phys Ther Sport.
-                <br />
-                2018;32:282-92.
-
-              </li>
-            </ol>
-          </div>
-
-        </div> */}
-
       </PageContainerComponent>
     </DocumentTitle>
   );

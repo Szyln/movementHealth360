@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function NavigateLinkButtonComponent({
   linkTo, children, isWhite = false, isAlignEnd = false,
@@ -22,5 +23,16 @@ function NavigateLinkButtonComponent({
     </div>
   );
 }
+NavigateLinkButtonComponent.propTypes = {
+  children: PropTypes.node.isRequired,
+  linkTo: PropTypes.string.isRequired,
+  isWhite: PropTypes.bool,
+  isAlignEnd: PropTypes.bool,
+
+};
+NavigateLinkButtonComponent.defaultProps = {
+  isWhite: false,
+  isAlignEnd: false,
+};
 
 export default NavigateLinkButtonComponent;

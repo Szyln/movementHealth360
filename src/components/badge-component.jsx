@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Badge({
   children, theme = 'primary', fontSize = 'h4', isOutline = false, textColor = 'primary-dark',
@@ -15,5 +16,19 @@ function Badge({
     </div>
   );
 }
+Badge.propTypes = {
+  children: PropTypes.node.isRequired,
+  theme: PropTypes.string,
+  fontSize: PropTypes.string,
+  isOutline: PropTypes.bool,
+  textColor: PropTypes.string,
+
+};
+Badge.defaultProps = {
+  theme: 'primary',
+  fontSize: 'h4',
+  textColor: 'primary-dark',
+  isOutline: false,
+};
 
 export default Badge;

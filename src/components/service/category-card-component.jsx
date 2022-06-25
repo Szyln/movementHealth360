@@ -2,6 +2,7 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 // import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import PropTypes from 'prop-types';
 import Btn from '../button-component';
 import CardInfoSection from './card-info-section';
 
@@ -9,8 +10,11 @@ function CategoryCardComponent({
   category, filterCategoryProductList, getCategoryName,
 }) {
   const {
-    name, img, descriptions, provide, features, product, enable, hide,
+    name, img, descriptions, provide, features, enable, hide,
   } = category;
+  if (hide === true) {
+    return null;
+  }
   return (
     <section className="row mb-4 gx-0" key={uuidv4()}>
       <div className="col-md-5 col-lg-4">
@@ -71,5 +75,17 @@ function CategoryCardComponent({
     </section>
   );
 }
-
+CategoryCardComponent.propTypes = {
+  category: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    descriptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+    provide: PropTypes.arrayOf(PropTypes.string),
+    features: PropTypes.arrayOf(PropTypes.string),
+    enable: PropTypes.bool.isRequired,
+    hide: PropTypes.bool.isRequired,
+  }).isRequired,
+  filterCategoryProductList: PropTypes.func.isRequired,
+  getCategoryName: PropTypes.func.isRequired,
+};
 export default CategoryCardComponent;

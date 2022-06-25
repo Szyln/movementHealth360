@@ -1,53 +1,72 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Btn({
-  theme = 'primary', children, data, getData, isOutline = false, isDisabled = false, link = '', isLinkExternal = false, isHash = false, otherClassName = '', target = '_blank'
+  theme = 'primary', children, data, getData, isOutline = false, isDisabled = false, link = '', isLinkExternal = false, otherClassName = '', target = '_blank',
 }) {
-  if (isDisabled === true) {
-    theme = 'gray-light';
-  }
-
-  return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
-      { isLinkExternal ? (
-        <a
-          href={link}
-          target={target}
-          className={`
-            btn${isOutline ? '-outline' : ''}${theme && `-${theme}`}
+  if (isLinkExternal) {
+    return (
+      <a
+        href={link}
+        target={target}
+        className={`
+            btn${isOutline && !isDisabled ? '-outline' : ''}${theme && !isDisabled ? `-${theme}` : ''}
+            ${isDisabled ? 'btn-gray-light' : ''}
             fs-h5 p-3 fw-normal w-100p
             hover-expand-round hover-animation-center hover
             text-center
 
             ${isDisabled ? 'pointer-events-none' : ''}
             ${otherClassName}`}
-          data-id={data}
-          onClick={getData}
-          disabled={isDisabled}
-        >
-          {children}
-        </a>
-
-      ) : (
-        <button
-          type="button"
-          className={`
+        data-id={data}
+        onClick={getData}
+        disabled={isDisabled}
+      >
+        {children}
+      </a>
+    );
+  }
+  return (
+    <button
+      type="button"
+      className={`
             btn${isOutline ? '-outline' : ''}${theme && `-${theme}`}
             fs-h5 p-3 fw-normal w-100p
             hover-expand-round hover-animation-center hover
             ${isDisabled ? 'pointer-events-none' : ''}
             ${otherClassName}`}
-          data-id={data}
-          onClick={getData}
-          disabled={isDisabled}
-        >
-          {children}
-        </button>
-      )}
-    </>
+      data-id={data}
+      onClick={getData}
+      disabled={isDisabled}
+    >
+      {children}
+    </button>
   );
 }
 
+Btn.propTypes = {
+  children: PropTypes.node.isRequired,
+  theme: PropTypes.string,
+  isOutline: PropTypes.bool,
+  isLinkExternal: PropTypes.bool,
+  otherClassName: PropTypes.string,
+  link: PropTypes.string,
+  target: PropTypes.string,
+  isDisabled: PropTypes.bool,
+  data: PropTypes.string,
+  getData: PropTypes.func,
+
+};
+Btn.defaultProps = {
+  theme: 'primary',
+  otherClassName: '',
+  link: '',
+  target: '_blank',
+  isOutline: false,
+  isLinkExternal: false,
+  isDisabled: false,
+  data: undefined,
+  getData: undefined,
+
+};
 export default Btn;

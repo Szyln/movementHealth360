@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ContactInfoItemComponent({
   hrefType, children, bsIconName, fontSizeClasses = 'fs-lg-h4 fs-small',
@@ -14,5 +15,16 @@ function ContactInfoItemComponent({
     </li>
   );
 }
+
+ContactInfoItemComponent.propTypes = {
+  hrefType: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  bsIconName: PropTypes.string.isRequired,
+  fontSizeClasses: PropTypes.string,
+
+};
+ContactInfoItemComponent.defaultProps = {
+  fontSizeClasses: 'fs-lg-h4 fs-small',
+};
 
 export default ContactInfoItemComponent;
