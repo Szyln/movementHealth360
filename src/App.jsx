@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-// import { v4 as uuidv4 } from 'uuid';
 import DocumentTitle from 'react-document-title';
 import axios from 'axios';
 import { DotWave } from '@uiball/loaders';
+
 import NavComponent from './components/nav-component';
 
 import FooterComponent from './components/footer-component';
@@ -15,7 +15,7 @@ import AboutMovementHealthPage from './pages/about-movement-health-page';
 import ForbiddenPage from './pages/forbidden-page';
 
 const logoImg = '/icon-2color.svg';
-const API_URL = 'https://movementhealth360-server.herokuapp.com/';
+const DB_API = import.meta.env.VITE_DB_API;
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,25 +26,25 @@ function App() {
   const [currentService, setCurrentService] = useState('');
 
   useLayoutEffect(() => {
-    axios.get(`${API_URL}servicesCategories`).then((res) => {
+    axios.get(`${DB_API}servicesCategories`).then((res) => {
       setServicesCategories(res.data);
       console.log('categories: success');
     }).catch((err) => {
       console.log(err);
     });
-    axios.get(`${API_URL}servicesList`).then((res) => {
+    axios.get(`${DB_API}servicesList`).then((res) => {
       setServicesList(res.data);
       console.log('Get categories: success');
     }).catch((err) => {
       console.log(err);
     });
-    axios.get(`${API_URL}memberList`).then((res) => {
+    axios.get(`${DB_API}memberList`).then((res) => {
       setMemberList(res.data);
       console.log('Get members: success');
     }).catch((err) => {
       console.log(err);
     });
-    axios.get(`${API_URL}feedbackList`).then((res) => {
+    axios.get(`${DB_API}feedbackList`).then((res) => {
       setFeedbackList(res.data);
       console.log('feedbackList: success');
     }).catch((err) => {

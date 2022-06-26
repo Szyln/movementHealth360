@@ -8,8 +8,9 @@ import { useForm, ValidationError } from '@formspree/react';
 import PageContainerComponent from '../components/page-container-component';
 import Alert from '../components/alert-component';
 
+const FORM_API = import.meta.env.VITE_FORM_API;
 function ContactPage() {
-  const [state, handleSubmit] = useForm('mqkngrkj');
+  const [state, handleSubmit] = useForm(FORM_API);
   return (
 
     <DocumentTitle title="聯絡我們 - 動作健康 360">
