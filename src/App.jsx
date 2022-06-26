@@ -15,9 +15,9 @@ import AboutMovementHealthPage from './pages/about-movement-health-page';
 import ForbiddenPage from './pages/forbidden-page';
 
 const logoImg = '/icon-2color.svg';
-const DB_API = import.meta.env.VITE_DB_API;
 
 function App() {
+  const DB_API = import.meta.env.VITE_DB_API;
   const [isLoading, setIsLoading] = useState(true);
   const [servicesList, setServicesList] = useState(null);
   const [servicesCategories, setServicesCategories] = useState(null);
@@ -26,30 +26,30 @@ function App() {
   const [currentService, setCurrentService] = useState('');
 
   useLayoutEffect(() => {
-    // axios.get(`${DB_API}servicesCategories`).then((res) => {
-    //   setServicesCategories(res.data);
-    //   console.log('categories: success');
-    // }).catch((err) => {
-    //   console.log(err);
-    // });
-    // axios.get(`${DB_API}servicesList`).then((res) => {
-    //   setServicesList(res.data);
-    //   console.log('Get categories: success');
-    // }).catch((err) => {
-    //   console.log(err);
-    // });
-    // axios.get(`${DB_API}memberList`).then((res) => {
-    //   setMemberList(res.data);
-    //   console.log('Get members: success');
-    // }).catch((err) => {
-    //   console.log(err);
-    // });
-    // axios.get(`${DB_API}feedbackList`).then((res) => {
-    //   setFeedbackList(res.data);
-    //   console.log('feedbackList: success');
-    // }).catch((err) => {
-    //   console.log(err);
-    // });
+    axios.get(`${DB_API}servicesCategories`).then((res) => {
+      setServicesCategories(res.data);
+      console.log('categories: success');
+    }).catch((err) => {
+      console.log(err);
+    });
+    axios.get(`${DB_API}servicesList`).then((res) => {
+      setServicesList(res.data);
+      console.log('Get categories: success');
+    }).catch((err) => {
+      console.log(err);
+    });
+    axios.get(`${DB_API}memberList`).then((res) => {
+      setMemberList(res.data);
+      console.log('Get members: success');
+    }).catch((err) => {
+      console.log(err);
+    });
+    axios.get(`${DB_API}feedbackList`).then((res) => {
+      setFeedbackList(res.data);
+      console.log('feedbackList: success');
+    }).catch((err) => {
+      console.log(err);
+    });
   }, []);
 
   useEffect(() => {
