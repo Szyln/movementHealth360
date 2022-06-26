@@ -17,8 +17,8 @@ import ForbiddenPage from './pages/forbidden-page';
 const logoImg = '/icon-2color.svg';
 
 function App() {
-  const DB_API = 'https://movementhealth360-server.herokuapp.com/';
-  // const DB_API = import.meta.env.VITE_DB_API;
+  const dbApi = 'https://movementhealth360-server.herokuapp.com/';
+  // const dbApi = import.meta.env.VITE_DB_API;
   const [isLoading, setIsLoading] = useState(true);
   const [servicesList, setServicesList] = useState(null);
   const [servicesCategories, setServicesCategories] = useState(null);
@@ -27,25 +27,25 @@ function App() {
   const [currentService, setCurrentService] = useState('');
 
   useLayoutEffect(() => {
-    axios.get(`${DB_API}servicesCategories`).then((res) => {
+    axios.get(`${dbApi}servicesCategories`).then((res) => {
       setServicesCategories(res.data);
       console.log('categories: success');
     }).catch((err) => {
       console.log(err);
     });
-    axios.get(`${DB_API}servicesList`).then((res) => {
+    axios.get(`${dbApi}servicesList`).then((res) => {
       setServicesList(res.data);
       console.log('Get categories: success');
     }).catch((err) => {
       console.log(err);
     });
-    axios.get(`${DB_API}memberList`).then((res) => {
+    axios.get(`${dbApi}memberList`).then((res) => {
       setMemberList(res.data);
       console.log('Get members: success');
     }).catch((err) => {
       console.log(err);
     });
-    axios.get(`${DB_API}feedbackList`).then((res) => {
+    axios.get(`${dbApi}feedbackList`).then((res) => {
       setFeedbackList(res.data);
       console.log('feedbackList: success');
     }).catch((err) => {
