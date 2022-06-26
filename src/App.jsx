@@ -15,7 +15,7 @@ import AboutMovementHealthPage from './pages/about-movement-health-page';
 import ForbiddenPage from './pages/forbidden-page';
 
 const logoImg = '/icon-2color.svg';
-const dbApi = import.meta.env.VITE_DB_API;
+const dbApi = 'https://movementhealth360-server.herokuapp.com/';
 
 console.log(dbApi);
 
