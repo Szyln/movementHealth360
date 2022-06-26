@@ -17,7 +17,6 @@ import ForbiddenPage from './pages/forbidden-page';
 const logoImg = '/icon-2color.svg';
 
 function App() {
-  // const DB_API = 'https://movementhealth360-server.herokuapp.com/';
   const DB_API = import.meta.env.VITE_DB_API;
   const [isLoading, setIsLoading] = useState(true);
   const [servicesList, setServicesList] = useState(null);
