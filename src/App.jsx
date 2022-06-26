@@ -24,7 +24,8 @@ function App() {
   const [memberList, setMemberList] = useState(null);
   const [feedbackList, setFeedbackList] = useState(null);
   const [currentService, setCurrentService] = useState('');
-
+  console.log('build????');
+  
   useLayoutEffect(() => {
     axios.get(`${DB_API}servicesCategories`).then((res) => {
       setServicesCategories(res.data);
