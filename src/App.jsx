@@ -24,33 +24,32 @@ function App() {
   const [memberList, setMemberList] = useState(null);
   const [feedbackList, setFeedbackList] = useState(null);
   const [currentService, setCurrentService] = useState('');
-  console.log('build????');
-  
+
   useLayoutEffect(() => {
-    axios.get(`${DB_API}servicesCategories`).then((res) => {
-      setServicesCategories(res.data);
-      console.log('categories: success');
-    }).catch((err) => {
-      console.log(err);
-    });
-    axios.get(`${DB_API}servicesList`).then((res) => {
-      setServicesList(res.data);
-      console.log('Get categories: success');
-    }).catch((err) => {
-      console.log(err);
-    });
-    axios.get(`${DB_API}memberList`).then((res) => {
-      setMemberList(res.data);
-      console.log('Get members: success');
-    }).catch((err) => {
-      console.log(err);
-    });
-    axios.get(`${DB_API}feedbackList`).then((res) => {
-      setFeedbackList(res.data);
-      console.log('feedbackList: success');
-    }).catch((err) => {
-      console.log(err);
-    });
+    // axios.get(`${DB_API}servicesCategories`).then((res) => {
+    //   setServicesCategories(res.data);
+    //   console.log('categories: success');
+    // }).catch((err) => {
+    //   console.log(err);
+    // });
+    // axios.get(`${DB_API}servicesList`).then((res) => {
+    //   setServicesList(res.data);
+    //   console.log('Get categories: success');
+    // }).catch((err) => {
+    //   console.log(err);
+    // });
+    // axios.get(`${DB_API}memberList`).then((res) => {
+    //   setMemberList(res.data);
+    //   console.log('Get members: success');
+    // }).catch((err) => {
+    //   console.log(err);
+    // });
+    // axios.get(`${DB_API}feedbackList`).then((res) => {
+    //   setFeedbackList(res.data);
+    //   console.log('feedbackList: success');
+    // }).catch((err) => {
+    //   console.log(err);
+    // });
   }, []);
 
   useEffect(() => {
