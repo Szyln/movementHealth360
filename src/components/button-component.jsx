@@ -30,7 +30,8 @@ function Btn({
     <button
       type="button"
       className={`
-            btn${isOutline ? '-outline' : ''}${theme && `-${theme}`}
+            btn${isOutline && !isDisabled ? '-outline' : ''}${theme && !isDisabled ? `-${theme}` : ''}
+            ${isDisabled ? 'btn-gray-light' : ''}
             fs-h5 p-3 fw-normal w-100p
             hover-expand-round hover-animation-center hover
             ${isDisabled ? 'pointer-events-none' : ''}
