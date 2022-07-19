@@ -24,21 +24,46 @@ function ServicePage({
   useEffect(() => {
     window.localStorage.setItem('category', currentCategoryName);
   }, [currentCategoryName]);
+
   const getCategoryName = (e) => {
     setCurrentCategoryName(e.target.dataset.id);
   };
-  // for product card modal
-  // const navigate = useNavigate();
+
+  // const getCurrentCategory = (e) => {
+  //   if (currentCategory.name !== e.target.dataset.id) {
+  //     setCurrentCategory(servicesCategories.find((category) => (
+  //       category.name === e.target.dataset.id
+  //     )));
+  //   } else if (currentCategory.name === e.target.dataset.id) {
+  //     setCurrentCategory('');
+  //   }
+  // };
+
+  // TODO ServiceProductPage 的 category 只有 name，希望可以抓到 enable
+  // 從 CategoryCardComponent 抓 currentCategory 到 ServiceProductPage
   return (
-    <DocumentTitle title="服務項目 - 動作健康 360">
+    <DocumentTitle title="服務 - 動作健康 360">
       <>
-        <PageContainerComponent title="服務項目">
+        <PageContainerComponent title="服務">
           <Alert theme="primary" isBold={false}>
             <div className="d-lg-flex align-items-lg-center ">
-              <p className="mb-4 mb-lg-0 me-lg-2"> 想更了解我們的服務項目？歡迎聯絡我們！</p>
-              <Link to="/contact">
-                <Btn theme="primary" isOutline>聯絡我們</Btn>
-              </Link>
+              <p className="mb-4 mb-lg-0 me-lg-2"> 想更了解我們的服務？歡迎聯絡我們！</p>
+              <ul className="d-lg-flex flex-basis-1">
+                <li className="mb-3 mb-lg-0 me-lg-2">
+                  <Link to="/contact">
+                    <Btn theme="primary" isOutline>聯絡我們</Btn>
+                  </Link>
+
+                </li>
+                <li>
+                  <Btn link="https://lin.ee/5pVAw4z" isLinkExternal isOutline>
+                    <i className="bi bi-line me-2" />
+                    加入官方 LINE
+                  </Btn>
+
+                </li>
+
+              </ul>
             </div>
           </Alert>
           {/* list of categories */}
