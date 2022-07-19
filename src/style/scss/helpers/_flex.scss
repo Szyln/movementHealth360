@@ -64,6 +64,10 @@
   // flex-grow: ;
   // flex-shrink: ;
 }
+.flex-basis-1 {
+  flex-basis: 1;
+  flex-shrink: 0;
+}
 
 @media (min-width: $grid-breakpoints-sm) {
   .flex-sm-column {
