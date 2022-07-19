@@ -5,7 +5,9 @@ function ServiceCardHomepageComponent({ service, category }) {
   const {
     name,
   } = service;
-
+  if (service) {
+    return <div />;
+  }
   return (
     <div className="border-primary border-around rounded">
       <div className="round-top bg-primary h-45 h-md-60 p-5 d-flex flex-column justify-content-end align-items-start">
