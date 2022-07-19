@@ -15,6 +15,7 @@ function CategoryCardComponent({
   if (hide === true) {
     return null;
   }
+
   return (
     <section className="row mb-4 gx-0" key={uuidv4()}>
       <div className="col-md-5 col-lg-4">
@@ -59,7 +60,7 @@ function CategoryCardComponent({
               </CardInfoSection>
             )}
             {/* product list */}
-            <CardInfoSection title="可購買項目">
+            <CardInfoSection title="選購項目">
               { filterCategoryProductList(name).map((product) => (
                 <li className="list-style-disc mb-1" key={uuidv4()}>{ product.name}</li>
               )) }
