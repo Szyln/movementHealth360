@@ -40,7 +40,7 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
               </li>
               <li>
 
-                {allowClass ? <Badge theme="primary" textColor="white">可安排團體授課</Badge> : <Badge theme="secondary">一對一</Badge>}
+                {allowClass ? <Badge theme="primary" textColor="white">可安排團體授課</Badge> : <Badge theme="secondary">1 對 1</Badge>}
 
               </li>
               <li>
@@ -76,15 +76,16 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
                     {products ? (
                       <ul className="mb-n2">
                         {products.map((product) => (
-                          <li key={uuidv4()} className={`fw-normal border-primary border-around p-4 rounded  text-primary mb-2 bg-white ${product.class && 'd-none'}`}>
+                          // class 必須重新設計樣式
+                          <li key={uuidv4()} className={`fw-normal border-primary border-around p-4 rounded  text-primary mb-2  ${product.class ? 'bg-info' : 'bg-white'}`}>
                             <h4 className="text-center mb-2 border-bottom pb-2 letter-space-md fs-h4 mb-4">{product.name}</h4>
 
                             <div className="d-flex justify-content-between mb-4">
                               <ul>
                                 <li>
                                   人數：
-                                  {product.member.max === 1 && product.member.min === 1 && '一對一'}
-                                  {product.member.max === 2 && '一對二'}
+                                  {product.member.max === 1 && product.member.min === 1 && '1 對 1'}
+                                  {product.member.max === 2 && '1 對 2'}
                                   {product.class && '團體授課'}
                                 </li>
 
@@ -142,14 +143,21 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
             {allowResident && isOpen && (
               <div className="col-12">
                 <div className="border-around border-primary rounded p-5 mt-4 bg-info">
-                  <h3 className="text-primary letter-space-normal-paragraph mb-4" id="b2bOrderInfo">想要為您的成員安排課程嗎？</h3>
-                  <p className="text-primary-dark mb-4 fw-normal fs-md-h4">為企業、團體客戶，我們也有提供團體包班的訂製服務，歡迎與我們聯繫！</p>
+                  <h3 className="text-primary letter-space-normal-paragraph mb-4" id="b2bOrderInfo">想要為您的企業員工、客戶安排課程嗎？</h3>
+                  <p className="text-primary-dark mb-4 fw-normal fs-md-h4">
+                    為公司、行號客戶，我們也有提供駐點合作、團體課程訂製服務，歡迎與我們聯繫！
+                  </p>
                   {requirement && (
-                    <div className="d-none d-md-block">
+                    <div className="d-none">
                       <CardInfoSection title="器材需求">
                         <ul className="d-flex flex-wrap">
                           {requirement.map((equipment) => (
-                            <li key={uuidv4()} className="list-style-disc w-30p w-md-50p w-lg-40p">{equipment}</li>
+                            <li
+                              key={uuidv4()}
+                              className="list-style-disc w-30p w-md-50p w-lg-40p"
+                            >
+                              {equipment}
+                            </li>
                           ))}
                         </ul>
                       </CardInfoSection>
