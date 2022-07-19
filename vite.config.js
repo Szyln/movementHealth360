@@ -6,4 +6,7 @@ export default defineConfig({
   plugins: [
     react()],
   publicDir: 'public',
+  // build: {
+  //   sourcemap: true,
+  // },
 });
