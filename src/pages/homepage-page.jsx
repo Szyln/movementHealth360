@@ -78,8 +78,9 @@ function Homepage({ servicesList, servicesCategories, feedbackList }) {
     };
   }, []);
 
-  const getCategoryOfProduct = (CategoryOfProduct) => (
-    servicesCategories.find((category) => (category.name === CategoryOfProduct))
+  const getCategoryOfProduct = (categoryOfProduct) => (
+    servicesCategories.find((category) => (category.name === categoryOfProduct))
+
   );
 
   return (
@@ -96,7 +97,7 @@ function Homepage({ servicesList, servicesCategories, feedbackList }) {
               </h1>
               <NavigateLinkButtonComponent linkTo="/service">立即體驗</NavigateLinkButtonComponent>
             </div>
-            <div className="align-self-end d2222">
+            <div className="align-self-end flex-basis-30">
               <NavListComponent textColor="primary-dark" fontSizeClass="fs-h4 fs-md-h4" />
             </div>
 
