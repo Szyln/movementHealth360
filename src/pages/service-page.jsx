@@ -46,9 +46,9 @@ function ServicePage({
       <>
         <PageContainerComponent title="服務">
           <Alert theme="primary" isBold={false}>
-            <div className="d-lg-flex align-items-lg-center ">
-              <p className="mb-4 mb-lg-0 me-lg-2"> 想更了解我們的服務？歡迎聯絡我們！</p>
-              <ul className="d-lg-flex flex-basis-1">
+            <div className="d-lg-flex align-items-lg-center">
+              <p className="mb-4 mb-lg-0 me-lg-2 ">想更了解我們的服務？歡迎聯絡我們！</p>
+              <ul className="d-lg-flex flex-no-shrink">
                 <li className="mb-3 mb-lg-0 me-lg-2">
                   <Link to="/contact">
                     <Btn theme="primary" isOutline>聯絡我們</Btn>
