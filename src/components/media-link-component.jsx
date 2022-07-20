@@ -21,6 +21,11 @@ function MediaLinkComponent({
       id: '@movementhealth360',
       address: 'https://www.facebook.com/movementhealth360',
     },
+    {
+      name: 'line',
+      id: '',
+      address: 'https://lin.ee/5pVAw4z',
+    },
   ];
   return (
     <ul className={`d-flex ${isFlexColumn ? 'flex-column' : ''}  m${isFlexColumn ? 'e' : 's'}-n3`}>

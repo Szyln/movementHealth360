@@ -7,20 +7,20 @@ import PropTypes from 'prop-types';
 function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTextEnd = true }) {
   const navListItems = [
     {
-      name: '來體驗',
-      route: '/service',
+      name: '服務',
+      route: 'service',
     },
     {
-      name: '學動作',
-      route: '/about/movementHealth',
+      name: '了解動作健康',
+      route: 'about/movementHealth',
     },
     {
-      name: '我們！',
-      route: '/about',
+      name: '理念與團隊',
+      route: 'about',
     },
     {
       name: '聯絡我們',
-      route: '/contact',
+      route: 'contact',
     },
   ];
   // const el = useRef();
@@ -39,7 +39,7 @@ function NavListComponent({ textColor = 'primary', fontSizeClass = 'fs-h5', isTe
       {
         navListItems.map((navListItem) => (
           <li key={uuidv4()} className="py-2">
-            <Link to={navListItem.route} className={`${fontSizeClass} text-decoration-none text-${textColor} letter-space-lg hover-expand-round hover-animation-start hover hover-nav-link`}>{navListItem.name}</Link>
+            <Link to={`/${navListItem.route}`} className={`${fontSizeClass} text-decoration-none text-${textColor} letter-space-lg hover-expand-round hover-animation-start hover hover-nav-link hover-${navListItem.route}`}>{navListItem.name}</Link>
           </li>
         ))
       }
