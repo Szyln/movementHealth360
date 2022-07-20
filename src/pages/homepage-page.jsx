@@ -97,7 +97,7 @@ function Homepage({ servicesList, servicesCategories, feedbackList }) {
               </h1>
               <NavigateLinkButtonComponent linkTo="/service">立即體驗</NavigateLinkButtonComponent>
             </div>
-            <div className="align-self-end flex-basis-30">
+            <div className="align-self-end flex-no-shrink">
               <NavListComponent textColor="primary-dark" fontSizeClass="fs-h4 fs-md-h4" />
             </div>
 
