@@ -12,7 +12,7 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
   const {
     name, descriptions, features, products, appointment,
     allowRemote, allowClass, allowResident, requirement,
-    alert,
+    alert, intros, isIntrosCollapseHide,
   } = service;
   return (
     <div className={`border-primary border-around bg-white rounded ${isOpen ? 'max-h-100p flex-column d-flex justify-content-between ' : ''}  `}>
@@ -47,10 +47,25 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
                 {allowResident && <Badge theme="primary" textColor="white">可安排駐點</Badge>}
               </li>
             </ul>
+            {/* !isOpen: 如果有 intros, 就不要顯示 descriptions */}
+            {/* isOpen: isIntrosCollapseHide, 就不要顯示 intros */}
+            {intros && (
+              <div className={`mb-10 ${isOpen && isIntrosCollapseHide ? 'd-none' : ''}`}>
+                {intros.map((intro) => (
+                  <p className={` fw-normal fs-lg-h4 ${isOpen ? 'text-primary' : 'text-primary-dark'}`}>{intro}</p>
+                ))}
+              </div>
+            )}
             {/* main info */}
             <div className={`${isOpen ? ' col-lg-6' : ''}`}>
               {/* product description */}
-              {descriptions && (
+              {/* isOpen: descriptions  */}
+              {descriptions && !isOpen && !intros && (
+              <div className="mb-8">
+                { descriptions.map((description) => (<p className="text-primary-dark fw-normal fs-lg-h4" key={uuidv4()}>{description}</p>))}
+              </div>
+              )}
+              {descriptions && isOpen && (
               <div className="mb-8">
                 { descriptions.map((description) => (<p className="text-primary-dark fw-normal fs-lg-h4" key={uuidv4()}>{description}</p>))}
               </div>
@@ -191,6 +206,8 @@ ServiceCardComponent.propTypes = {
     name: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     alert: PropTypes.string,
+    intros: PropTypes.arrayOf(PropTypes.string),
+    isIntrosCollapseHide: PropTypes.bool,
     descriptions: PropTypes.arrayOf(PropTypes.string),
     features: PropTypes.arrayOf(PropTypes.string),
     products: PropTypes.arrayOf(PropTypes.shape({
