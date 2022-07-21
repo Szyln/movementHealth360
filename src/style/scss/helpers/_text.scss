@@ -1,6 +1,9 @@
 .text-decoration-none {
   text-decoration: none;
 }
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
 .letter-space-sm {
   letter-spacing: $letter-spacing-sm;
   text-indent: $letter-spacing-sm;
@@ -47,3 +50,5 @@
 .lh-1 {
   line-height: 1;
 }
+
+

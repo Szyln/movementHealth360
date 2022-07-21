@@ -37164,6 +37164,10 @@ a:active {
   flex-shrink: 0;
 }
 
+.flex-no-grow {
+  flex-grow: 0;
+}
+
 @media (min-width: 576px) {
   .flex-sm-column {
     flex-direction: column;
@@ -37489,6 +37493,10 @@ a:active {
 
 .text-decoration-none {
   text-decoration: none;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
 }
 
 .letter-space-sm {
@@ -38067,6 +38075,10 @@ a:active {
 }
 .hover-navigate-link.text-white:hover path {
   fill: #f29438;
+}
+
+.object-fit-cover {
+  object-fit: cover;
 }
 
 .bg-primary {

@@ -61,6 +61,9 @@
 .flex-no-shrink {
   flex-shrink: 0;
 }
+.flex-no-grow {
+  flex-grow: 0;
+}
 
 
 @media (min-width: $grid-breakpoints-sm) {
