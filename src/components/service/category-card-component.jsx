@@ -69,7 +69,11 @@ function CategoryCardComponent({
           </div>
           {enable ? (
             <HashLink to={`/service/#${name}`}>
-              <Btn otherClassName="mt-auto" isDisabled={!enable} data={name} getData={getCategoryName}>{ enable ? '立即報名' : '規劃中'}</Btn>
+              <Btn otherClassName="mt-auto" isDisabled={!enable} data={name} getData={getCategoryName}>
+                {enable && name === '找知識' && '詳細資訊'}
+                {enable && name !== '找知識' && '立即報名'}
+                {!enable && '規劃中'}
+              </Btn>
             </HashLink>
           ) : (
             <Btn otherClassName="mt-auto" isDisabled={!enable} data={name} getData={getCategoryName}>{ enable ? '立即報名' : '規劃中'}</Btn>

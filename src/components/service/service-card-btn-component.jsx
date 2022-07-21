@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Btn from '../button-component';
 
 function ServiceCardBtnComponent({ getServiceName, service, isOpen }) {
@@ -7,7 +8,20 @@ function ServiceCardBtnComponent({ getServiceName, service, isOpen }) {
   return (
     <ul className="d-flex justify-content-stretch flex-wrap row">
       <li className="col-sm-5 mb-2 mb-sm-0">
-        <Btn dataId={name} getData={getServiceName} isDisabled={!enable} link={enable ? link : ''} isLinkExternal>{enable ? '立即報名' : '規劃中'}</Btn>
+        {/* 如果是導到聯絡我們，不要用 a 標籤 */}
+        {link === '/contact' && (
+          <Link to={enable ? link : ''}>
+            <Btn dataId={name} getData={getServiceName} isDisabled={!enable}>
+              {enable ? '聯絡我們' : '規劃中'}
+            </Btn>
+          </Link>
+        )}
+        {link !== '/contact' && (
+        <Btn dataId={name} getData={getServiceName} isDisabled={!enable} link={enable ? link : ''} isLinkExternal={link}>
+          {enable ? '立即報名' : '規劃中'}
+        </Btn>
+        )}
+
       </li>
       <li className="col-sm-7">
         <Btn data={name} getData={getServiceName} isOutline theme="primary">{ isOpen ? '關閉' : '了解更多'}</Btn>
