@@ -63,10 +63,24 @@
   }
   &:hover {
     color: $white;
+    span {
+      display: none;
+    }
+    &.hover-service::after {
+      content: "來體驗！";
+    }
+    &.hover-about-movementHealth::after {
+      content: "必須知道！";
+    }
+    &.hover-about::after {
+      content: "我們！";
+    }
+    &.hover-contact::after {
+      content: "找我們！";
+    }
   }
 }
 .hover-expand-round {
-  // z-index: 1;
   border-radius: $border-base-sm-radius;
   display: block;
   position: relative;
@@ -132,4 +146,18 @@
       }
     }
   }
+}
+
+.hover-service::before {
+  content: "";
+
+}
+.hover-about-movementHealth::before {
+  // content: "必須知道！";
+}
+.hover-about::before {
+  // content: "我們！";
+}
+.hover-contact::before {
+  // content: "找我們！";
 }

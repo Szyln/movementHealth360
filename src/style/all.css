@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -38019,6 +38020,21 @@ a:active {
 .hover.hover-nav-link:hover {
   color: #ffffff;
 }
+.hover.hover-nav-link:hover span {
+  display: none;
+}
+.hover.hover-nav-link:hover.hover-service::after {
+  content: "來體驗！";
+}
+.hover.hover-nav-link:hover.hover-about-movementHealth::after {
+  content: "必須知道！";
+}
+.hover.hover-nav-link:hover.hover-about::after {
+  content: "我們！";
+}
+.hover.hover-nav-link:hover.hover-contact::after {
+  content: "找我們！";
+}
 
 .hover-expand-round {
   border-radius: 4px;
@@ -38075,6 +38091,10 @@ a:active {
 }
 .hover-navigate-link.text-white:hover path {
   fill: #f29438;
+}
+
+.hover-service::before {
+  content: "";
 }
 
 .object-fit-cover {
