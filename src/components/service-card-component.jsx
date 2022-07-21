@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Btn from './button-component';
-import Alert from './alert-component';
 import CardInfoSection from './service/card-info-section';
 import ServiceCardBtnComponent from './service/service-card-btn-component';
 import Badge from './badge-component';
@@ -12,8 +11,12 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
   const {
     name, descriptions, features, products, appointment,
     allowRemote, allowClass, allowResident, requirement,
-    alert, intros, isIntrosCollapseHide,
+    alert, intros, isIntrosCollapseHide, hide, img,
   } = service;
+
+  if (hide) {
+    return null;
+  }
   return (
     <div className={`border-primary border-around bg-white rounded ${isOpen ? 'max-h-100p flex-column d-flex justify-content-between ' : ''}  `}>
       {/* product title */}
@@ -52,8 +55,13 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
             {intros && (
               <div className={`mb-10 ${isOpen && isIntrosCollapseHide ? 'd-none' : ''}`}>
                 {intros.map((intro) => (
-                  <p className={` fw-normal fs-lg-h4 ${isOpen ? 'text-primary' : 'text-primary-dark'}`}>{intro}</p>
+                  <p className={`fw-normal ${isOpen ? 'text-primary' : 'text-primary-dark'}`}>{intro}</p>
                 ))}
+              </div>
+            )}
+            {img && isOpen && (
+              <div className="mb-8">
+                <img src={img} alt={name} className="object-fit-cover h-100 w-100p rounded" />
               </div>
             )}
             {/* main info */}
@@ -62,18 +70,18 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
               {/* isOpen: descriptions  */}
               {descriptions && !isOpen && !intros && (
               <div className="mb-8">
-                { descriptions.map((description) => (<p className="text-primary-dark fw-normal fs-lg-h4" key={uuidv4()}>{description}</p>))}
+                { descriptions.map((description) => (<p className="text-primary-dark fw-normal" key={uuidv4()}>{description}</p>))}
               </div>
               )}
               {descriptions && isOpen && (
               <div className="mb-8">
-                { descriptions.map((description) => (<p className="text-primary-dark fw-normal fs-lg-h4" key={uuidv4()}>{description}</p>))}
+                { descriptions.map((description) => (<p className="text-primary-dark fw-normal" key={uuidv4()}>{description}</p>))}
               </div>
               )}
               {features && (
               <CardInfoSection title="特色">
                 {features && (
-                <ul className="mb-4 fs-lg-h4">
+                <ul className="mb-10">
                   {features.map((feature) => (
                     <li key={uuidv4()} className="fw-normal list-style-disc text-primary-dark mb-2">{feature}</li>
                   ))}
@@ -86,21 +94,28 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
             {/* product selection */}
             {isOpen && (
               <div className={`${isOpen ? 'col-lg-6 overflow-y-auto h-100p' : ''}`}>
-                <div className=" bg-secondary rounded p-5">
+                <div className=" bg-secondary rounded p-3">
                   <CardInfoSection title="定價">
                     {products ? (
                       <ul className="mb-n2">
                         {products.map((product) => (
                           // class 必須重新設計樣式
-                          <li key={uuidv4()} className={`fw-normal border-primary border-around p-4 rounded  text-primary mb-2  ${product.class ? 'bg-info' : 'bg-white'}`}>
+                          <li key={uuidv4()} className={`fw-normal border-primary border-around p-4 rounded  text-primary mb-2  ${product.class ? 'd-none' : 'bg-white'}`}>
                             <h4 className="text-center mb-2 border-bottom pb-2 letter-space-md fs-h4 mb-4">{product.name}</h4>
+                            <ul className="mb-4">
+                              {product.descriptions && product.descriptions.map((description) => (
+                                <li>
+                                  {description}
+                                </li>
+                              )) }
 
-                            <div className="d-flex justify-content-between mb-4">
+                            </ul>
+                            <div className={`d-flex justify-content-between align-items-end ${product.discount && 'mb-4'}`}>
                               <ul>
                                 <li>
                                   人數：
-                                  {product.member.max === 1 && product.member.min === 1 && '1 對 1'}
-                                  {product.member.max === 2 && '1 對 2'}
+                                  {product.member.max === 1 && product.member.min === 1 && !product.class && '1 對 1'}
+                                  {product.member.max === 2 && !product.class && '1 對 2'}
                                   {product.class && '團體授課'}
                                 </li>
 
@@ -111,8 +126,7 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
                                   小時
                                 </li>
                               </ul>
-                              <div className="text-accent mb-6 text-end">
-                                價格：
+                              <div className="text-accent text-end fs-h4">
                                 <span className="fw-bold">
                                   NT$
                                   {product.pricePerUnit}
@@ -121,23 +135,28 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
                                 / 小時
                               </div>
                             </div>
+                            {/* 優惠價 */}
                             {product.discount && (
-                            <Alert theme="accent" isSmall isBold={false}>
-                              本項目購滿
-                                {' '}
-                              {product.discount.unit}
-                              {' '}
-                              堂，折
-                                {' '}
-                              <span className="fw-bold">
-                                NT$
-                                {product.discount.unit * product.discount.discountPerUnit}
-                              </span>
-                              （NT$
-                                {product.discount.discountPerUnit}
-                              {' '}
-                              / 小時）
-                            </Alert>
+                            // 本項目購滿 8 堂，現折 NT$1440，優惠價：NT$1620 / 小時
+                              <div className="text-primary border-around border-accent rounded-sm">
+                                <p className="bg-accent text-white text-center py-1">
+                                  購滿
+                                  {' '}
+                                  {product.discount.unit}
+                                  {' '}
+                                  堂
+                                </p>
+                                <div className="text-primary-dark text-center">
+                                  NT$
+
+                                  <span className="fs-h3 fs-md-h2 fw-bold text-accent mx-1">
+                                    {product.pricePerUnit - product.discount.discountPerUnit}
+                                  </span>
+
+                                  <span className="text-decoration-line-through">{product.pricePerUnit}</span>
+                                  / 小時
+                                </div>
+                              </div>
                             )}
                           </li>
                         ))}
@@ -205,6 +224,7 @@ ServiceCardComponent.propTypes = {
   service: PropTypes.shape({
     name: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    img: PropTypes.string,
     alert: PropTypes.string,
     intros: PropTypes.arrayOf(PropTypes.string),
     isIntrosCollapseHide: PropTypes.bool,
@@ -232,9 +252,11 @@ ServiceCardComponent.propTypes = {
     requirement: PropTypes.arrayOf(PropTypes.string),
     enable: PropTypes.bool.isRequired,
     link: PropTypes.string,
+    hide: PropTypes.bool,
   }).isRequired,
   getServiceName: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
+
 };
 
 ServiceCardComponent.defaultProps = {
