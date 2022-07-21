@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// 要用 React-Router 的 Link 的話，直接包在這個元件外面用
+
 function Btn({
   theme = 'primary', children, data, getData, isOutline = false, isDisabled = false, link = '', isLinkExternal = false, otherClassName = '', target = '_blank',
 }) {
