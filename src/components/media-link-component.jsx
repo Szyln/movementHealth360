@@ -23,7 +23,7 @@ function MediaLinkComponent({
     },
     {
       name: 'line',
-      id: '官方帳號',
+      id: 'line 官方帳號',
       address: 'https://lin.ee/5pVAw4z',
     },
   ];
