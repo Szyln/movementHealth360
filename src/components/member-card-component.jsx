@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import Btn from './button-component';
+import MemberDetailComponent from '../pages/about/member-detail-component';
 
 function MemberCardComponent({
   member, getMemberName, isOpen = false,
 }) {
   const {
     name, engName, img, professionalTitles, experiences,
+    specialty, educationalBackgroundAndCertificate,
+    professionalCourseRecord, link,
   } = member;
 
   return (
@@ -35,14 +38,15 @@ function MemberCardComponent({
             <Btn data={engName} getData={getMemberName} isOutline={isOpen}>{ isOpen ? '關閉' : '詳細' }</Btn>
           </div>
           {/* experience */}
+          {/* specialty, educationalBackgroundAndCertificate,
+    professionalCourseRecord, link, */}
           {isOpen && (
-          <div className="ms-md-10 w-md-70p w-lg-80p">
-            <h4 className="text-primary fs-h5 border-bottom border-primary mb-5 pb-1">資格</h4>
-            <ul className="overflow-y-auto h-md-90 mb-n2 px-4">
-              { experiences.map((experience) => (
-                <li key={uuidv4()} className="list-style-disc fw-normal mb-2 letter-space-sm">{experience}</li>))}
-            </ul>
-          </div>
+            <div className="ms-md-10 w-md-70p w-lg-80p overflow-y-auto h-md-130 position-relative">
+              <MemberDetailComponent title="專長" listOfDetail={specialty} />
+              <MemberDetailComponent title="學歷、專業證照、國際認證" listOfDetail={educationalBackgroundAndCertificate} />
+              <MemberDetailComponent title="專業課程結業" listOfDetail={professionalCourseRecord} />
+              <MemberDetailComponent title="經歷" listOfDetail={experiences} />
+            </div>
           )}
         </div>
       </div>
@@ -57,6 +61,12 @@ MemberCardComponent.propTypes = {
     img: PropTypes.string.isRequired,
     professionalTitles: PropTypes.arrayOf(PropTypes.string).isRequired,
     experiences: PropTypes.arrayOf(PropTypes.string),
+    specialty: PropTypes.arrayOf(PropTypes.string),
+    educationalBackgroundAndCertificate: PropTypes.arrayOf(PropTypes.string),
+    professionalCourseRecord: PropTypes.arrayOf(PropTypes.string),
+    link: PropTypes.shape({
+      linkTree: PropTypes.string,
+    }),
   }).isRequired,
   getMemberName: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
