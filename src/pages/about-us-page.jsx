@@ -29,6 +29,7 @@ function AboutUsPage({ memberList }) {
       <PageContainerComponent title="我們！">
         <div className="mb-22 text-primary-dark">
           <div className="row">
+            {/* logo */}
             <div className="col-md-4 col-lg-5 d-flex px-30 pb-10 pb-md-0 px-md-10 px-lg-6 mb-6">
               <img
                 src={logoPic}
@@ -37,6 +38,7 @@ function AboutUsPage({ memberList }) {
               "
               />
             </div>
+            {/* introduction */}
             <div className="col-md-7 col-lg-6  offset-md-1">
               <h2 className="fs-h3 fs-lg-h2 mb-10 letter-space-md-paragraph">
                 動作健康 360
@@ -55,47 +57,73 @@ function AboutUsPage({ memberList }) {
                 <p>動作的問題，就用動作的方法解決。</p>
               </div>
             </div>
+            {/* how to start */}
+            <PageContainerComponent title="緣起" headingLevel="h2">
+              <div className="row">
+                <div className="fw-normal">
+                  <p>運動不應該如此艱澀困難</p>
+                  <p>運動不應該如此讓人畏懼害怕</p>
+                  <p className="mb-4">運動應該要能讓人擁抱健康，而不是遠離健康</p>
+                  <p>「動作健康360」的存在，就是幫助你，解決一切的問題。</p>
+                  <p>「如何完整地接住患者的恢復健康的過程？」</p>
+                  <p className="mb-4">「動作健康360」的三位創辦人，彼此來自不同領域，卻不約而同地發出這個疑問。</p>
+                  <p>醫療端與體能訓練端間始終存在著一條鴻溝，彼此語言不同、觀點不同、專業不同。民眾如迷途的旅人，在兩端之間不斷徘徊；</p>
+                  <p className="mb-4">民眾需用著不甚熟悉的詞語，吃力地說明自己的狀況，卻因兩端的語言隔閡吃了閉門羹。</p>
 
+                  <p>三位創辦人，各自在自身的領域中觀察到了此問題，惴惴不安地把客戶送到了鴻溝之上，同時盡力的延伸自身專業，力求將客戶安全地送至對岸，也因此結識了彼此。</p>
+
+                  <p className="mb-4">突然間，他們發現了答案，跨越鴻溝的那艘船，就是「動作健康」，</p>
+                  <p>人生由一連串的動作所產生，「要活就要動，要動就要動得健康」：病人需要安全地活動、一般民眾需要追求健康地運動、運動員需要超人般的動作。</p>
+
+                  <p>根據此理念，三位創辦人建立了「動作健康360」，願成為大眾在動作、在健康上的舵手，為大眾搭起醫療、訓練兩端間的橋樑；</p>
+                  <p>讓運動不再變成如此讓人卻步的事情，讓大家很能享受運動的美好，從運動中找回「動作健康」。</p>
+                </div>
+              </div>
+
+            </PageContainerComponent>
+            <PageContainerComponent title="成員" headingLevel="h2" isContainer={false}>
+
+              <Swiper
+                className="p-2"
+                slidesPerView={1.25}
+                spaceBetween={24}
+                breakpoints={{
+                  576: {
+                    slidesPerView: 1.1,
+                    spaceBetween: 24,
+                  },
+                  768: {
+                    slidesPerView: 2.1,
+                    spaceBetween: 16,
+                  },
+                  992: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 16,
+                  },
+                  1120: {
+                    slidesPerView: 3,
+                    spaceBetween: 16,
+                  },
+                }}
+              >
+                {memberList.map((member) => (
+                  <div key={uuidv4()}>
+                    <SwiperSlide key={uuidv4()}>
+                      <MemberCardComponent member={member} getMemberName={getMemberName} />
+                    </SwiperSlide>
+                  </div>
+                ))}
+              </Swiper>
+
+            </PageContainerComponent>
           </div>
         </div>
-        <div>
-          <Swiper
-            className="p-2"
-            slidesPerView={1.25}
-            spaceBetween={24}
-            breakpoints={{
-              576: {
-                slidesPerView: 1.1,
-                spaceBetween: 24,
-              },
-              768: {
-                slidesPerView: 2.1,
-                spaceBetween: 16,
-              },
-              992: {
-                slidesPerView: 2.5,
-                spaceBetween: 16,
-              },
-              1120: {
-                slidesPerView: 3,
-                spaceBetween: 16,
-              },
-            }}
-          >
-            {memberList.map((member) => (
-              <div key={uuidv4()}>
-                <SwiperSlide key={uuidv4()}>
-                  <MemberCardComponent member={member} getMemberName={getMemberName} />
-                </SwiperSlide>
-              </div>
-            ))}
-          </Swiper>
-        </div>
+        <div />
         {/* member modal */}
         {currentMember && (
-        <Modal>
-          <MemberCardComponent member={currentMember} getMemberName={getMemberName} isOpen />
-        </Modal>
+          <Modal>
+            <MemberCardComponent member={currentMember} getMemberName={getMemberName} isOpen />
+          </Modal>
         )}
       </PageContainerComponent>
     </DocumentTitle>
