@@ -25,15 +25,14 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
       </div>
       {/* product info */}
       <div className={` 
-      ${isOpen ? 'overflow-y-auto h-80p rounded' : 'overflow-y-auto'}
-       p-4 p-lg-5`}
+      ${isOpen ? 'overflow-y-auto h-80p rounded' : 'overflow-y-auto'} p-4 p-lg-5`}
       >
         <div className="container-fluid">
           <div className="row">
             {/* badge info */}
             <ul className="d-flex mb-8 flex-wrap">
               <li>
-                {alert && (<Badge theme="accent" isOutline textColor="accent">{ alert }</Badge>)}
+                {alert && (<Badge theme="accent" isOutline textColor="accent">{alert}</Badge>)}
               </li>
               <li>
                 {appointment && (<Badge theme="accent" isOutline textColor="accent">{appointment === 'required' ? '需事前預約' : '可按照開班時間前往駐點報名參加'}</Badge>)}
@@ -69,25 +68,25 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
               {/* product description */}
               {/* isOpen: descriptions  */}
               {descriptions && !isOpen && !intros && (
-              <div className="mb-8">
-                { descriptions.map((description) => (<p className="text-primary-dark fw-normal" key={uuidv4()}>{description}</p>))}
-              </div>
+                <div className="mb-8">
+                  {descriptions.map((description) => (<p className="text-primary-dark fw-normal" key={uuidv4()}>{description}</p>))}
+                </div>
               )}
               {descriptions && isOpen && (
-              <div className="mb-8">
-                { descriptions.map((description) => (<p className="text-primary-dark fw-normal" key={uuidv4()}>{description}</p>))}
-              </div>
+                <div className="mb-8">
+                  {descriptions.map((description) => (<p className="text-primary-dark fw-normal" key={uuidv4()}>{description}</p>))}
+                </div>
               )}
               {features && (
-              <CardInfoSection title="特色">
-                {features && (
-                <ul className="mb-10">
-                  {features.map((feature) => (
-                    <li key={uuidv4()} className="fw-normal list-style-disc text-primary-dark mb-2">{feature}</li>
-                  ))}
-                </ul>
-                )}
-              </CardInfoSection>
+                <CardInfoSection title="特色">
+                  {features && (
+                    <ul className="mb-10">
+                      {features.map((feature) => (
+                        <li key={uuidv4()} className="fw-normal list-style-disc text-primary-dark mb-2">{feature}</li>
+                      ))}
+                    </ul>
+                  )}
+                </CardInfoSection>
               )}
 
             </div>
@@ -107,7 +106,7 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
                                 <li>
                                   {description}
                                 </li>
-                              )) }
+                              ))}
 
                             </ul>
                             <div className={`d-flex justify-content-between align-items-end ${product.discount && 'mb-4'}`}>
@@ -137,7 +136,7 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
                             </div>
                             {/* 優惠價 */}
                             {product.discount && (
-                            // 本項目購滿 8 堂，現折 NT$1440，優惠價：NT$1620 / 小時
+                              // 本項目購滿 8 堂，現折 NT$1440，優惠價：NT$1620 / 小時
                               <div className="text-primary border-around border-accent rounded-sm">
                                 <p className="bg-accent text-white text-center py-1">
                                   購滿
@@ -148,7 +147,6 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
                                 </p>
                                 <div className="text-primary-dark text-center">
                                   NT$
-
                                   <span className="fs-h3 fs-md-h2 fw-bold text-accent mx-1">
                                     {product.pricePerUnit - product.discount.discountPerUnit}
                                   </span>
@@ -168,7 +166,7 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
                           <Btn isOutline>聯繫我們</Btn>
                         </Link>
                       </div>
-                    ) }
+                    )}
                   </CardInfoSection>
                 </div>
               </div>
