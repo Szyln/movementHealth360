@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import PageTitleComponent from './page-title-component';
 
 function PageContainerComponent({
-  children, title = '頁面標題', id = '', headingLevel = 'h1',
+  children, title = '頁面標題', id = '', headingLevel = 'h1', isContainer = true,
 }) {
   return (
-    <div className="container mb-30">
+    <div className={`mb-30 ${isContainer ? 'container' : ''}`}>
       <PageTitleComponent
         title={title}
         id={id}
@@ -23,11 +23,13 @@ PageContainerComponent.propTypes = {
   title: PropTypes.string,
   id: PropTypes.string,
   headingLevel: PropTypes.string,
+  isContainer: PropTypes.bool,
 
 };
 PageContainerComponent.defaultProps = {
   title: '頁面標題',
   id: undefined,
   headingLevel: 'h1',
+  isContainer: true,
 };
 export default PageContainerComponent;
