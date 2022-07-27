@@ -58,7 +58,7 @@ function AboutUsPage({ memberList }) {
               </div>
             </div>
             {/* how to start */}
-            <PageContainerComponent title="緣起" headingLevel="h2">
+            <PageContainerComponent title="品牌故事" headingLevel="h2">
               <div className="row">
                 <div className="fw-normal">
                   <p>運動不應該如此艱澀困難</p>
