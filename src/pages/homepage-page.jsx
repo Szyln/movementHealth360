@@ -123,7 +123,7 @@ function Homepage({ servicesList, servicesCategories, feedbackList }) {
               <HomepageSectionTitleComponent>
                 動作的問題
                 <br />
-                就用動作的方式解決
+                就用動作的方法解決
               </HomepageSectionTitleComponent>
               <NavigateLinkButtonComponent linkTo="/about/movementHealth">了解運動科學</NavigateLinkButtonComponent>
             </div>

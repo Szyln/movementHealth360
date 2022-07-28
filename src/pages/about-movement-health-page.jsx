@@ -7,8 +7,8 @@ import Btn from '../components/button-component';
 
 function AboutMovementHealthPage() {
   return (
-    <DocumentTitle title="學動作 - 動作健康 360">
-      <PageContainerComponent title="學動作 - 什麼是動作科學？">
+    <DocumentTitle title="動作健康 - 動作健康 360">
+      <PageContainerComponent title="什麼是動作健康與動作科學">
 
         <div className="row">
 

@@ -24,7 +24,7 @@ function AboutUsPage({ memberList }) {
   };
 
   return (
-    <DocumentTitle title="我們！ - 動作健康 360">
+    <DocumentTitle title="理念與團隊 - 動作健康 360">
 
       <PageContainerComponent title="我們！">
         <div className="mb-22 text-primary-dark">
