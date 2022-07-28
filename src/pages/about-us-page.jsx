@@ -60,7 +60,7 @@ function AboutUsPage({ memberList }) {
             {/* how to start */}
             <PageContainerComponent title="品牌故事" headingLevel="h2">
               <div className="row">
-                <div className="fw-normal text-center">
+                <div className="fw-normal">
                   <p>
                     運動不應該如此艱澀困難
                     <br />
