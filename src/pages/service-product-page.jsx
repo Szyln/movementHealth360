@@ -9,15 +9,20 @@ import ServiceCardComponent from '../components/service-card-component';
 function ServiceProductPage({
   filterCategoryProductList, getServiceName, category,
 }) {
-  // get from /service/:category
-  // const { category } = useParams();
+  // const [name, enable] = category;
+  // console.log(category.name);
+
+  // if (!enable) return null;
 
   return (
     <div className="col-12">
       {/* products (sort by category) */}
       {/* title: category name */}
       <Link to={`/service/#${category}`}>
-        <PageTitleComponent id={category} headingLevel="h2">{category}</PageTitleComponent>
+        <PageTitleComponent id={category} headingLevel="h2">
+          我想
+          {category}
+        </PageTitleComponent>
       </Link>
       <div className="row">
         {/* products in this category */}
