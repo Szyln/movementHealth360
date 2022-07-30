@@ -45,6 +45,7 @@ function ServicePage({
     <DocumentTitle title="服務 - 動作健康 360">
       <>
         <PageContainerComponent title="服務">
+          {/* contact info */}
           <Alert theme="primary" isBold={false}>
             <div className="d-lg-flex align-items-lg-center">
               <p className="mb-4 mb-lg-0 me-lg-2 ">想更了解我們的服務？歡迎聯絡我們！</p>
