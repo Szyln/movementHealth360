@@ -81,7 +81,7 @@ function ServicePage({
           </ul>
 
           {/* product in category */}
-          {servicesCategories.map((category) => (
+          {currentCategoryName !== '' && servicesCategories.map((category) => (
             <div key={uuidv4()} className="row">
               <ServiceProductPage
                 category={category.name}
