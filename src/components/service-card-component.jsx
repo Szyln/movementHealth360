@@ -20,8 +20,8 @@ function ServiceCardComponent({ service, getServiceName, isOpen = false }) {
   return (
     <div className={`border-primary border-around bg-white rounded ${isOpen ? 'max-h-100p flex-column d-flex justify-content-between ' : ''}  `}>
       {/* product title */}
-      <div className=" bg-white p-4 p-md-7 border-bottom border-primary rounded-top">
-        <h3 className="text-primary fs-h4 fs-md-h3 letter-space-normal-paragraph">{name}</h3>
+      <div className=" bg-secondary-light p-4 p-md-7 border-bottom border-primary rounded-top">
+        <h3 className="text-center text-primary fs-h4 fs-md-h3 letter-space-normal-paragraph">{name}</h3>
       </div>
       {/* product info */}
       <div className={` 

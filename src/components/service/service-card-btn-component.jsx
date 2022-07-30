@@ -17,7 +17,7 @@ function ServiceCardBtnComponent({ getServiceName, service, isOpen }) {
           </Link>
         )}
         {link !== '/contact' && (
-        <Btn dataId={name} getData={getServiceName} isDisabled={!enable} link={enable ? link : ''} isLinkExternal={link && true}>
+        <Btn theme="accent" dataId={name} getData={getServiceName} isDisabled={!enable} link={enable ? link : ''} isLinkExternal={link && true}>
           {enable ? '立即報名' : '規劃中'}
         </Btn>
         )}

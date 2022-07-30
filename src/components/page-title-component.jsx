@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function PageTitleComponent({ children = '頁面標題', id, headingLevel = 'h1' }) {
+function PageTitleComponent({
+  children = '頁面標題', id, headingLevel = 'h1', textColor = 'primary',
+}) {
   if (headingLevel === 'h2') {
     return (
-      <h2 className="text-primary border-bottom pt-16 pt-sm- pt-md-38 pt-lg-20 mb-20 fs-h3 fs-md-h2" id={id}>
+      <h2 className={`text-${textColor} border-bottom pt-16 pt-sm- pt-md-38 pt-lg-20 mb-20 fs-h3 fs-md-h2`} id={id}>
         {children}
       </h2>
 
@@ -21,12 +23,12 @@ PageTitleComponent.propTypes = {
   children: PropTypes.string.isRequired,
   id: PropTypes.string,
   headingLevel: PropTypes.string,
-
+  textColor: PropTypes.string,
 };
 PageTitleComponent.defaultProps = {
   id: undefined,
   headingLevel: 'h1',
-
+  textColor: 'primary',
 };
 
 export default PageTitleComponent;
