@@ -68,7 +68,7 @@ function ServicePage({
             </div>
           </Alert>
           {/* list of categories */}
-          <ul className="row mb-22">
+          <ul className="row mb-50">
             {servicesCategories.map((category) => (
               <li className="col-12" key={uuidv4()}>
                 <CategoryCardComponent
