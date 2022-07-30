@@ -27,9 +27,6 @@
         z-index: 1;
         background-color: $white;
         color: $value;
-        // background: $white;
-        &::before {
-        }
       }
     }
     &.btn-outline-#{$key} {
@@ -70,7 +67,7 @@
       content: "來體驗！";
     }
     &.hover-about-movementHealth::after {
-      content: "必須知道！";
+      content: "動作科學？";
     }
     &.hover-about::after {
       content: "認識我們！";
@@ -146,18 +143,4 @@
       }
     }
   }
-}
-
-.hover-service::before {
-  content: "";
-
-}
-.hover-about-movementHealth::before {
-  // content: "必須知道！";
-}
-.hover-about::before {
-  // content: "我們！";
-}
-.hover-contact::before {
-  // content: "找我們！";
 }

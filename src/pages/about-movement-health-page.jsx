@@ -8,7 +8,7 @@ import Btn from '../components/button-component';
 function AboutMovementHealthPage() {
   return (
     <DocumentTitle title="動作健康 - 動作健康 360">
-      <PageContainerComponent title="什麼是動作健康與動作科學">
+      <PageContainerComponent title="什麼是動作健康與動作科學？">
 
         <div className="row">
 
@@ -64,13 +64,34 @@ function AboutMovementHealthPage() {
                 」，可以讓你遠離疼痛、降低傷害、促進動作表現、增加生活品質，達到「動作健康」。
               </p>
 
-              <p className="mb-4">所以，下次做全身檢查時，除了檢查心臟、血壓、膽固醇之外，不妨檢查看看自己的「動作」夠不夠健康吧。</p>
+              <p className="mb-4">而幫助你達到動作健康的那門科學、就叫做「動作科學(Movement Science)」。</p>
 
-              <p>
-                追蹤我們的 IG, FB，會一步步帶大家認識，何謂動作選擇、動作控制以及喪失動作健康怎麼辦。
+              <p className="mb-4">
+                醫學幫助你從疾病中恢復、重回生活；
+                <br />
+                運動科學幫助你挑戰身體極限、突破自我。
+                <br />
+                而動作科學作為研究人體動作的學問，
               </p>
 
-              <p>記住「要活就要動，要動就要動得健康」</p>
+              <p className="mb-4">
+                以解剖學、肌動學、神經肌骨系統為根基，融合醫學與運動科學，
+                <br />
+                目的教會你如何好好地動，重新找回身體自主權。
+                <br />
+                肌肉、骨頭與大腦之間相互協調，產生出「動作。」
+              </p>
+
+              <p className="mb-4">
+                「動作(movement)」本身就是一個系統，
+                <br />
+                動作科學便是那解決系統障礙的處方。
+              </p>
+
+              <p className="mb-4">「動作的問題，就用動作的方法解決」</p>
+
+              <p className="mb-4">結合醫學與運動——動作科學，發現動作的問題，解決動作的問題，重新擁有「動作健康」。</p>
+
             </div>
           </div>
         </div>
